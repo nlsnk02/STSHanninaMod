@@ -56,7 +56,7 @@ public class UnionManager {
         List<AbstractCard> l = CardLibrary.getAllCards().stream().filter(filter).collect(Collectors.toList());
         AbstractCard c = l.get(getRamdom(l.size())).makeCopy();
 
-        if (ModHelper.InCombat()
+        if (ModHelper.isInCombat()
                 && !(AbstractDungeon.getCurrRoom()).isBattleOver
                 && c.hasTag(AbstractCard.CardTags.HEALING)
                 && index < 3) {

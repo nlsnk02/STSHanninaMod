@@ -2,18 +2,20 @@ package hannina.modcore;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -22,19 +24,14 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import hannina.actions.ChangeCharColorAction;
 import hannina.cards.MMRuizhan;
 import hannina.cards.XCDDangmoshi;
-import hannina.cards.Zuiainile;
 import hannina.character.Hannina;
-import hannina.fantasyCard.FusionColorCard;
 import hannina.misc.SaveData;
 import hannina.misc.ScrollBarForUnion;
 import hannina.potions.Aiqing;
 import hannina.potions.Jinbi;
 import hannina.potions.Maozhua;
 import hannina.relics.*;
-import hannina.utils.ChangePlayerModel;
-import hannina.utils.GoldManager;
-import hannina.utils.ModHelper;
-import hannina.utils.MonsterDieThisTurnManager;
+import hannina.utils.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -95,6 +92,7 @@ public class Core implements
 
     public static void initialize() {
         new Core();
+        ConfigHelper.tryCreateConfig();
     }
 
     @Override
@@ -142,9 +140,16 @@ public class Core implements
     @Override
     public void receivePostInitialize() {
         logger.info("===============加载事件与其他东西===============");
+        ModPanel settingsPanel = ConfigHelper.initSettings();
+        Texture badgeTexture = ImageMaster.loadImage(ModHelper.getImgPath("UI/badge.png"));
+        BaseMod.registerModBadge(badgeTexture, "hannina mod", "332", "", settingsPanel);
+
         BaseMod.addPotion(Maozhua.class, null, null, null, Maozhua.id, Enums.HANNINA_CLASS);
         BaseMod.addPotion(Jinbi.class, null, null, null, Jinbi.id, Enums.HANNINA_CLASS);
         BaseMod.addPotion(Aiqing.class, null, null, null, Aiqing.id, Enums.HANNINA_CLASS);
+
+        SkinSelectScreen.init();
+
         logger.info("===============加载事件与其他东西===============");
     }
 

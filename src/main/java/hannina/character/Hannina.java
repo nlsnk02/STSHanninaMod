@@ -28,6 +28,7 @@ import hannina.powers.UnionPower;
 import hannina.utils.ChangePlayerModel;
 import hannina.utils.HanninaImageMaster;
 import hannina.utils.ModHelper;
+import hannina.utils.SkinSelectScreen;
 
 import java.util.ArrayList;
 
@@ -76,6 +77,15 @@ public class Hannina extends CustomPlayer {
                 getLoadout(),
                 0F, 5.0F, 240.0F, 300.0F,
                 new EnergyManager(ENERGY_PER_TURN));
+
+        if (SkinSelectScreen.Inst != null)
+            refreshSkin();
+    }
+
+    public void refreshSkin() {
+        this.shoulderImg = HanninaImageMaster.getSkinImg("shoulder1");
+        this.shoulder2Img = HanninaImageMaster.getSkinImg("shoulder2");
+        this.corpseImg = HanninaImageMaster.getSkinImg("die");
     }
 
     @Override
@@ -221,18 +231,19 @@ public class Hannina extends CustomPlayer {
     public void update() {
         if (!this.isDead) {
             if (this.hasPower(FusionPower.POWER_ID)) {
-                this.img = HanninaImageMaster.charFusion;
+                this.img = HanninaImageMaster.getSkinImg("fusion");
             } else if (this.hasPower(UnionPower.POWER_ID)) {
                 UnionPower power = (UnionPower) this.getPower(UnionPower.POWER_ID);
                 if (power.color == AbstractCard.CardColor.RED)
-                    this.img = HanninaImageMaster.charR;
+                    this.img = HanninaImageMaster.getSkinImg("red");
                 if (power.color == AbstractCard.CardColor.GREEN)
-                    this.img = HanninaImageMaster.charG;
+                    this.img = HanninaImageMaster.getSkinImg("green");
                 if (power.color == AbstractCard.CardColor.BLUE)
-                    this.img = HanninaImageMaster.charB;
+                    this.img = HanninaImageMaster.getSkinImg("blue");
                 if (power.color == AbstractCard.CardColor.PURPLE)
-                    this.img = HanninaImageMaster.charP;
-            } else this.img = HanninaImageMaster.charIdle;
+                    this.img = HanninaImageMaster.getSkinImg("purple");
+            } else this.img = HanninaImageMaster.getSkinImg("null");
+            ;
         }
         super.update();
     }

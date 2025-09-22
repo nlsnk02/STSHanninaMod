@@ -14,7 +14,7 @@ public class Chaojuehajimi extends AbstractHanninaCard {
         super(Chaojuehajimi.class.getSimpleName(), 3, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.isMultiDamage = true;
         this.baseDamage = 1;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.exhaust = true;
     }
 
@@ -22,7 +22,7 @@ public class Chaojuehajimi extends AbstractHanninaCard {
     public void applyPowers() {
         int n = 0;
         if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-            n = AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount * this.baseMagicNumber;
+            n = AbstractDungeon.player.getPower(VigorPower.POWER_ID).amount * (this.baseMagicNumber - 1);
         }
         this.baseDamage += n;
         super.applyPowers();

@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.FruitJuice;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import hannina.actions.ChooseColor2EnterAction;
 import hannina.actions.GainGoldAction;
 import hannina.misc.OnLoseGoldSubscriber;
 import hannina.utils.ModHelper;
@@ -45,7 +43,7 @@ public class Jinbi extends AbstractHanninaPotion implements CustomSavable<Intege
 
     @Override
     public void use(AbstractCreature abstractCreature) {
-        if (ModHelper.InCombat())
+        if (ModHelper.isInCombat())
             addToBot(new GainGoldAction(amount * 3 / 10));
         else AbstractDungeon.player.gainGold(amount * 3 / 10);
     }

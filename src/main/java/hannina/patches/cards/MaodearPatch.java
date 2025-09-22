@@ -15,7 +15,7 @@ import javassist.expr.MethodCall;
 public class MaodearPatch {
 
     public static boolean onUsedCard(AbstractCard c) {
-        if (ModHelper.InCombat() && AbstractDungeon.player.hasPower(MaodearxingtaiPower.POWER_ID)) {
+        if (ModHelper.isInCombat() && AbstractDungeon.player.hasPower(MaodearxingtaiPower.POWER_ID)) {
             int amount = AbstractDungeon.player.getPower(MaodearxingtaiPower.POWER_ID).amount;
             if (amount > 0) {
                 AbstractDungeon.player.getPower(MaodearxingtaiPower.POWER_ID).amount--;

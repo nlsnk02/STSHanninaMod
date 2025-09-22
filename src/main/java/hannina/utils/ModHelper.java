@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import hannina.actions.ChangeCharColorAction;
 import hannina.modcore.Enums;
 import hannina.powers.AntiUnionPower;
@@ -17,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
 
 public class ModHelper {
@@ -44,7 +42,7 @@ public class ModHelper {
     public static final Logger logger = LogManager.getLogger(ModHelper.class.getName());
 
 
-    public static boolean InCombat() {
+    public static boolean isInCombat() {
         return AbstractDungeon.player != null &&
                 AbstractDungeon.currMapNode != null &&
                 AbstractDungeon.currMapNode.room != null &&
@@ -53,7 +51,7 @@ public class ModHelper {
     }
 
     public static AbstractCard.CardColor getPlayerColor() {
-        if (InCombat() && AbstractDungeon.player.hasPower(UnionPower.POWER_ID)) {
+        if (isInCombat() && AbstractDungeon.player.hasPower(UnionPower.POWER_ID)) {
             return ((UnionPower) (AbstractDungeon.player.getPower(UnionPower.POWER_ID))).color;
         }
         return AbstractDungeon.player.getCardColor();

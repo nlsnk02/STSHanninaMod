@@ -20,7 +20,7 @@ public class GoldManager {
     }
 
     public static void updateGold() {
-        if (ModHelper.InCombat()) {
+        if (ModHelper.isInCombat()) {
             if (AbstractDungeon.player.gold != gold) {
                 if (AbstractDungeon.player.gold > gold) {
                     if (gold != -1000) {
