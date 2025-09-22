@@ -1,0 +1,58 @@
+{
+  "hannina:Maozhibaozang": {
+    "NAME": "猫之宝藏",
+    "FLAVOR": "猫的宝藏一直伴她左右",
+    "DESCRIPTIONS": [
+      "可选的卡牌奖励数量+1。 NL 每场战斗结束时，获得 #b9 #y金币 。"
+    ]
+  },
+  "hannina:Xiantuanniudanji": {
+    "NAME": "线团扭蛋机",
+    "FLAVOR": "特别到只能扭出线团",
+    "DESCRIPTIONS": [
+      "每 #b2 个回合，消耗 #b3  #y金币 并获得 [E] 。"
+    ]
+  },
+  "hannina:PToy": {
+    "NAME": "P玩偶",
+    "FLAVOR": "因为晚上都抱着本人睡觉所以不常用",
+    "DESCRIPTIONS": [
+      "在战斗中消耗 #y金币 时获得 #b1 #y金币 与 #b3 点 #y活力 。"
+    ]
+  },
+  "hannina:Chuchanling": {
+    "NAME": "畜产灵",
+    "FLAVOR": "正因如此变成了这种身材",
+    "DESCRIPTIONS": [
+      "拾起时，移除牌组中1张“打击”与“防御”牌并获得 #b4 点最大生命。"
+    ]
+  },
+  "hannina:Qinmihezhao": {
+    "NAME": "亲密合照",
+    "FLAVOR": "50年前拍的，当时猫还只有50岁",
+    "DESCRIPTIONS": [
+      "你在每回合第一次进入任意 #y形态 时获得 [E] 。"
+    ]
+  },
+  "hannina:Jibeilongdehuiyi": {
+    "NAME": "脊背龙的记忆",
+    "FLAVOR": "第一次相见时的甜蜜回忆",
+    "DESCRIPTIONS": [
+      "进入战士猫 #y形态 时在本回合获得1点 #y力量 。 NL 进入猎人猫 #y形态 时在本回合获得1点 #y敏捷 。 NL 进入机器猫 #y形态 时在本回合获得1点 #y集中 。"
+    ]
+  },
+  "hannina:Jibeilongdehuiyi2": {
+    "NAME": "脊背龙的记忆",
+    "FLAVOR": "第一次相见时的甜蜜回忆",
+    "DESCRIPTIONS": [
+      "进入任意 #y形态 时在本回合获得 #b1 点 #y力量 ， #b1 点 #y敏捷 ， #b1 点 #y集中 。"
+    ]
+  },
+  "hannina:Maozhizhencang": {
+    "NAME": "猫之珍藏",
+    "FLAVOR": "猫的珍藏一直在她身后",
+    "DESCRIPTIONS": [
+      "拾起时获得 #b400 #y金币 。 NL 每场战斗结束时，获得 #b15 金币。 NL 可选的卡牌奖励数量+1。"
+    ]
+  }
+}

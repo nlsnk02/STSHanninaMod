@@ -1,0 +1,17 @@
+{
+  "hannina:Xuedinge": {
+    "TEXT": [
+      "选择一张洗入抽牌堆"
+    ]
+  },
+  "hannina:YZYHSXTBJHLM": {
+    "TEXT": [
+      "选择一张加入手牌"
+    ]
+  },
+  "hannina:ChangeCharColorAction": {
+    "TEXT": [
+      "我不能改变形态"
+    ]
+  }
+}

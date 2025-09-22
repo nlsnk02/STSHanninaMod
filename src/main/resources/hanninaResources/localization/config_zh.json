@@ -1,0 +1,6 @@
+{
+	"otherObtainDestroyer": "特殊玩法：其他角色也将获得毁灭者遗物以及一张特殊牌，但是所有敌人初始获得1点力量。",
+	"otherObtainDestroyer2": "所有角色获得毁灭者（详情见config）",
+	"activeTutorials": "加载教程（加载一次后自动关闭）",
+	"dontLoad3d": "关闭3d模型（闪退的时候可以开）"
+}

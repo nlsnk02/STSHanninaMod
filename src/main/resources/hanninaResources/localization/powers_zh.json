@@ -1,0 +1,115 @@
+{
+  "hannina:UnionPower": {
+    "NAME": "形态",
+    "DESCRIPTIONS": [
+      "处于战士猫形态时获得 #b2 点 #y力量 。 NL #y复合 卡牌变为对应卡牌中记录的 #r红色 卡牌。",
+      "处于猎人猫形态时获得 #b2 点 #y敏捷 。 NL #y复合 卡牌变为对应卡牌中记录的 #g绿色 卡牌。",
+      "处于机器猫形态时生成一个 #y闪电 充能球并获得 #b1 点 #y集中 。 NL #y复合 卡牌变为对应卡牌中记录的 #b蓝色 卡牌。",
+      "处于观者猫形态时 #y预见 #b2 。 NL #y复合 卡牌变为对应卡牌中记录的 #p紫色 卡牌。",
+      " NL 回合结束时自动退出。"
+    ]
+  },
+  "hannina:XingtaibianhuaPower": {
+    "NAME": "形态变化",
+    "DESCRIPTIONS": [
+      "在 #b",
+      " 回合内，回合结束时不会退出当前 #y形态 。"
+    ]
+  },
+  "hannina:DoumaobangPower": {
+    "NAME": "逗猫棒",
+    "DESCRIPTIONS": [
+      "回合开始时，在手牌随机加入 #b",
+      " 张 #y猫的平稳落地 或 #y猫的冲锋进击 。"
+    ]
+  },
+  "hannina:DoumaobangUPGPower": {
+    "NAME": "逗猫棒+",
+    "DESCRIPTIONS": [
+      "回合开始时，在手牌随机加入 #b",
+      " 张 #y猫的平稳落地+ 或 #y猫的冲锋进击+ 。"
+    ]
+  },
+  "hannina:MaodefeiqiyijiaoPower": {
+    "NAME": "猫的飞起一脚",
+    "DESCRIPTIONS": [
+      "进入猎人猫形态时抽 #b",
+      " 张牌"
+    ]
+  },
+  "hannina:QianmiaowanhaPower": {
+    "NAME": "千猫万哈",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张牌后，抽 #b",
+      " 张牌，随机进入任意 #y职业形态 。"
+    ]
+  },
+  "hannina:ZhuchengjinshenPower": {
+    "NAME": "铸成金身",
+    "DESCRIPTIONS": [
+      "战斗中每次获得或上缴金币后，获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "hannina:MaodearxingtaiPower": {
+    "NAME": "猫dear形态",
+    "DESCRIPTIONS": [
+      "每回合前 #b",
+      " 张牌打出时，返回抽牌堆底，且在下次打出前耗能变为0。"
+    ]
+  },
+  "hannina:MaodearxingtaiPower2": {
+    "NAME": "猫dear形态",
+    "DESCRIPTIONS": [
+      "你进入 #y职业形态 时同时获得所有 #y形态 的 #y形态 增益。 NL 每回合前 #b",
+      " 张切换 #y形态 时，打出对应 #y形态 的一张强力卡牌。"
+    ]
+  },
+  "hannina:AntiUnionPower": {
+    "NAME": "无法改变形态",
+    "DESCRIPTIONS": [
+      "本场战斗，你不能改变你的 #y形态 。"
+    ]
+  },
+  "hannina:MMRuizhanPower": {
+    "NAME": "下回合获得活力",
+    "DESCRIPTIONS": [
+      "下回合开始时，获得 #b",
+      " 点 #r活力 。"
+    ]
+  },
+  "hannina:JinziyinhangPower": {
+    "NAME": "金子银行",
+    "DESCRIPTIONS": [
+      "战斗内，你获得的金币增加 #b",
+      " 倍。"
+    ]
+  },
+  "hannina:SirenzhuanshuPower": {
+    "NAME": "私人专属",
+    "DESCRIPTIONS": [
+      "回合开始时，获得 #b",
+      " 层 #y金属化 。"
+    ]
+  },
+  "hannina:ZhuazhunilePower": {
+    "NAME": "抓住你了",
+    "DESCRIPTIONS": [
+      "下回合开始时，在手牌加入 #b",
+      " 张 #y猫的平稳落地 。"
+    ]
+  },
+  "hannina:AiqingPower": {
+    "NAME": "坚不可摧",
+    "DESCRIPTIONS": [
+      "本回合最多只能受到 #b1 点伤害。"
+    ]
+  },
+  "hannina:FusionPower": {
+    "NAME": "尖塔之兽",
+    "DESCRIPTIONS": [
+      "本回合无法进入其他 #y形态 。打出 #y复合 卡牌时选择并打出1张其 #y复合 的卡牌。"
+    ]
+  }
+}
