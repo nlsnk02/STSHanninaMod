@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.misc.ReunionModifier;
 import hannina.modcore.Enums;
+import hannina.utils.ConfigHelper;
 import hannina.utils.ModHelper;
 
 import java.util.ArrayList;
@@ -44,6 +45,9 @@ public abstract class AbstractHanninaCard extends CustomCard {
     }
 
     public static String getPicPath(String name, CardType type) {
+        if (Gdx.files.internal(ModHelper.getImgPath("cards/" + ConfigHelper.skinId + "/" + name + ".png")).exists())
+            return ModHelper.getImgPath("cards/" + ConfigHelper.skinId + "/" + name + ".png");
+
         if (Gdx.files.internal(ModHelper.getImgPath("cards/" + name + ".png")).exists())
             return ModHelper.getImgPath("cards/" + name + ".png");
 
