@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class SkinSelectScreen {
-    public static final float SKIN_SELECT_POSITION_X = Settings.WIDTH * 1.2F - 600.0F * Settings.scale;
-    public static final float SKIN_SELECT_POSITION_Y = Settings.WIDTH * 0.7F - 600.0F * Settings.scale;
+    public static final float SKIN_SELECT_POSITION_X = Settings.WIDTH * 1.15F - 600.0F * Settings.scale;
+    public static final float SKIN_SELECT_POSITION_Y = Settings.HEIGHT * 1.4F - 600.0F * Settings.scale;
 
     public static SkinSelectScreen Inst;
 
@@ -119,8 +119,8 @@ public class SkinSelectScreen {
     public void render(SpriteBatch sb) {
         float centerX = SKIN_SELECT_POSITION_X;
         float centerY = SKIN_SELECT_POSITION_Y;
-        renderSkin(sb, centerX, centerY);
-        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, uiStrings.TEXT[0], centerX, centerY + 250.0F * Settings.scale, Color.WHITE, 1.25F);
+//        renderSkin(sb, centerX, centerY);
+//        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, uiStrings.TEXT[0], centerX, centerY + 250.0F * Settings.scale, Color.WHITE, 1.25F);
         Color color = Settings.GOLD_COLOR.cpy();
         color.a /= 2.0F;
         float dist = 100.0F * Settings.scale;
@@ -131,13 +131,13 @@ public class SkinSelectScreen {
         } else {
             sb.setColor(Color.WHITE);
         }
-        sb.draw(ImageMaster.CF_LEFT_ARROW, this.leftHb.cX - 24.0F, this.leftHb.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
+        sb.draw(ImageMaster.CF_LEFT_ARROW, this.leftHb.cX - 24.0F, this.leftHb.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale*1.5F, Settings.scale*1.5F, 0.0F, 0, 0, 48, 48, false, false);
         if (this.rightHb.hovered) {
             sb.setColor(Color.LIGHT_GRAY);
         } else {
             sb.setColor(Color.WHITE);
         }
-        sb.draw(ImageMaster.CF_RIGHT_ARROW, this.rightHb.cX - 24.0F, this.rightHb.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
+        sb.draw(ImageMaster.CF_RIGHT_ARROW, this.rightHb.cX - 24.0F, this.rightHb.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale*1.5F, Settings.scale*1.5F, 0.0F, 0, 0, 48, 48, false, false);
         this.rightHb.render(sb);
         this.leftHb.render(sb);
     }
@@ -147,7 +147,6 @@ public class SkinSelectScreen {
 
         sb.draw(t,
                 x - t.getWidth() * Settings.scale / 2.0F,
-//                y - t.getHeight() * Settings.scale / 2.0F,
                 y,
                 t.getWidth() * Settings.scale / 2.0F, t.getHeight() * Settings.scale / 2.0F,
                 t.getWidth() * Settings.scale, t.getHeight() * Settings.scale,
