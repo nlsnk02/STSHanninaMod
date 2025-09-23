@@ -6,21 +6,11 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 
 public class HanninaImageMaster {
-    public static Texture charR;
-    public static Texture charG;
-    public static Texture charB;
-    public static Texture charP;
     public static Texture charIdle;
-    public static Texture charFusion;
     public static Texture badge;
 
     static {
-        charR = new Texture(ModHelper.getImgPath("char/zhan.png"));
-        charG = new Texture(ModHelper.getImgPath("char/lie.png"));
-        charB = new Texture(ModHelper.getImgPath("char/ji.png"));
-        charP = new Texture(ModHelper.getImgPath("char/guan.png"));
         charIdle = new Texture(ModHelper.getImgPath("char/null.png"));
-        charFusion = new Texture(ModHelper.getImgPath("char/fusion.png"));
         badge = new Texture(ModHelper.getImgPath("UI/badge.png"));
     }
 
@@ -35,6 +25,8 @@ public class HanninaImageMaster {
     }
 
     public static void refreshSkin() {
-        skinTexture.clear();
+        if (skinTexture != null)
+            skinTexture.clear();
+        else skinTexture = new HashMap<>();
     }
 }

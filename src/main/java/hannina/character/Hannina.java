@@ -36,9 +36,9 @@ import java.util.ArrayList;
 public class Hannina extends CustomPlayer {
     private static final int ENERGY_PER_TURN = 3;
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("hannina:MyCharacter");
-    private static final String SHOULDER_2 = "hanninaResources/img/char/shoulder2.png";
-    private static final String SHOULDER_1 = "hanninaResources/img/char/shoulder1.png";
-    private static final String CORPSE = "hanninaResources/img/char/Die.png";
+//    private static final String SHOULDER_2 = "hanninaResources/img/char/shoulder2.png";
+//    private static final String SHOULDER_1 = "hanninaResources/img/char/shoulder1.png";
+//    private static final String CORPSE = "hanninaResources/img/char/die.png";
 
     private static final String ORB_VFX = "hanninaResources/img/UI/orb/vfx.png";
 
@@ -73,7 +73,7 @@ public class Hannina extends CustomPlayer {
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
 
-        initializeClass("hanninaResources/img/char/null.png", SHOULDER_2, SHOULDER_1, CORPSE,
+        initializeClass("hanninaResources/img/char/null.png", null, null, null,
                 getLoadout(),
                 0F, 5.0F, 240.0F, 300.0F,
                 new EnergyManager(ENERGY_PER_TURN));
