@@ -265,17 +265,17 @@ public class Hannina extends CustomPlayer {
 //            this.img.dispose();
 //        }
 
-        if (this.shoulderImg != null) {
-            this.shoulderImg.dispose();
-        }
-
-        if (this.shoulder2Img != null) {
-            this.shoulder2Img.dispose();
-        }
-
-        if (this.corpseImg != null) {
-            this.corpseImg.dispose();
-        }
+//        if (this.shoulderImg != null) {
+//            this.shoulderImg.dispose();
+//        }
+//
+//        if (this.shoulder2Img != null) {
+//            this.shoulder2Img.dispose();
+//        }
+//
+//        if (this.corpseImg != null) {
+//            this.corpseImg.dispose();
+//        }
     }
 }
 
