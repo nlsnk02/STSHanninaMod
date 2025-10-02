@@ -20,14 +20,14 @@
     "NAME": "逗猫棒",
     "DESCRIPTIONS": [
       "回合开始时，在手牌随机加入 #b",
-      " 张 #y猫的平稳落地 或 #y猫的冲锋进击 。"
+      " 张 #y猫落地~ 或 #y猫冲击！ 。"
     ]
   },
   "hannina:DoumaobangUPGPower": {
     "NAME": "逗猫棒+",
     "DESCRIPTIONS": [
       "回合开始时，在手牌随机加入 #b",
-      " 张 #y猫的平稳落地+ 或 #y猫的冲锋进击+ 。"
+      " 张 #y猫落地~ 或 #y猫冲击！+ 。"
     ]
   },
   "hannina:MaodefeiqiyijiaoPower": {
@@ -48,7 +48,7 @@
   "hannina:ZhuchengjinshenPower": {
     "NAME": "铸成金身",
     "DESCRIPTIONS": [
-      "战斗中每次获得或上缴金币后，获得 #b",
+      "战斗中每次获得或失去金币后，获得 #b",
       " 点 #y格挡 。"
     ]
   },
@@ -63,7 +63,7 @@
     "NAME": "猫dear形态",
     "DESCRIPTIONS": [
       "你进入 #y职业形态 时同时获得所有 #y形态 的 #y形态 增益。 NL 每回合前 #b",
-      " 张切换 #y形态 时，打出对应 #y形态 的一张强力卡牌。"
+      " 张切换 #y形态 时，打出对应 #y形态 的强力卡牌。"
     ]
   },
   "hannina:AntiUnionPower": {
@@ -97,7 +97,7 @@
     "NAME": "抓住你了",
     "DESCRIPTIONS": [
       "下回合开始时，在手牌加入 #b",
-      " 张 #y猫的平稳落地 。"
+      " 张 #y猫落地~ 。"
     ]
   },
   "hannina:AiqingPower": {

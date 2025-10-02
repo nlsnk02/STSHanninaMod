@@ -10,14 +10,14 @@
     "NAME": "线团扭蛋机",
     "FLAVOR": "特别到只能扭出线团",
     "DESCRIPTIONS": [
-      "每 #b2 个回合，消耗 #b3  #y金币 并获得 [E] 。"
+      "每 #b2 个回合，失去 #b3  #y金币 并获得 [E] 。"
     ]
   },
   "hannina:PToy": {
     "NAME": "P玩偶",
     "FLAVOR": "因为晚上都抱着本人睡觉所以不常用",
     "DESCRIPTIONS": [
-      "在战斗中消耗 #y金币 时获得 #b1 #y金币 与 #b3 点 #y活力 。"
+      "在战斗中失去 #y金币 时获得 #b1 #y金币 与 #b3 点 #y活力 。"
     ]
   },
   "hannina:Chuchanling": {

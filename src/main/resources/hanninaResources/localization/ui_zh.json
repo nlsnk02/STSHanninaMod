@@ -1,17 +1,17 @@
 {
   "hannina:Xuedinge": {
     "TEXT": [
-      "选择一张洗入抽牌堆"
+      "主人，快选择一张洗入抽牌堆喵ovo"
     ]
   },
   "hannina:YZYHSXTBJHLM": {
     "TEXT": [
-      "选择一张加入手牌"
+      "主人，从这里面选择一张加入手牌吧+v+"
     ]
   },
   "hannina:ChangeCharColorAction": {
     "TEXT": [
-      "我不能改变形态"
+      "做不到喵>A<"
     ]
   },
   "hannina:SkinSelect": {
@@ -19,14 +19,14 @@
     "TEXT": [
       "选择皮肤",
       "SFW SKIN",
-      "皮肤1",
+      "普通的猫",
       "SFW",
-      "皮肤2",
+      "天哈星-插翅耄-雷耋",
       "SFW-2",
       "NSFW SKIN",
-      "皮肤3",
+      "色色的猫",
       "NSFW",
-      "皮肤4",
+      "憧憬成为魔法猫咪",
       "NSFW-2"
     ]
   }
