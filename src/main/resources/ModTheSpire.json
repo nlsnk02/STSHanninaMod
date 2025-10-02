@@ -5,12 +5,13 @@
     "FF"
   ],
   "credits": "Basemod, ModTheSpire, stslib#modding",
-  "description": "暂时没有。。",
-  "version": "0.0.1",
+  "description": "add a new character, Hannina",
+  "version": "1.0.0",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": [
-    "basemod"
+    "basemod",
+    "stslib"
   ],
   "update_json": ""
 }
