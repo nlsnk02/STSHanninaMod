@@ -24,6 +24,17 @@ public class Touqianwenlu extends AbstractHanninaCard {
 
     @Override
     public void applyPowers() {
+//        this.block = this.baseBlock;
+//        this.damage = this.baseDamage;
+//        this.magicNumber = this.baseMagicNumber;
+//        this.isBlockModified = false;
+//        this.isDamageModified = false;
+//        this.isMagicNumberModified = false;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+
     }
 
     @Override
