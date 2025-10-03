@@ -243,9 +243,22 @@ public class Hannina extends CustomPlayer {
                 if (power.color == AbstractCard.CardColor.PURPLE)
                     this.img = HanninaImageMaster.getSkinImg("purple");
             } else this.img = HanninaImageMaster.getSkinImg("null");
-            ;
         }
         super.update();
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        if(this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null){
+            refreshSkin();
+            update();
+        }
+        if(this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null){
+            ModHelper.logger.info("=================出现bug================");
+            ModHelper.logger.info("shoulderImg = {}， shoulder2Img = {}， corpseImg = {}， img = {}", this.shoulderImg, this.shoulder2Img, this.corpseImg, this.img);
+            ModHelper.logger.info("=================出现bug================");
+        }
+        super.render(sb);
     }
 
 //    @Override
