@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import hannina.character.Hannina;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +12,8 @@ import java.lang.reflect.Method;
 
 public class ChangePlayerModel {
     public static void ChangeSkin(String Player) {
+        if(!(AbstractDungeon.player instanceof Hannina))
+            return;
 
 //        if(AbstractDungeon.player == null) return;
 

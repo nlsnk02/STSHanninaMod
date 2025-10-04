@@ -249,13 +249,14 @@ public class Hannina extends CustomPlayer {
 
     @Override
     public void render(SpriteBatch sb) {
-        if(this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null){
+        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
             refreshSkin();
-            update();
+            this.img = HanninaImageMaster.charIdle;
         }
-        if(this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null){
+        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
             ModHelper.logger.info("=================出现bug================");
             ModHelper.logger.info("shoulderImg = {}， shoulder2Img = {}， corpseImg = {}， img = {}", this.shoulderImg, this.shoulder2Img, this.corpseImg, this.img);
+            SkinSelectScreen.printSkinNameAndId();
             ModHelper.logger.info("=================出现bug================");
         }
         super.render(sb);
@@ -277,7 +278,7 @@ public class Hannina extends CustomPlayer {
 //        if (this.img != null) {
 //            this.img.dispose();
 //        }
-
+//
 //        if (this.shoulderImg != null) {
 //            this.shoulderImg.dispose();
 //        }
