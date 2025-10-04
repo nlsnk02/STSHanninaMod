@@ -247,20 +247,20 @@ public class Hannina extends CustomPlayer {
         super.update();
     }
 
-    @Override
-    public void render(SpriteBatch sb) {
-        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
-            refreshSkin();
-            this.img = HanninaImageMaster.charIdle;
-        }
-        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
-            ModHelper.logger.info("=================出现bug================");
-            ModHelper.logger.info("shoulderImg = {}， shoulder2Img = {}， corpseImg = {}， img = {}", this.shoulderImg, this.shoulder2Img, this.corpseImg, this.img);
-            SkinSelectScreen.printSkinNameAndId();
-            ModHelper.logger.info("=================出现bug================");
-        }
-        super.render(sb);
-    }
+//    @Override
+//    public void render(SpriteBatch sb) {
+//        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
+//            refreshSkin();
+//            this.img = HanninaImageMaster.charIdle;
+//        }
+//        if (this.shoulderImg == null || this.shoulder2Img == null || this.corpseImg == null || this.img == null) {
+//            ModHelper.logger.info("=================出现bug================");
+//            ModHelper.logger.info("shoulderImg = {}， shoulder2Img = {}， corpseImg = {}， img = {}", this.shoulderImg, this.shoulder2Img, this.corpseImg, this.img);
+//            SkinSelectScreen.printSkinNameAndId();
+//            ModHelper.logger.info("=================出现bug================");
+//        }
+//        super.render(sb);
+//    }
 
 //    @Override
 //    public void render(SpriteBatch spriteBatch) {

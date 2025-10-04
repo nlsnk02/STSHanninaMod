@@ -275,7 +275,7 @@ public class Core implements
         if (SaveData.saveData != null) {
             ChangePlayerModel.ChangeSkin(SaveData.saveData.skin);
         }
-        ModHelper.logger.info("++++++++++++=======start game============+++++++++");
+//        ModHelper.logger.info("++++++++++++=======start game============+++++++++");
     }
 
     @Override
