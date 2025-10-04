@@ -206,6 +206,12 @@ public class SkinSelectScreen {
         Inst = new SkinSelectScreen();
     }
 
+    public static void printSkinNameAndId(){
+        for(Skin skin : skins){
+            ModHelper.logger.info("skin name = {}, id = {}, index = {}", skin.name, skin.id, skin.index);
+        }
+    }
+
     public static class Skin {
         public int index;
 

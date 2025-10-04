@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -271,12 +272,10 @@ public class Core implements
 
     @Override
     public void receiveStartGame() {
-//        ModHelper.logger.info("=====================================");
         if (SaveData.saveData != null) {
-//            ModHelper.logger.info("========Change Skin: {}========", SaveData.saveData.skin);
             ChangePlayerModel.ChangeSkin(SaveData.saveData.skin);
         }
-//        ModHelper.logger.info("=====================================");
+//        ModHelper.logger.info("++++++++++++=======start game============+++++++++");
     }
 
     @Override
