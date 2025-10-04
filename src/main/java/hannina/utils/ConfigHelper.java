@@ -16,12 +16,11 @@ import java.util.Map;
 import java.util.Properties;
 
 public class ConfigHelper {
-
-    public static Properties SSAModDefaultSettings = new Properties();
     public static SpireConfig config = null;
 
     public static String skinId = "";
     public static boolean nsfw = false;
+    public static boolean activeTutorials = true;
 
     public static void tryCreateConfig() {
         try {
@@ -32,11 +31,14 @@ public class ConfigHelper {
         }
 
         if (config != null) {
-            if(config.has("skinId")){
+            if (config.has("skinId")) {
                 skinId = config.getString("skinId");
-            }else skinId = "";
+            } else skinId = "";
 
             nsfw = config.has("nsfw") && config.getBool("nsfw");
+
+            activeTutorials = (config.has("activeTutorials") && config.getBool("activeTutorials")) ||
+                    !config.has("activeTutorials");
         }
     }
 
@@ -49,9 +51,16 @@ public class ConfigHelper {
     }
 
     public static void saveId(String id) {
-        if(config == null) return;
+        if (config == null) return;
         skinId = id;
         config.setString("skinId", skinId);
+        trySaveConfig(config);
+    }
+
+    public static void saveActiveTutorials(boolean active) {
+        if (config == null) return;
+        activeTutorials = active;
+        config.setBool("activeTutorials", activeTutorials);
         trySaveConfig(config);
     }
 
@@ -73,20 +82,30 @@ public class ConfigHelper {
 
         ModPanel modPanel = new ModPanel();
 
-            float yPos = 750.0F;
-            ModLabeledToggleButton nsfwButton =
-                    new ModLabeledToggleButton(configStrings.get("nsfw"), 350.0F, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont, nsfw, modPanel, label -> {
-                    }, button -> {
-                        if (config != null) {
-                            nsfw = button.enabled;
-                            config.setBool("nsfw", nsfw);
-                            trySaveConfig(config);
-                        }
-                    });
+        float yPos = 750.0F;
+        ModLabeledToggleButton nsfwButton =
+                new ModLabeledToggleButton(configStrings.get("nsfw"), 350.0F, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont, nsfw, modPanel, label -> {
+                }, button -> {
+                    if (config != null) {
+                        nsfw = button.enabled;
+                        config.setBool("nsfw", nsfw);
+                        trySaveConfig(config);
+                    }
+                });
 
-            yPos -= 50.0F;
+        yPos -= 50.0F;
+        ModLabeledToggleButton activeTutorialsButton =
+                new ModLabeledToggleButton(configStrings.get("activeTutorials"), 350.0F, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont, activeTutorials, modPanel, label -> {
+                }, button -> {
+                    if (config != null) {
+                        activeTutorials = button.enabled;
+                        config.setBool("activeTutorials", activeTutorials);
+                        trySaveConfig(config);
+                    }
+                });
 
-            modPanel.addUIElement(nsfwButton);
+        modPanel.addUIElement(nsfwButton);
+        modPanel.addUIElement(activeTutorialsButton);
 
         ModHelper.logger.info("===============设置加载完毕===============");
         return modPanel;

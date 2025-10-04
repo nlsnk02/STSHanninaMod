@@ -187,7 +187,7 @@
     "NAME": "逗猫棒",
     "TAG": 1,
     "DESCRIPTION": "每回合随机增加1张 *猫落地~ 或1张 *猫冲击！ 到你的手牌。",
-    "UPGRADE_DESCRIPTION": "每回合随机增加1张 *猫落地~+ 或1张 *猫冲击！+ 到你的手牌。"
+    "UPGRADE_DESCRIPTION": "每回合随机增加1张 *猫落地~ +或1张 *猫冲击！ +到你的手牌。"
   },
   "hannina:MZLLieguang": {
     "NAME": "猫之力·裂光",

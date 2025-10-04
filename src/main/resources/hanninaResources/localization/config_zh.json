@@ -1,4 +1,5 @@
 {
 	"skinId": "",
-	"nsfw": "开启NSFW（重启生效）"
+	"nsfw": "开启NSFW（重启生效）",
+	"activeTutorials" : "开启教程（打开一次后自动关闭）"
 }
