@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
 import hannina.misc.SaveData;
@@ -24,20 +25,24 @@ public class UnionManager {
     public static int getRamdom(int index) {
         if (index < 0) return 0;
 
-        Random rng;
+        Random rng = null;
         boolean flag = false;
 
         if (AbstractDungeon.player != null &&
                 AbstractDungeon.currMapNode != null &&
-                AbstractDungeon.currMapNode.room != null &&
-                AbstractDungeon.currMapNode.room.monsters != null) {
-            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !(AbstractDungeon.getCurrRoom()).isBattleOver) {
+                AbstractDungeon.currMapNode.room != null) {
+            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
                 rng = AbstractDungeon.cardRandomRng;
-            } else {
+            }
+//            else if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMPLETE) {
+//                rng = UnionManager.rng;
+//            }
+            else {
                 rng = UnionManager.rng;
                 flag = true;
             }
-        } else
+        }
+        if (rng == null)
             rng = new Random();
 
         int n = rng.random(index - 1);
@@ -98,7 +103,7 @@ public class UnionManager {
 
             //切回本体有时候也要切回无色牌
             AbstractCard tmp = mod.union.stream().filter(u -> u.color == color).findFirst().orElse(null);
-            if(tmp == null && color == Enums.HanninaColor)
+            if (tmp == null && color == Enums.HanninaColor)
                 tmp = mod.union.stream().filter(u -> u.color == AbstractCard.CardColor.COLORLESS).findFirst().orElse(null);
 
 

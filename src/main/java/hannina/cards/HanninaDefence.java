@@ -4,9 +4,12 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.random.Random;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.SaveData;
+import hannina.utils.ModHelper;
 
 public class HanninaDefence extends AbstractHanninaCard implements CustomSavable<Integer> {
 

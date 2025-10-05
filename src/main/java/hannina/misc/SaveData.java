@@ -1,6 +1,7 @@
 package hannina.misc;
 
 import hannina.cards.Zuiainile;
+import hannina.patches.utils.CardSeedBeforeRollPatch;
 import hannina.utils.ModHelper;
 
 public class SaveData {
@@ -18,6 +19,11 @@ public class SaveData {
     public static SaveData save() {
         if (saveData == null)
             saveData = new SaveData();
+
+        if(CardSeedBeforeRollPatch.hue_count_before_roll != -1) {
+            saveData.hueRngCounter = CardSeedBeforeRollPatch.hue_count_before_roll;
+            CardSeedBeforeRollPatch.hue_count_before_roll = -1;
+        }
 
         return saveData;
     }
