@@ -79,8 +79,6 @@ public class UnionManager {
             SaveData.saveData = new SaveData();
         }
         rng = new Random(Settings.seed, SaveData.saveData.hueRngCounter);
-        ModHelper.logger.info("==========Seeds loaded: {} ==========", rng.copy().random(1000));
-        int a = 1;
     }
 
     public static void configureOnSpawn(AbstractCard c) {
