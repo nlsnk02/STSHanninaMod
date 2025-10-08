@@ -217,7 +217,10 @@ public class Core implements
 
     @Override
     public void receivePostDungeonInitialize() {
-
+        if (AbstractDungeon.floorNum < 1) {
+            SaveData.saveData = new SaveData();
+            ChangePlayerModel.ChangeSkin(SaveData.saveData.skin);
+        }
     }
 
     @Override

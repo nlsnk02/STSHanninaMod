@@ -264,7 +264,7 @@
   "hannina:Yeshifudejuehuo": {
     "NAME": "夜师博的绝活",
     "TAG": 2,
-    "DESCRIPTION": "hannina:复合 。 NL 抽到这张牌时获得 [E] 。 NL 请不要打出这张牌。 NL 仅会 hannina:复合 能力卡。",
+    "DESCRIPTION": "hannina:复合 。 NL 抽到这张牌时获得 [E] 。 NL *请不要打出这张牌 。 NL 仅会 hannina:复合 能力卡。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Maishenhuanzhai": {
