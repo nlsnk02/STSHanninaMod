@@ -6,7 +6,7 @@
   ],
   "credits": "Basemod, ModTheSpire, stslib#modding",
   "description": "add a new character, Hannina",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": [

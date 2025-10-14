@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -26,6 +27,7 @@ import hannina.actions.ChangeCharColorAction;
 import hannina.cards.MMRuizhan;
 import hannina.cards.XCDDangmoshi;
 import hannina.character.Hannina;
+import hannina.events.FlyingCat;
 import hannina.misc.SaveData;
 import hannina.misc.ScrollBarForUnion;
 import hannina.potions.Aiqing;
@@ -150,8 +152,9 @@ public class Core implements
         BaseMod.addPotion(Aiqing.class, null, null, null, Aiqing.id, Enums.HANNINA_CLASS);
 
         SkinSelectScreen.init();
-
+        BaseMod.addEvent(FlyingCat.ID, FlyingCat.class);
         logger.info("===============加载事件与其他东西===============");
+
     }
 
     @Override
@@ -165,7 +168,8 @@ public class Core implements
         BaseMod.addRelicToCustomPool(new PToy(), HanninaColor);
         BaseMod.addRelicToCustomPool(new Qinmihezhao(), HanninaColor);
         BaseMod.addRelicToCustomPool(new Xiantuanniudanji(), HanninaColor);
-//        BaseMod.addRelic(new ATRelic(), RelicType.SHARED);
+        BaseMod.addRelic(new Gangqi(), RelicType.SHARED);
+        BaseMod.addRelic(new Miaodan(), RelicType.SHARED);
         logger.info("===============加载遗物===============");
     }
 
@@ -204,8 +208,8 @@ public class Core implements
 
         String potionStrings = Gdx.files.internal(potion).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
-//        String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
-//        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+      String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
+      BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
 
         String uiStrings = Gdx.files.internal(ui).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);

@@ -26,6 +26,18 @@
     "DESCRIPTIONS": [
       "拾起时，移除牌组中1张“打击”与“防御”牌并获得 #b4 点最大生命。"
     ]
+  },"hannina:Gangqi": {
+    "NAME": "刚气·心",
+    "FLAVOR": "哈！",
+    "DESCRIPTIONS": [
+      "每场战斗的前4回合每回合获得5层活力并向手中置入1张傲慢。\n将超绝耄耋哈气乱挠加入手中时，获得10层活力。"
+    ]
+  },"hannina:Miaodan": {
+    "NAME": "猛虎喵弹",
+    "FLAVOR": "金光闪闪！",
+    "DESCRIPTIONS": [
+      "消耗活力时获得消耗活力层数/2的格挡\n消耗诅咒与状态卡时获得1层多层护甲\n"
+    ]
   },
   "hannina:Qinmihezhao": {
     "NAME": "亲密合照",
