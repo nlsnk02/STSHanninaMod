@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BloodVial;
+import com.megacrit.cardcrawl.relics.TinyChest;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import hannina.cards.HanninaStrike;
@@ -62,6 +63,7 @@ public class Hannina extends CustomPlayer {
     private static final int STARTING_HP = 84;
     private static final int MAX_HP = 84;
     private static final int STARTING_GOLD = 99;
+
     private static final int DRAW_SIZE = 5;
     private static final int ASCENSION_MAX_HP_LOSS = 8;
 
