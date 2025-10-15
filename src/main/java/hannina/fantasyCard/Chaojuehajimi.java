@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import hannina.effects.PlayGiFEffect;
+import hannina.relics.Miaodan;
 
 public class Chaojuehajimi extends AbstractHanninaCard {
 
@@ -17,6 +19,7 @@ public class Chaojuehajimi extends AbstractHanninaCard {
         this.magicNumber = this.baseMagicNumber = 3;
         this.exhaust = true;
     }
+    public static int startGIF;
 
     @Override
     public void applyPowers() {
@@ -35,6 +38,11 @@ public class Chaojuehajimi extends AbstractHanninaCard {
         applyPowers();
         for (int i = 0; i < 5; i++)
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (AbstractDungeon.player.hasRelic(Miaodan.ID)){
+            Chaojuehajimi.startGIF=4;
+        }
+        AbstractDungeon.effectList.add(new PlayGiFEffect(4));
+
     }
 
     @Override

@@ -1,25 +1,23 @@
 package hannina.events;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Madness;
+
 import com.megacrit.cardcrawl.cards.curses.Pride;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
-import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
+
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.ObtainKeyEffect;
+
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import hannina.cards.MMRuizhan;
 import hannina.relics.Gangqi;
 import hannina.relics.Miaodan;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+
 
 public class FlyingCat extends AbstractImageEvent {
     public static final String ID = "FlyingCat";

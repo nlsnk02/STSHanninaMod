@@ -28,6 +28,7 @@ import hannina.cards.MMRuizhan;
 import hannina.cards.XCDDangmoshi;
 import hannina.character.Hannina;
 import hannina.events.FlyingCat;
+import hannina.fantasyCard.Chaojuehajimi;
 import hannina.misc.SaveData;
 import hannina.misc.ScrollBarForUnion;
 import hannina.potions.Aiqing;
@@ -112,6 +113,7 @@ public class Core implements
                     BaseMod.addCard(c);
                     UnlockTracker.unlockCard(c.cardID);
                 });
+        BaseMod.addCard(new Chaojuehajimi());
         logger.info("================加入卡牌=============");
     }
 

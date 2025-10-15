@@ -12,8 +12,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import hannina.cards.MMRuizhan;
+import hannina.effects.PlayGiFEffect;
 import hannina.fantasyCard.Chaojuehajimi;
 import hannina.relics.Gangqi;
+import hannina.relics.Miaodan;
 import hannina.utils.ModHelper;
 
 public class MMRuizhanPower extends AbstractPower {
@@ -46,9 +48,16 @@ public class MMRuizhanPower extends AbstractPower {
             addToBot(new MakeTempCardInHandAction(new Chaojuehajimi()));
             if (AbstractDungeon.player.hasRelic(Gangqi.ID)){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new VigorPower(AbstractDungeon.player,10)));
+
             }
+            if (AbstractDungeon.player.hasRelic(Miaodan.ID)){
+                Chaojuehajimi.startGIF=4;
+            }
+            AbstractDungeon.effectList.add(new PlayGiFEffect(4));
+
         }
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+
     }
 
     public void updateDescription() {

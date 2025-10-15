@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.relics.TinyChest;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import hannina.cards.HanninaStrike;
+import hannina.fantasyCard.Chaojuehajimi;
 import hannina.misc.SaveData;
 import hannina.modcore.Enums;
 import hannina.powers.FusionPower;
@@ -32,6 +33,8 @@ import hannina.utils.ModHelper;
 import hannina.utils.SkinSelectScreen;
 
 import java.util.ArrayList;
+
+import static hannina.fantasyCard.Chaojuehajimi.startGIF;
 
 
 public class Hannina extends CustomPlayer {
@@ -245,6 +248,9 @@ public class Hannina extends CustomPlayer {
                 if (power.color == AbstractCard.CardColor.PURPLE)
                     this.img = HanninaImageMaster.getSkinImg("purple");
             } else this.img = HanninaImageMaster.getSkinImg("null");
+            if (startGIF>0){
+                this.img = HanninaImageMaster.getSkinImg(startGIF+"z");
+            }
         }
         super.update();
     }
