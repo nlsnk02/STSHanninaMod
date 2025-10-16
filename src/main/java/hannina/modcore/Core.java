@@ -4,6 +4,8 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
+import basemod.eventUtil.AddEventParams;
+import basemod.eventUtil.util.Condition;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -16,6 +18,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -154,7 +157,13 @@ public class Core implements
         BaseMod.addPotion(Aiqing.class, null, null, null, Aiqing.id, Enums.HANNINA_CLASS);
 
         SkinSelectScreen.init();
-        BaseMod.addEvent(FlyingCat.ID, FlyingCat.class);
+        BaseMod.addEvent(new AddEventParams.Builder(FlyingCat.ID, FlyingCat.class).spawnCondition(new Condition() {
+            @Override
+            public boolean test() {
+                return false;
+            }
+        }).create());
+
         logger.info("===============加载事件与其他东西===============");
 
     }

@@ -23,7 +23,7 @@ public class PlayGiFEffect extends AbstractGameEffect {
         elapsedTime += Gdx.graphics.getDeltaTime();
 
         // 每隔 interval 秒执行一次操作
-        if (elapsedTime >= 0.7F) {
+        if (elapsedTime >=1F) {
             // 在这里执行你的操作
             if (startGIF>0){
                 startGIF--;
