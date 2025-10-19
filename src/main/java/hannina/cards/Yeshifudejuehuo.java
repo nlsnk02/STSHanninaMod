@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.actions.ChangeCharColorAction;
 import hannina.fantasyCard.*;
 import hannina.misc.SaveData;
+import hannina.modcore.Enums;
 import hannina.utils.ChangePlayerModel;
 import hannina.utils.UnionManager;
 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class Yeshifudejuehuo extends AbstractHanninaCard {
     public Yeshifudejuehuo() {
         super(Yeshifudejuehuo.class.getSimpleName(), 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override

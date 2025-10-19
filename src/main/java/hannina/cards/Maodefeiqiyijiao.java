@@ -15,7 +15,7 @@ public class Maodefeiqiyijiao extends AbstractHanninaCard {
     public Maodefeiqiyijiao() {
         super(Maodefeiqiyijiao.class.getSimpleName(), 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
-        MultiCardPreview.add(this, new Maodepingwenluodi());
+        this.cardsToPreview = new Maodepingwenluodi();
     }
 
     @Override
@@ -28,7 +28,14 @@ public class Maodefeiqiyijiao extends AbstractHanninaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+
+            this.isInnate = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
+
+            AbstractCard c = new Maodepingwenluodi();
+            c.upgrade();
+            this.cardsToPreview = c;
         }
     }
 

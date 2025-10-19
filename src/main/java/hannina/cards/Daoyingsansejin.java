@@ -9,6 +9,7 @@ import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.fantasyCard.BlueColorCard;
 import hannina.fantasyCard.GreenColorCard;
 import hannina.fantasyCard.RedColorCard;
+import hannina.modcore.Enums;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class Daoyingsansejin extends AbstractHanninaCard {
         super(Daoyingsansejin.class.getSimpleName(), 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
         this.selfRetain = true;
+        this.tags.add(Enums.ChangeColorCard);
     }
 
     @Override

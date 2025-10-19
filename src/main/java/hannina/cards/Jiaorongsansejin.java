@@ -12,6 +12,7 @@ import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.fantasyCard.BlueColorCard;
 import hannina.fantasyCard.GreenColorCard;
 import hannina.fantasyCard.RedColorCard;
+import hannina.modcore.Enums;
 import hannina.powers.AntiUnionPower;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Jiaorongsansejin extends AbstractHanninaCard {
         super(Jiaorongsansejin.class.getSimpleName(), 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
+        this.tags.add(Enums.ChangeColorCard);
     }
 
 
@@ -35,7 +37,7 @@ public class Jiaorongsansejin extends AbstractHanninaCard {
         stanceChoices.add(new GreenColorCard());
         stanceChoices.add(new BlueColorCard());
         addToBot(new ChooseOneAction(stanceChoices));
-        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p, 4)));
     }
 
     @Override

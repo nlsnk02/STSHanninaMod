@@ -15,9 +15,9 @@ import hannina.utils.ModHelper;
 
 public class Jinshajianyu extends AbstractHanninaCard implements OnLoseGoldSubscriber {
     public Jinshajianyu() {
-        super(Jinshajianyu.class.getSimpleName(), 4, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.magicNumber = this.baseMagicNumber = 4;
-        this.damage = this.baseDamage = 5;
+        super(Jinshajianyu.class.getSimpleName(), 3, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.damage = this.baseDamage = 6;
     }
 
     @Override

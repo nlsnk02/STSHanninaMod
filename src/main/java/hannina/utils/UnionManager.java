@@ -3,6 +3,7 @@ package hannina.utils;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.colorless.Madness;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -54,20 +55,17 @@ public class UnionManager {
     }
 
     public static AbstractCard getRamdomCard(Predicate<AbstractCard> filter) {
-        return getRamdomCard(filter, 0);
-    }
+        List<AbstractCard> l = CardLibrary.getAllCards().stream()
+                .filter(filter)
+                .filter(c -> !(ModHelper.isInCombat()
+                        && !(AbstractDungeon.getCurrRoom()).isBattleOver
+                        && c.hasTag(AbstractCard.CardTags.HEALING)))
+                .collect(Collectors.toList());
 
-    public static AbstractCard getRamdomCard(Predicate<AbstractCard> filter, int index) {
-        List<AbstractCard> l = CardLibrary.getAllCards().stream().filter(filter).collect(Collectors.toList());
-        AbstractCard c = l.get(getRamdom(l.size())).makeCopy();
+        if(l.isEmpty())
+            return new Madness();
 
-        if (ModHelper.isInCombat()
-                && !(AbstractDungeon.getCurrRoom()).isBattleOver
-                && c.hasTag(AbstractCard.CardTags.HEALING)
-                && index < 3) {
-            return getRamdomCard(filter, index + 1);
-        }
-        return c;
+        return l.get(getRamdom(l.size())).makeCopy();
     }
 
     public static void generateSeeds() {

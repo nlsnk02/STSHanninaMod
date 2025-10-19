@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.actions.ChangeCharColorAction;
 import hannina.actions.ChooseColor2EnterAction;
 import hannina.fantasyCard.*;
+import hannina.modcore.Enums;
 import hannina.powers.XingtaibianhuaPower;
 import hannina.utils.ModHelper;
 
@@ -19,6 +20,7 @@ public class Xingtaibianhua extends AbstractHanninaCard {
     public Xingtaibianhua() {
         super(Xingtaibianhua.class.getSimpleName(), 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(Enums.ChangeColorCard);
     }
 
     @Override

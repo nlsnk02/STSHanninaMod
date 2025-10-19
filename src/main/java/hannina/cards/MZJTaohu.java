@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class MZJTaohu extends AbstractHanninaCard {
     public MZJTaohu() {
         super(MZJTaohu.class.getSimpleName(), 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.block = this.baseBlock = 8;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override

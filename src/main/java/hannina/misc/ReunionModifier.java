@@ -103,7 +103,37 @@ public class ReunionModifier extends AbstractCardModifier implements
             } else union.add(new Madness());
         }
 
-        return new ReunionModifier(union.stream().map(AbstractCard::makeCopy).collect(Collectors.toCollection(ArrayList::new)));
+        return new ReunionModifier(union.stream().map(
+                ReunionModifier::pureMakeStatEquivalentCopy
+        ).collect(Collectors.toCollection(ArrayList::new)));
+    }
+
+    private static AbstractCard pureMakeStatEquivalentCopy(AbstractCard original) {
+        AbstractCard card = original.makeCopy();
+
+        for(int i = 0; i < original.timesUpgraded; ++i) {
+            card.upgrade();
+        }
+
+        card.name = original.name;
+        card.target = original.target;
+        card.upgraded = original.upgraded;
+        card.timesUpgraded = original.timesUpgraded;
+        card.baseDamage = original.baseDamage;
+        card.baseBlock = original.baseBlock;
+        card.baseMagicNumber = original.baseMagicNumber;
+        card.cost = original.cost;
+        card.costForTurn = original.costForTurn;
+        card.isCostModified = original.isCostModified;
+        card.isCostModifiedForTurn = original.isCostModifiedForTurn;
+        card.inBottleLightning = original.inBottleLightning;
+        card.inBottleFlame = original.inBottleFlame;
+        card.inBottleTornado = original.inBottleTornado;
+        card.isSeen = original.isSeen;
+        card.isLocked = original.isLocked;
+        card.misc = original.misc;
+        card.freeToPlayOnce = original.freeToPlayOnce;
+        return card;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class MMRuizhan extends AbstractHanninaCard {
 
     public MMRuizhan() {
         super(MMRuizhan.class.getSimpleName(), 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.damage = this.baseDamage = 4;
+        this.damage = this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -66,7 +66,7 @@ public class MMRuizhan extends AbstractHanninaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }
