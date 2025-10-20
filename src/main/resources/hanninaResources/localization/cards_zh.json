@@ -190,7 +190,7 @@
   },
   "hannina:Jinshajianyu": {
     "NAME": "金砂剑雨",
-    "DESCRIPTION": "你在本场战斗中每失去1金币，耗能就减少1点。 NL 造成 !D! 点伤害3次。",
+    "DESCRIPTION": "你在本场战斗中每失去1次金币，耗能就减少1点。 NL 造成 !D! 点伤害3次。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Linghuaqian": {
@@ -354,9 +354,12 @@
   },
   "hannina:Gongxinziluolan": {
     "NAME": "共心紫罗兰",
-    "TAG": 2,
-    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 神格 。 NL 本回合无法再改变 hannina:职业形态 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "wwwwww"
+    "TAG": 4,
+    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 神格 。 NL 获得 !M! ~ !B! 点 真言 ,若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+    "UPGRADE_DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 神格 。 NL 获得 !M! ~ !B! 点 真言 ,若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (%s 点)"
+    ]
   },
   "hannina:XCDZhanlongshi": {
     "NAME": "衔蝉刀·斩龙式",
