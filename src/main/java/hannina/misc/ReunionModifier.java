@@ -18,6 +18,13 @@ import hannina.utils.ModHelper;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/*
+复合牌通过modifer实现，给一张牌添加这个modifier就将这张牌变为复合牌
+
+实现了复合牌的美术效果，包括四张牌的预览以及使用滚轮且牌
+
+除此之外重写了modifier的应用，复制，保存读取功能来确保它能工作
+ */
 public class ReunionModifier extends AbstractCardModifier implements
         UnionMechanicsPatch.CardModPreRenderPatch.PreCardRenderModifier {
     // 视觉相关常量
@@ -95,9 +102,8 @@ public class ReunionModifier extends AbstractCardModifier implements
 
     @Override
     public AbstractCardModifier makeCopy() {
-        //如果使用的是无参构造体，说明是进入游戏时调用的方法，需要主动调用on load
+        //如果union为空，说明使用的是无参构造体复制，这是进入游戏时调用的方法，这个时候需要主动调用on load
         if (union.isEmpty()) {
-//            ModHelper.logger.info("===========saveFile = {}===========", (Object) saveFile);
             if (saveFile.length > 0) {
                 onLoad(saveFile, upgraded);
             } else union.add(new Madness());
@@ -108,10 +114,11 @@ public class ReunionModifier extends AbstractCardModifier implements
         ).collect(Collectors.toCollection(ArrayList::new)));
     }
 
+    //防止makecopy反复调用死循环
     private static AbstractCard pureMakeStatEquivalentCopy(AbstractCard original) {
         AbstractCard card = original.makeCopy();
 
-        for(int i = 0; i < original.timesUpgraded; ++i) {
+        for (int i = 0; i < original.timesUpgraded; ++i) {
             card.upgrade();
         }
 
@@ -133,6 +140,28 @@ public class ReunionModifier extends AbstractCardModifier implements
         card.isLocked = original.isLocked;
         card.misc = original.misc;
         card.freeToPlayOnce = original.freeToPlayOnce;
+
+
+        CardModifierManager.removeAllModifiers(card, false);
+
+        ArrayList<AbstractCardModifier> toCopy = new ArrayList();
+        CardModifierManager.modifiers(original).forEach((mod) -> {
+            if (!(mod.isInherent(original) || mod.identifier(original).equals("ReunionModifier"))) {
+                toCopy.add(mod);
+            }
+        });
+        toCopy.forEach((mod) -> {
+            AbstractCardModifier newMod = mod.makeCopy();
+            if (newMod.shouldApply(card)) {
+                CardModifierManager.modifiers(card).add(newMod);
+                newMod.onInitialApplication(card);
+            }
+        });
+
+        Collections.sort(CardModifierManager.modifiers(card));
+        CardModifierManager.onCardModified(card);
+        card.initializeDescription();
+
         return card;
     }
 
@@ -141,13 +170,16 @@ public class ReunionModifier extends AbstractCardModifier implements
         return "ReunionModifier";
     }
 
-    public void onSave() {
+    /*
+    modifier自带Save和Load功能，这里的onSave和onLoad为类内部调用
+     */
+    private void onSave() {
         if (union != null && !union.isEmpty())
             saveFile = union.stream().map(c -> c.cardID).toArray(String[]::new);
         else saveFile = new String[0];
     }
 
-    public void onLoad(String[] abstractCards, boolean upgraded) {
+    private void onLoad(String[] abstractCards, boolean upgraded) {
         if (abstractCards != null) {
             union = Arrays.stream(abstractCards).map(CardLibrary::getCard).collect(Collectors.toCollection(ArrayList::new));
             if (upgraded)

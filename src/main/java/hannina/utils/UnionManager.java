@@ -9,17 +9,21 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
 import hannina.misc.SaveData;
 import hannina.modcore.Enums;
+import hannina.patches.utils.CardSeedBeforeRollPatch;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/*
+复合牌的核心逻辑，包括生成牌，切换复合牌，以及自己的随机数
+调用这些代码主要是在 patches.UnionMechanicsPatch 里
+ */
 public class UnionManager {
     public static Random rng = new Random();
 
@@ -54,6 +58,9 @@ public class UnionManager {
         return n;
     }
 
+    /*
+    获取一个随机数，战斗内使用card random rng，战斗外用自己的随机数。
+    */
     public static AbstractCard getRamdomCard(Predicate<AbstractCard> filter) {
         List<AbstractCard> l = CardLibrary.getAllCards().stream()
                 .filter(filter)
@@ -62,7 +69,7 @@ public class UnionManager {
                         && c.hasTag(AbstractCard.CardTags.HEALING)))
                 .collect(Collectors.toList());
 
-        if(l.isEmpty())
+        if (l.isEmpty())
             return new Madness();
 
         return l.get(getRamdom(l.size())).makeCopy();
@@ -77,6 +84,18 @@ public class UnionManager {
             SaveData.saveData = new SaveData();
         }
         rng = new Random(Settings.seed, SaveData.saveData.hueRngCounter);
+    }
+
+    public static void onSaveSeeds() {
+        //如果是调用了卡牌奖励，那么回退saveData。否则更新UnionManager.rng
+        //这段代码主要是解决sl之后复合卡牌变化的问题
+        if (CardSeedBeforeRollPatch.hue_count_before_roll != -1) {
+            SaveData.saveData.hueRngCounter = CardSeedBeforeRollPatch.hue_count_before_roll;
+            CardSeedBeforeRollPatch.hue_count_before_roll = -1;
+        } else {
+            SaveData.saveData.hueRngCounter = AbstractDungeon.floorNum;
+            UnionManager.rng = new Random(Settings.seed, SaveData.saveData.hueRngCounter);
+        }
     }
 
     public static void configureOnSpawn(AbstractCard c) {

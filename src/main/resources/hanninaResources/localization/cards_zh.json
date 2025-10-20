@@ -337,8 +337,8 @@
   },
   "hannina:Kongbuzhiliyuan2": {
     "NAME": "恐怖直立猿",
-    "DESCRIPTION": "随机将X张随机 hannina:复合 卡加入手牌，使那些 hannina:复合 卡及其中 hannina:复合 的卡牌费用变为0并获得 消耗 。",
-    "UPGRADE_DESCRIPTION": "随机将X张已 升级 的随机 hannina:复合 卡加入手牌，使那些 hannina:复合 卡及其中 hannina:复合 的卡牌费用变为0并获得 消耗 。"
+    "DESCRIPTION": "随机将X张随机 hannina:复合 卡加入手牌，使那些 hannina:复合 卡及其中 hannina:复合 的卡牌费用变为0并获得 消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "随机将X张已 升级 的随机 hannina:复合 卡加入手牌，使那些 hannina:复合 卡及其中 hannina:复合 的卡牌费用变为0并获得 消耗 。 NL 消耗 。"
   },
   "hannina:Jushouzailing": {
     "NAME": "巨兽再临·狰",

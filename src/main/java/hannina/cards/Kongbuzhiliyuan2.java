@@ -1,6 +1,7 @@
 package hannina.cards;
 
 import basemod.abstracts.AbstractCardModifier;
+import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,6 +26,7 @@ import hannina.utils.UnionManager;
 public class Kongbuzhiliyuan2 extends AbstractHanninaCard {
     public Kongbuzhiliyuan2() {
         super(Kongbuzhiliyuan2.class.getSimpleName(), -1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        this.exhaust = true;
     }
 
     @Override
@@ -57,6 +59,7 @@ public class Kongbuzhiliyuan2 extends AbstractHanninaCard {
 
                         for (AbstractCard cc : r.union) {
                             cc.modifyCostForCombat(-100);
+                            CardModifierManager.addModifier(cc, new ExhaustMod());
                             if (tmpUpgraded) cc.upgrade();
                             cc.update();
                         }
