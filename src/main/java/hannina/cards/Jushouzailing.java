@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class Jushouzailing extends AbstractHanninaCard {
         super(Jushouzailing.class.getSimpleName(), 3, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         this.damage = this.baseDamage = 18;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.actions.ChooseColor2EnterAction;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class Maodepingwenluodi extends AbstractHanninaCard {
     public Maodepingwenluodi() {
         super(Maodepingwenluodi.class.getSimpleName(), 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
         this.exhaust = true;
+        this.tags.add(Enums.UnionCard);
+        this.tags.add(Enums.ChangeColorCard);
     }
 
     @Override

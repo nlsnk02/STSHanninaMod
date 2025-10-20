@@ -1,4 +1,4 @@
-package hannina.cards;
+package hannina.fantasyCard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -6,21 +6,14 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.purple.Wish;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
-import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.utils.ModHelper;
-import hannina.utils.UnionManager;
-
-import java.util.ArrayList;
 
 public class Zhenjianduijue extends AbstractHanninaCard {
     public static final String[] actionTEXT;
@@ -28,7 +21,7 @@ public class Zhenjianduijue extends AbstractHanninaCard {
     public Zhenjianduijue() {
         super(Zhenjianduijue.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 6;
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.block = this.baseBlock = 4;
     }
 

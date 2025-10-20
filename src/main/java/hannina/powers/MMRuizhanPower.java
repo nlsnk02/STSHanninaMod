@@ -43,7 +43,7 @@ public class MMRuizhanPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount), this.amount));
-        if(MMRuizhan.count >= 19){
+        if(MMRuizhan.count >= 15){
             MMRuizhan.count = 0;
             addToBot(new MakeTempCardInHandAction(new Chaojuehajimi()));
             if (AbstractDungeon.player.hasRelic(Gangqi.ID)){

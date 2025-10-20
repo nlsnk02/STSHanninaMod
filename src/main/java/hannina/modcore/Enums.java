@@ -13,4 +13,8 @@ public class Enums {
     public static CardLibrary.LibraryType HanninaLibraryType;
     @SpireEnum(name = "hannina")
     public static AbstractCard.CardColor HanninaColor;
+    @SpireEnum
+    public static AbstractCard.CardTags UnionCard;
+    @SpireEnum
+    public static AbstractCard.CardTags ChangeColorCard;
 }

@@ -1,21 +1,41 @@
 package hannina.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
 
 public class MZLLieguang extends AbstractHanninaCard {
     public MZLLieguang() {
-        super(MZLLieguang.class.getSimpleName(), 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.magicNumber = this.baseMagicNumber = 2;
+        super(MZLLieguang.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.damage = this.baseDamage = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(Enums.UnionCard);
+    }
+
+    @Override
+    public void applyPowers() {
+        int tmp = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.color != Enums.HanninaColor)
+                tmp += this.baseMagicNumber;
+        }
+        this.baseDamage += tmp;
+        super.applyPowers();
+        this.baseDamage -= tmp;
+        this.isDamageModified = this.isDamageModified || tmp > 0;
     }
 
     @Override
@@ -34,8 +54,8 @@ public class MZLLieguang extends AbstractHanninaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p,
-                new VulnerablePower(m, this.magicNumber, false)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override

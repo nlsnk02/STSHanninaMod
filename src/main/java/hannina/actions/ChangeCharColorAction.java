@@ -20,6 +20,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+所有改变角色形态全部通过这个action
+
+action包括三个部分：
+* 修改或给予玩家buff（每个形态特有的buff）
+* 修改三堆里牌的形态
+* 触发接口
+
+ */
 public class ChangeCharColorAction extends AbstractGameAction {
     public static final String[] actionTEXT;
 

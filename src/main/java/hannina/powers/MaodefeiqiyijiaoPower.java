@@ -16,7 +16,7 @@ import hannina.cards.Maodepingwenluodi;
 import hannina.misc.OnChangeColorSubscriber;
 import hannina.utils.ModHelper;
 
-public class MaodefeiqiyijiaoPower extends AbstractPower implements OnChangeColorSubscriber {
+public class MaodefeiqiyijiaoPower extends TwoAmountPower implements OnChangeColorSubscriber {
     public static final String POWER_ID = ModHelper.makeID(MaodefeiqiyijiaoPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
@@ -31,11 +31,24 @@ public class MaodefeiqiyijiaoPower extends AbstractPower implements OnChangeColo
         this.ID = POWER_ID;
         this.type = PowerType.BUFF;
         this.owner = owner;
-        this.amount = amount;
+
+        this.amount = this.amount2 = amount;
+
         //        this.loadRegion("tools");
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PATH128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PATH48), 0, 0, 32, 32);
         this.updateDescription();
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        this.amount = amount2;
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        this.amount2 += stackAmount;
     }
 
 
@@ -45,8 +58,10 @@ public class MaodefeiqiyijiaoPower extends AbstractPower implements OnChangeColo
 
     @Override
     public void onChangeColor(AbstractCard.CardColor color) {
-        if (color == AbstractCard.CardColor.GREEN) {
-            addToBot(new DrawCardAction(this.amount));
+        if (color == AbstractCard.CardColor.GREEN && this.amount >= 1) {
+            addToBot(new DrawCardAction(3));
+            amount -= 1;
+            updateDescription();
         }
     }
 }

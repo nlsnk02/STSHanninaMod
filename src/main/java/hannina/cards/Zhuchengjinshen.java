@@ -25,7 +25,7 @@ public class Zhuchengjinshen extends AbstractHanninaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(2);
         }
     }
 

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class MZLFushu extends AbstractHanninaCard {
     public MZLFushu() {
         super(MZLFushu.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 8;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override
