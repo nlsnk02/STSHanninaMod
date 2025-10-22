@@ -38,12 +38,12 @@ public class Chaojuehajimi extends AbstractHanninaCard {
         applyPowers();
         for (int i = 0; i < 5; i++)
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-       /* if (AbstractDungeon.player.hasRelic(Miaodan.ID)){
-            Chaojuehajimi.startGIF=4;
-            AbstractDungeon.effectList.add(new PlayGiFEffect(4));
+    if (AbstractDungeon.player.hasRelic(Miaodan.ID)){
+            Chaojuehajimi.startGIF=8;
+            AbstractDungeon.effectList.add(new PlayGiFEffect(8,6,3.0F));
 
-        }*/
-    }
+
+    }}
 
     @Override
     public void upgrade() {

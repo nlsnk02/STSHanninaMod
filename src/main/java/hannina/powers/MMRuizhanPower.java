@@ -52,7 +52,7 @@ public class MMRuizhanPower extends AbstractPower {
             }
             if (AbstractDungeon.player.hasRelic(Miaodan.ID)){
                 Chaojuehajimi.startGIF=4;
-                AbstractDungeon.effectList.add(new PlayGiFEffect(4));
+                AbstractDungeon.effectList.add(new PlayGiFEffect(4,0,4.0F));
 
             }
 
