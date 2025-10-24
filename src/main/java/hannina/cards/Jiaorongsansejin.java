@@ -5,9 +5,6 @@ import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.FocusPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.fantasyCard.BlueColorCard;
 import hannina.fantasyCard.GreenColorCard;
@@ -28,10 +25,6 @@ public class Jiaorongsansejin extends AbstractHanninaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FocusPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         stanceChoices.add(new RedColorCard());
         stanceChoices.add(new GreenColorCard());

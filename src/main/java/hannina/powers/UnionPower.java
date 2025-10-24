@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import hannina.actions.ChangeCharColorAction;
+import hannina.cards.Jiaorongsansejin;
 import hannina.modcore.Enums;
 import hannina.utils.ModHelper;
 
@@ -84,44 +85,48 @@ public class UnionPower extends AbstractPower {
 //    }
 
     public void leaveColor(AbstractCard.CardColor color) {
+        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ? null : AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
+        int multiplier = lastCard != null && AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(c -> c.cardID.equals(Jiaorongsansejin.class.getSimpleName())) ? (lastCard.upgraded ? 4 : 3) : 1;
         if (color == AbstractCard.CardColor.RED || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
             addToBot(new ReducePowerAction(this.owner, this.owner,
-                    StrengthPower.POWER_ID, AMOUNT));
+                    StrengthPower.POWER_ID, AMOUNT * multiplier));
         }
         if (color == AbstractCard.CardColor.GREEN || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
             addToBot(new ReducePowerAction(this.owner, this.owner,
-                    DexterityPower.POWER_ID, AMOUNT));
+                    DexterityPower.POWER_ID, AMOUNT * multiplier));
         }
         if (color == AbstractCard.CardColor.BLUE || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
             addToBot(new ReducePowerAction(this.owner, this.owner,
-                    FocusPower.POWER_ID, 1));
+                    FocusPower.POWER_ID, multiplier));
         }
     }
 
     public void enterColor(AbstractCard.CardColor color) {
         this.color = color;
+        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ? null : AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
+        int multiplier = lastCard != null && AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(c -> c.cardID.equals(Jiaorongsansejin.class.getSimpleName())) ? (lastCard.upgraded ? 4 : 3) : 1;
         if (color == AbstractCard.CardColor.RED || owner.hasPower(MaodearxingtaiPower2.POWER_ID)) {
             addToBot(new ApplyPowerAction(this.owner, this.owner,
-                    new StrengthPower(this.owner, AMOUNT)));
+                    new StrengthPower(this.owner, AMOUNT * multiplier)));
             this.region128 = region128R;
             this.region48 = region48R;
 
         }
         if (color == AbstractCard.CardColor.GREEN || owner.hasPower(MaodearxingtaiPower2.POWER_ID)) {
             addToBot(new ApplyPowerAction(this.owner, this.owner,
-                    new DexterityPower(this.owner, AMOUNT)));
+                    new DexterityPower(this.owner, AMOUNT * multiplier)));
             this.region128 = region128G;
             this.region48 = region48G;
         }
         if (color == AbstractCard.CardColor.BLUE || owner.hasPower(MaodearxingtaiPower2.POWER_ID)) {
             addToBot(new ChannelAction(new Lightning()));
             addToBot(new ApplyPowerAction(this.owner, this.owner,
-                    new FocusPower(this.owner, 1)));
+                    new FocusPower(this.owner, multiplier)));
             this.region128 = region128B;
             this.region48 = region48B;
         }
         if (color == AbstractCard.CardColor.PURPLE || owner.hasPower(MaodearxingtaiPower2.POWER_ID)) {
-            addToBot(new ScryAction(AMOUNT));
+            addToBot(new ScryAction(AMOUNT * multiplier));
             this.region128 = region128P;
             this.region48 = region48P;
         }

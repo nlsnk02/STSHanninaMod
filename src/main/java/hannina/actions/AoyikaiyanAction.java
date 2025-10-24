@@ -3,9 +3,11 @@ package hannina.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,13 +21,15 @@ public class AoyikaiyanAction extends AbstractGameAction {
     private float startingDuration;
 
     private int block;
+    private int[] damages;
     private int multi;
     private boolean upgraded;
 
-    public AoyikaiyanAction(int numCards, int block, int multi, boolean upgraded) {
+    public AoyikaiyanAction(int numCards, int block, int damages[], int multi, boolean upgraded) {
         this.amount = numCards;
         this.block = block;
         this.multi = multi;
+        this.damages = damages;
         this.upgraded = upgraded;
         if (AbstractDungeon.player.hasRelic("GoldenEye")) {
             AbstractDungeon.player.getRelic("GoldenEye").flash();
@@ -73,8 +77,11 @@ public class AoyikaiyanAction extends AbstractGameAction {
                             new MantraPower(AbstractDungeon.player, AbstractDungeon.gridSelectScreen.selectedCards.size())));
                 }
 
-                addToTop(new GainBlockAction(AbstractDungeon.player,
-                        this.block + AbstractDungeon.gridSelectScreen.selectedCards.size() * this.multi));
+//                addToTop(new GainBlockAction(AbstractDungeon.player,
+//                        this.block + AbstractDungeon.gridSelectScreen.selectedCards.size() * this.multi));
+                for (int i=0;i<multi;i++) {
+                    addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, damages, DamageInfo.DamageType.NORMAL, AttackEffect.BLUNT_LIGHT));
+                }
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
             }
