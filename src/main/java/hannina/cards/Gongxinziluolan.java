@@ -16,6 +16,9 @@ import hannina.modcore.Enums;
 import hannina.powers.AntiUnionPower;
 
 public class Gongxinziluolan extends AbstractHanninaCard {
+
+    public int nextInt = 3;
+
     public Gongxinziluolan() {
         super(Gongxinziluolan.class.getSimpleName(), 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         this.exhaust = true;

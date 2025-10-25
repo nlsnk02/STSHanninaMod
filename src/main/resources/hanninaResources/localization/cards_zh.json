@@ -190,7 +190,7 @@
   },
   "hannina:Jinshajianyu": {
     "NAME": "金砂剑雨",
-    "DESCRIPTION": "你在本场战斗中每失去1金币，耗能就减少1点。 NL 造成 !D! 点伤害3次。",
+    "DESCRIPTION": "你在本场战斗中每失去1次金币，耗能就减少1点。 NL 造成 !D! 点伤害3次。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Linghuaqian": {

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import hannina.actions.ChangeCharColorAction;
+import hannina.actions.RemoveSpecificCardAction;
 import hannina.cards.XingshengjianZhanlongshi;
 import hannina.modcore.Enums;
 import hannina.powers.AntiUnionPower;
@@ -32,21 +33,7 @@ public class FusionColorCard extends AbstractHanninaCard {
 
     @Override
     public void onChoseThisOption() {
-        //暂时懒得想更好的写法了
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (tiggerCard != null) {
-                    if (AbstractDungeon.player.discardPile.contains(tiggerCard))
-                        AbstractDungeon.player.discardPile.moveToExhaustPile(tiggerCard);
-                    if (AbstractDungeon.player.hand.contains(tiggerCard))
-                        AbstractDungeon.player.hand.moveToExhaustPile(tiggerCard);
-                    if (AbstractDungeon.player.drawPile.contains(tiggerCard))
-                        AbstractDungeon.player.drawPile.moveToExhaustPile(tiggerCard);
-                }
-                isDone = true;
-            }
-        });
+        addToBot(new RemoveSpecificCardAction(tiggerCard));
 
         ModHelper.fusion();
     }

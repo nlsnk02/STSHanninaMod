@@ -32,10 +32,8 @@ public class AntiUnionPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (!isPlayer) {
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
+    public void atEndOfRound() {
+        addToBot(new ReducePowerAction(owner, owner, this, 1));
     }
 
     public void updateDescription() {

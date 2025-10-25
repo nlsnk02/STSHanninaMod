@@ -259,6 +259,7 @@ public class Core implements
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
+        GoldManager.monitorEnabled = false;
     }
 
     @Override

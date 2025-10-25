@@ -7,6 +7,7 @@ import hannina.misc.OnLoseGoldSubscriber;
 import java.util.stream.Stream;
 
 public class GoldManager {
+    public static boolean monitorEnabled = false;
 
     public static int goldLoseInCombat = 0;
     public static int goldGainInCombat = 0;
@@ -18,11 +19,12 @@ public class GoldManager {
         goldLoseInCombat = 0;
         goldGainInCombat = 0;
         goldLoseLastTime = 0;
-        gold = -1000;
+        gold = AbstractDungeon.player.gold;
+        monitorEnabled = true;
     }
 
     public static void updateGold() {
-        if (ModHelper.isInCombat()) {
+        if (ModHelper.isInCombat() && monitorEnabled) {
             if (AbstractDungeon.player.gold != gold) {
                 if (AbstractDungeon.player.gold > gold) {
                     if (gold != -1000) {

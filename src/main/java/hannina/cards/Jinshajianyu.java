@@ -22,7 +22,7 @@ public class Jinshajianyu extends AbstractHanninaCard implements OnLoseGoldSubsc
 
     @Override
     public void onLoseGold(int gold) {
-        modifyCostForCombat(-gold);
+        modifyCostForCombat(-1);
     }
 
     @Override
