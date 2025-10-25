@@ -236,8 +236,8 @@
   "hannina:YZYHSXTBJHLM": {
     "NAME": "  一直用红色形态不就好了吗？",
     "TAG": 2,
-    "DESCRIPTION": "hannina:复合 。 NL 选择并进入1种 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机红色卡牌中选择一张加入手牌。",
-    "UPGRADE_DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机升级红色卡牌中选择一张加入手牌。"
+    "DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机红色牌中选择一张加入手牌并使其费用在本回合减少1； NL 该卡牌 hannina:复合 的红色牌费用-1。",
+    "UPGRADE_DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机 升级 红色牌中选择一张加入手牌并使其费用在本回合减少1； NL 该卡牌 hannina:复合 的红色牌费用-1。"
   },
   "hannina:Maodefeiqiyijiao": {
     "NAME": "猫的飞起一脚",
@@ -254,7 +254,7 @@
   "hannina:Aoyikaiyan": {
     "NAME": "奥义开眼",
     "TAG": 2,
-    "DESCRIPTION": "预见 !M! 。 NL 每丢弃一张牌获得2 格挡 。 NL 处于观者猫 hannina:形态 :每丢弃1张牌，获得1点 真言 。",
+    "DESCRIPTION": "预见 !M! 。 NL 每丢弃一张牌就对所有敌人造成 !D! 点伤害。 NL 处于观者猫 hannina:形态 :每丢弃1张牌，获得1点 真言 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Yishenyigui": {
@@ -343,22 +343,23 @@
   "hannina:Jushouzailing": {
     "NAME": "巨兽再临·狰",
     "TAG": 2,
-    "DESCRIPTION": "hannina:复合 。 NL 造成 !D! 点伤害。 NL 抽 !M! 张牌并使抽取的卡牌以及本牌中的复合牌耗能减少1。 NL 仅会 hannina:复合 稀有卡牌。",
+    "DESCRIPTION": "hannina:复合 。 NL 对所有敌人造成 !D! 点伤害。 NL 打出此牌中的所有 hannina:复合 牌。 NL 仅会 hannina:复合 稀有牌。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Jiaorongsansejin": {
     "NAME": "交融三色堇",
     "TAG": 2,
-    "DESCRIPTION": "获得 !M! 点 力量 ， 敏捷 ， 集中 。 NL 选择:进入战士猫 hannina:形态 或 猎人猫 hannina:形态 或 机器猫 hannina:形态 。 NL 本回合无法再改变 hannina:职业形态 。 消耗 。",
-    "UPGRADE_DESCRIPTION": "wwwwww"
+    "DESCRIPTION": "选择:进入战士猫 hannina:形态 或 猎人猫 hannina:形态 或 机器猫 hannina:形态 。 NL 本回合获得的 hannina:形态 增益翻三倍。 NL 本回合无法再改变 hannina:职业形态 。",
+    "UPGRADE_DESCRIPTION": "选择:进入战士猫 hannina:形态 或 猎人猫 hannina:形态 或 机器猫 hannina:形态 。 NL 本回合获得的 hannina:形态 增益翻四倍。 NL 本回合无法再改变 hannina:职业形态 。"
   },
   "hannina:Gongxinziluolan": {
     "NAME": "共心紫罗兰",
-    "TAG": 4,
-    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 神格 。 NL 获得 !M! ~ !B! 点 真言 ,若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
-    "UPGRADE_DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 神格 。 NL 获得 !M! ~ !B! 点 真言 ,若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+    "TAG": 2,
+    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 2-7 点 真言 。 NL 若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+    "UPGRADE_DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 3-8 点 真言 。 NL 若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
     "EXTENDED_DESCRIPTION": [
-      " NL (%s 点)"
+      "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+      "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。"
     ]
   },
   "hannina:XCDZhanlongshi": {
@@ -370,8 +371,8 @@
   "hannina:XingshengjianZhanlongshi": {
     "NAME": "心生剑·斩龙式",
     "TAG": 2,
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 本卡牌对首领敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 本卡牌对首领敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。"
+    "DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 可被多次 升级 。 NL 本卡牌对首领与精英敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 本卡牌对首领与精英敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。"
   },
   "hannina:FusionColorCard": {
     "NAME": "尖塔之兽",
@@ -386,7 +387,7 @@
   "hannina:XCDDangmoshi": {
     "NAME": "衔蝉刀·荡魔式",
     "TAG": 4,
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀时:此牌耗能-1并返回手中。 NL 在一场战斗打出至少3次时，可选择:融合为 *尖塔之兽 并 消耗 。",
+    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 击杀时:此牌耗能-1并返回手中。 NL 在一场战斗打出至少 !M! 次时，获得 [E] [E] 并选择:融合为 *尖塔之兽 并 消耗 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Jingzhuangjianmie": {
@@ -396,9 +397,9 @@
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Jingzhuangjianmie2": {
-    "NAME": "精装歼灭",
+    "NAME": "衔蝉刀·灭精式",
     "TAG": 2,
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，获得造成伤害等量的金币。 NL 若你本场战斗已经失去了至少100金币，融合为 *尖塔之兽 。 消耗 。",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，获得造成伤害等量的金币。 NL 若你本场战斗失去与获得的金币总数达到了100，融合为 *尖塔之兽 。 消耗 。",
     "UPGRADE_DESCRIPTION": "wwwwww",
     "EXTENDED_DESCRIPTION": [
       " NL (已失去 !M! 点)"

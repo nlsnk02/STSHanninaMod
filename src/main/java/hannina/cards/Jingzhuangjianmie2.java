@@ -125,7 +125,7 @@ public class Jingzhuangjianmie2 extends AbstractHanninaCard {
             }
         });
 
-        if(GoldManager.goldLoseInCombat >= 100){
+        if(GoldManager.goldLoseInCombat + GoldManager.goldGainInCombat >= 100){
             ModHelper.fusion();
         }
     }

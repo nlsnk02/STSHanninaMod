@@ -23,14 +23,15 @@ public class Aoyikaiyan extends AbstractHanninaCard {
     public static final String[] actionTEXT;
 
     public Aoyikaiyan() {
-        super(Aoyikaiyan.class.getSimpleName(), 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 4;
-        this.block = this.baseBlock = 0;
+        super(Aoyikaiyan.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        this.baseDamage = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
+        this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AoyikaiyanAction(this.magicNumber, this.block, 2, ModHelper.getPlayerColor() == CardColor.PURPLE));
+        addToBot(new AoyikaiyanAction(this.magicNumber, this.block, this.multiDamage, 2, ModHelper.getPlayerColor() == CardColor.PURPLE));
     }
 
     @Override

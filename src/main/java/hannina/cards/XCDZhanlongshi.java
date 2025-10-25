@@ -30,7 +30,7 @@ public class XCDZhanlongshi extends AbstractHanninaCard implements CustomSavable
 
     public XCDZhanlongshi() {
         super(XCDZhanlongshi.class.getSimpleName(), 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        this.damage = this.baseDamage = 7;
+        this.damage = this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
         this.cardsToPreview = new XingshengjianZhanlongshi();
     }
@@ -91,8 +91,8 @@ public class XCDZhanlongshi extends AbstractHanninaCard implements CustomSavable
 
     @Override
     public void upgrade() {
-        upgradeDamage(2);
-//        upgradeMagicNumber(1);
+        upgradeDamage(1);
+        upgradeMagicNumber(1);
 
         this.timesUpgraded++;
         this.upgraded = true;
