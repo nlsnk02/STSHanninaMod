@@ -1,10 +1,8 @@
 package hannina.actions;
 
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,15 +18,11 @@ public class AoyikaiyanAction extends AbstractGameAction {
     public static final String[] TEXT;
     private float startingDuration;
 
-    private int block;
     private int[] damages;
-    private int multi;
     private boolean upgraded;
 
-    public AoyikaiyanAction(int numCards, int block, int damages[], int multi, boolean upgraded) {
+    public AoyikaiyanAction(int numCards, int[] damages, boolean upgraded) {
         this.amount = numCards;
-        this.block = block;
-        this.multi = multi;
         this.damages = damages;
         this.upgraded = upgraded;
         if (AbstractDungeon.player.hasRelic("GoldenEye")) {
@@ -58,7 +52,7 @@ public class AoyikaiyanAction extends AbstractGameAction {
                 CardGroup tmpGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 if (this.amount != -1) {
                     for (int i = 0; i < Math.min(this.amount, AbstractDungeon.player.drawPile.size()); ++i) {
-                        tmpGroup.addToTop((AbstractCard) AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
+                        tmpGroup.addToTop(AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
                     }
                 } else {
                     for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
@@ -77,9 +71,7 @@ public class AoyikaiyanAction extends AbstractGameAction {
                             new MantraPower(AbstractDungeon.player, AbstractDungeon.gridSelectScreen.selectedCards.size())));
                 }
 
-//                addToTop(new GainBlockAction(AbstractDungeon.player,
-//                        this.block + AbstractDungeon.gridSelectScreen.selectedCards.size() * this.multi));
-                for (int i=0;i<multi;i++) {
+                for (int i = 0; i < AbstractDungeon.gridSelectScreen.selectedCards.size(); i++) {
                     addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, damages, DamageInfo.DamageType.NORMAL, AttackEffect.BLUNT_LIGHT));
                 }
 

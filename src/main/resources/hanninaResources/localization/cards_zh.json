@@ -355,12 +355,8 @@
   "hannina:Gongxinziluolan": {
     "NAME": "共心紫罗兰",
     "TAG": 2,
-    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 2-7 点 真言 。 NL 若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
-    "UPGRADE_DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 3-8 点 真言 。 NL 若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
-    "EXTENDED_DESCRIPTION": [
-      "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
-      "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。"
-    ]
+    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。",
+    "UPGRADE_DESCRIPTION": "进入观者猫 hannina:形态 。 NL 获得 !M! 点 真言 。 NL 若进入 神格 则将1张 *光辉+ 加入手中并 消耗 。 NL 本回合无法再改变 hannina:职业形态 。"
   },
   "hannina:XCDZhanlongshi": {
     "NAME": "衔蝉刀·斩龙式",

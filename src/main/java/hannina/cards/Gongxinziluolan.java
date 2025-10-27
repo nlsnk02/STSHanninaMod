@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 import com.megacrit.cardcrawl.stances.DivinityStance;
@@ -17,21 +16,11 @@ import hannina.powers.AntiUnionPower;
 
 public class Gongxinziluolan extends AbstractHanninaCard {
 
-    public int nextInt = 3;
-
     public Gongxinziluolan() {
         super(Gongxinziluolan.class.getSimpleName(), 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        this.exhaust = true;
         this.tags.add(Enums.ChangeColorCard);
         this.cardsToPreview = new Brilliance();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        int lb = upgraded ? 3 : 2;
-        this.magicNumber = this.baseMagicNumber = AbstractDungeon.cardRandomRng.random(lb, lb + 5);
-        this.rawDescription = upgraded ? cardStrings.EXTENDED_DESCRIPTION[1] : cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
+        this.baseMagicNumber = this.magicNumber = 5;
     }
 
     @Override
@@ -58,9 +47,7 @@ public class Gongxinziluolan extends AbstractHanninaCard {
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
             this.cardsToPreview.upgrade();
-//            this.isEthereal = false;
-//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-//            initializeDescription();
+            this.upgradeMagicNumber(2);
         }
     }
 
