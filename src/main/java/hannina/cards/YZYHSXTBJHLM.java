@@ -1,5 +1,7 @@
 package hannina.cards;
 
+import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -13,6 +15,8 @@ import hannina.actions.ChangeCharColorAction;
 import hannina.actions.ChooseColor2EnterAction;
 import hannina.actions.SelectFromRewardAction;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.misc.ReunionModifier;
+import hannina.modcore.Enums;
 import hannina.utils.ModHelper;
 import hannina.utils.UnionManager;
 
@@ -31,8 +35,9 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
     }
 
     public YZYHSXTBJHLM() {
-        super(YZYHSXTBJHLM.class.getSimpleName(), 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(YZYHSXTBJHLM.class.getSimpleName(), 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override
@@ -58,6 +63,7 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
                             ArrayList<AbstractCard> cards = new ArrayList<>();
                             while (cards.size() < YZYHSXTBJHLM.this.magicNumber) {
                                 AbstractCard card = UnionManager.getRamdomCard(c -> c.color == CardColor.RED);
+                                card.modifyCostForCombat(-1);
                                 if (cards.stream().noneMatch(c -> card.cardID.equals(c.cardID))) {
                                     cards.add(card);
                                 }
@@ -66,8 +72,20 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
                             if(upgraded) cards.forEach(AbstractCard::upgrade);
 
                             addToTop(new SelectFromRewardAction(cards,
-                                    c -> c.ifPresent(abstractCard -> addToTop(new MakeTempCardInHandAction(abstractCard))),
+                                    c -> c.ifPresent(abstractCard -> {
+                                        abstractCard.setCostForTurn(abstractCard.costForTurn - 1);
+                                        addToTop(new MakeTempCardInHandAction(abstractCard));
+                                    }),
                                     actionTEXT[0], true, AbstractGameAction.ActionType.DRAW));
+                            ArrayList<AbstractCardModifier> list = CardModifierManager.getModifiers(YZYHSXTBJHLM.this, "ReunionModifier");
+                            if (list.size() > 0) {
+                                ReunionModifier mod = (ReunionModifier) list.get(0);
+                                for (AbstractCard card : mod.union) {
+                                    if (card.color == CardColor.RED) {
+                                        card.modifyCostForCombat(-1);
+                                    }
+                                }
+                            }
                         }
                         this.isDone = true;
                     }

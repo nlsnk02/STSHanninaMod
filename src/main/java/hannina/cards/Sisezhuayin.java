@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class Sisezhuayin extends AbstractHanninaCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.damage = this.baseDamage = 4;
         this.block = this.baseBlock = 4;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override

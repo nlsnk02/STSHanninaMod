@@ -5,12 +5,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.powers.QianmiaowanhaPower;
 
 public class Qianmiaowanha extends AbstractHanninaCard {
     public Qianmiaowanha() {
         super(Qianmiaowanha.class.getSimpleName(), 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(Enums.ChangeColorCard);
     }
 
 

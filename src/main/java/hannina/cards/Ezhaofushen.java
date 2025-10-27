@@ -42,7 +42,7 @@ public class Ezhaofushen extends AbstractHanninaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(2);
+//            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

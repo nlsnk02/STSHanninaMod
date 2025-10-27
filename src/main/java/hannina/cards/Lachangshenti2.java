@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.ModHelper;
 import hannina.utils.UnionManager;
 
@@ -15,7 +16,9 @@ import java.util.ArrayList;
 public class Lachangshenti2 extends AbstractHanninaCard {
     public Lachangshenti2() {
         super(Lachangshenti2.class.getSimpleName(), 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(Enums.UnionCard);
+        this.tags.add(Enums.ChangeColorCard);
     }
 
     @Override

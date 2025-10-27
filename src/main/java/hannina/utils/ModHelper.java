@@ -101,7 +101,7 @@ public class ModHelper {
         c.flashVfx = null;
     }
 
-    //变牌的逻辑，这个逻辑与buff的逻辑完全分离了
+    //变牌的逻辑
     public static void changeCardUnion(AbstractCard.CardColor color, boolean onlyInHand) {
         new ArrayList<>(AbstractDungeon.player.hand.group).forEach(c -> {
             c.update();

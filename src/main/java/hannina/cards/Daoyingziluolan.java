@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.actions.ChangeCharColorAction;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class Daoyingziluolan extends AbstractHanninaCard {
     public Daoyingziluolan() {
         super(Daoyingziluolan.class.getSimpleName(), 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(Enums.ChangeColorCard);
     }
 
 //    @Override

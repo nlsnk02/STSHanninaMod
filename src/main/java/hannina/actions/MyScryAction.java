@@ -1,44 +1,39 @@
 package hannina.actions;
 
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 
-public class AoyikaiyanAction extends AbstractGameAction {
+import java.util.ArrayList;
+import java.util.function.BiConsumer;
+
+public class MyScryAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private float startingDuration;
 
-    private int block;
-    private int[] damages;
-    private int multi;
-    private boolean upgraded;
+    public ArrayList<AbstractCard> screedCards;
+    public ArrayList<AbstractCard> selectedCards;
+    public BiConsumer<ArrayList<AbstractCard>, ArrayList<AbstractCard>> then;
 
-    public AoyikaiyanAction(int numCards, int block, int damages[], int multi, boolean upgraded) {
+    public MyScryAction(int numCards, BiConsumer<ArrayList<AbstractCard>, ArrayList<AbstractCard>> then) {
         this.amount = numCards;
-        this.block = block;
-        this.multi = multi;
-        this.damages = damages;
-        this.upgraded = upgraded;
+
         if (AbstractDungeon.player.hasRelic("GoldenEye")) {
             AbstractDungeon.player.getRelic("GoldenEye").flash();
             this.amount += 2;
         }
 
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.duration = this.startingDuration;
+
+        this.then = then;
     }
 
     public void update() {
@@ -46,7 +41,7 @@ public class AoyikaiyanAction extends AbstractGameAction {
             this.isDone = true;
         } else {
             if (this.duration == this.startingDuration) {
-                for (AbstractPower p : AbstractDungeon.player.powers) {
+                for(AbstractPower p : AbstractDungeon.player.powers) {
                     p.onScry();
                 }
 
@@ -57,36 +52,31 @@ public class AoyikaiyanAction extends AbstractGameAction {
 
                 CardGroup tmpGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 if (this.amount != -1) {
-                    for (int i = 0; i < Math.min(this.amount, AbstractDungeon.player.drawPile.size()); ++i) {
-                        tmpGroup.addToTop((AbstractCard) AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
+                    for(int i = 0; i < Math.min(this.amount, AbstractDungeon.player.drawPile.size()); ++i) {
+                        tmpGroup.addToTop(AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
                     }
                 } else {
-                    for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+                    for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
                         tmpGroup.addToBottom(c);
                     }
                 }
 
+                screedCards = new ArrayList<>(tmpGroup.group);
+
                 AbstractDungeon.gridSelectScreen.open(tmpGroup, this.amount, true, TEXT[0]);
             } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                for(AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                     AbstractDungeon.player.drawPile.moveToDiscardPile(c);
                 }
 
-                if (upgraded) {
-                    addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                            new MantraPower(AbstractDungeon.player, AbstractDungeon.gridSelectScreen.selectedCards.size())));
-                }
-
-//                addToTop(new GainBlockAction(AbstractDungeon.player,
-//                        this.block + AbstractDungeon.gridSelectScreen.selectedCards.size() * this.multi));
-                for (int i=0;i<multi;i++) {
-                    addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, damages, DamageInfo.DamageType.NORMAL, AttackEffect.BLUNT_LIGHT));
-                }
+                selectedCards = new ArrayList<>(AbstractDungeon.gridSelectScreen.selectedCards);
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
+
+                then.accept(screedCards, selectedCards);
             }
 
-            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+            for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
                 c.triggerOnScry();
             }
 

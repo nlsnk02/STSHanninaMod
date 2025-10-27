@@ -23,6 +23,7 @@ public class EventChangePatch {
          if (!maozhibaozang.hasEnteredEvent&&SkinSelectScreen.getSkin().index==1){
 event[0]=new FlyingCat();
 maozhibaozang.hasEnteredEvent=true;
+
          }
      }
     }

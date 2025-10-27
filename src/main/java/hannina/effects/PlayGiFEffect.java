@@ -9,9 +9,12 @@ import static hannina.utils.MonsterDieThisTurnManager.amount;
 
 public class PlayGiFEffect extends AbstractGameEffect {
     private  float elapsedTime=0;
-    public PlayGiFEffect(int amount){
-        this.duration=4.0F;
-
+    private int start;
+    private int end;
+    public PlayGiFEffect(int start,int end,float duration ){
+        this.duration=duration;
+        this.start=start;
+        this.end=end;
     }
     @Override
     public void render(SpriteBatch spriteBatch) {
@@ -23,9 +26,9 @@ public class PlayGiFEffect extends AbstractGameEffect {
         elapsedTime += Gdx.graphics.getDeltaTime();
 
         // 每隔 interval 秒执行一次操作
-        if (elapsedTime >=1F) {
+        if (elapsedTime >=duration/(start-end)) {
             // 在这里执行你的操作
-            if (startGIF>0){
+            if (startGIF>end){
                 startGIF--;
             }
             elapsedTime = 0f; // 重置计时器

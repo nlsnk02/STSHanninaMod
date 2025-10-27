@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import hannina.fantasyCard.AbstractHanninaCard;
+import hannina.modcore.Enums;
 import hannina.utils.UnionManager;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class Shenlingpingyi extends AbstractHanninaCard {
         super(Shenlingpingyi.class.getSimpleName(), 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 1;
         this.block = this.baseBlock = 5;
+        this.tags.add(Enums.UnionCard);
     }
 
     @Override

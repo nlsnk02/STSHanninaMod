@@ -44,6 +44,11 @@ public abstract class AbstractHanninaCard extends CustomCard {
         cardStrings = getCardStrings(NAME);
     }
 
+    /*
+    自动加载卡牌的卡图
+    如果cards文件夹下方有某个卡图皮肤id的文件夹，则优先使用其中的皮肤卡图
+    什么是卡图皮肤id可以看ui.json里面的注释
+     */
     public static String getPicPath(String name, CardType type) {
         if (Gdx.files.internal(ModHelper.getImgPath("cards/" + ConfigHelper.skinId + "/" + name + ".png")).exists())
             return ModHelper.getImgPath("cards/" + ConfigHelper.skinId + "/" + name + ".png");
@@ -78,6 +83,10 @@ public abstract class AbstractHanninaCard extends CustomCard {
     @Override
     public abstract void upgrade();
 
+    /*
+    为卡牌设置他的复合牌，方法在一张牌加入战斗或进入卡牌奖励时自动执行。
+    不过想要让一张牌被识别为复合牌，依旧需要主动设置tag。
+     */
     public ArrayList<AbstractCard> setUnion() {
         return null;
     }

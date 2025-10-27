@@ -33,8 +33,8 @@
   "hannina:MaodefeiqiyijiaoPower": {
     "NAME": "猫的飞起一脚",
     "DESCRIPTIONS": [
-      "进入猎人猫形态时抽 #b",
-      " 张牌"
+      "每回合前 #b",
+      " 次进入 #y猎人猫形态 时抽 #b3 张牌。"
     ]
   },
   "hannina:QianmiaowanhaPower": {
@@ -69,7 +69,8 @@
   "hannina:AntiUnionPower": {
     "NAME": "无法改变形态",
     "DESCRIPTIONS": [
-      "本场战斗，你不能改变你的 #y形态 。"
+      "在 #b",
+      " 回合内，你不能改变你的 #y形态 。"
     ]
   },
   "hannina:MMRuizhanPower": {
@@ -109,7 +110,7 @@
   "hannina:FusionPower": {
     "NAME": "尖塔之兽",
     "DESCRIPTIONS": [
-      "本回合无法进入其他 #y形态 。打出 #y复合 卡牌时选择并打出1张其 #y复合 的卡牌。"
+      "本回合无法进入其他 #y形态 。打出 #y复合 卡牌时选择并打出1张其 #y复合 的卡牌。打出进入职业形态的卡牌时获得 [E] 。"
     ]
   }
 }

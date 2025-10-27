@@ -116,7 +116,7 @@ public class Core implements
                     BaseMod.addCard(c);
                     UnlockTracker.unlockCard(c.cardID);
                 });
-        BaseMod.addCard(new Chaojuehajimi());
+      BaseMod.addCard(new Chaojuehajimi());
         logger.info("================加入卡牌=============");
     }
 
@@ -259,6 +259,7 @@ public class Core implements
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
+        GoldManager.monitorEnabled = false;
     }
 
     @Override

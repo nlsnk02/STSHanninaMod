@@ -3,6 +3,7 @@ package hannina.powers;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,6 +17,7 @@ import hannina.actions.SelectFromGridAction;
 import hannina.actions.SelectFromRewardAction;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
+import hannina.modcore.Enums;
 import hannina.utils.ModHelper;
 
 import java.util.ArrayList;
@@ -61,6 +63,10 @@ public class FusionPower extends AbstractPower {
                     c -> c.ifPresent(
                             abstractCard -> addToTop(new PlayACardAction(abstractCard, null, unionCardtarget, true))
                     ), "", true, AbstractGameAction.ActionType.DRAW));
+        }
+
+        if (card instanceof AbstractHanninaCard && card.hasTag(Enums.ChangeColorCard)) {
+            addToBot(new GainEnergyAction(1));
         }
     }
 
