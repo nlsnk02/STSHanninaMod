@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.powers.ZhuazhunilePower;
+import hannina.utils.ModHelper;
 
 public class Zhuazhunile extends AbstractHanninaCard {
     public Zhuazhunile() {
@@ -24,9 +25,11 @@ public class Zhuazhunile extends AbstractHanninaCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
-        if (!m.hasPower(ArtifactPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        if (ModHelper.getPlayerColor() == CardColor.GREEN) {
+            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
+            if (!m.hasPower(ArtifactPower.POWER_ID)) {
+                this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            }
         }
 
         addToBot(new ApplyPowerAction(p, p, new ZhuazhunilePower(p, 1)));

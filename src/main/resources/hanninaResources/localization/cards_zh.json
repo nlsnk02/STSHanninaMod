@@ -122,8 +122,8 @@
   "hannina:Zhuazhunile": {
     "NAME": "抓住你了！",
     "TAG": 1,
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~ 到你的手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~+ 到你的手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~ 到你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~+ 到你的手牌。"
   },
   "hannina:Jihanchaodao": {
     "NAME": "极寒超导",
@@ -179,7 +179,7 @@
   "hannina:Touqianwenlu": {
     "NAME": "投钱问路",
     "TAG" : 1,
-    "DESCRIPTION": "失去3金币。 NL 预见 !M! ，每丢弃一张获得 !B! 点 格挡 。 NL 处于观者猫 hannina:形态 :获得 !D! 点 真言 。",
+    "DESCRIPTION": "预见 !M! ，每丢弃一张获得 !B! 点 格挡 并失去1金币。 NL 处于观者猫 hannina:形态 :获得 !D! 点 真言 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Huijinrutu": {

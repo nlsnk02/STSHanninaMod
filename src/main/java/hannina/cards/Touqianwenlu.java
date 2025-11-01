@@ -1,13 +1,8 @@
 package hannina.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
-import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
@@ -21,7 +16,7 @@ public class Touqianwenlu extends AbstractHanninaCard {
         super(Touqianwenlu.class.getSimpleName(), 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.damage = this.baseDamage = 2;
         this.block = this.baseBlock = 2;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override
@@ -40,11 +35,10 @@ public class Touqianwenlu extends AbstractHanninaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseGoldAction(3));
-
         addToBot(new MyScryAction(this.magicNumber, (l1, l2) -> {
             if (!l2.isEmpty()) {
                 addToTop(new GainBlockAction(p, this.block * l2.size()));
+                addToTop(new LoseGoldAction(l2.size()));
             }
         }));
 
@@ -57,7 +51,7 @@ public class Touqianwenlu extends AbstractHanninaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(1);
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
         }
     }
 
