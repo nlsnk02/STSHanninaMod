@@ -85,19 +85,10 @@ public class XCDZhanlongshi extends AbstractHanninaCard implements CustomSavable
     }
 
     @Override
-    public boolean canUpgrade() {
-        return true;
-    }
-
-    @Override
     public void upgrade() {
         upgradeDamage(1);
         upgradeMagicNumber(1);
-
-        this.timesUpgraded++;
-        this.upgraded = true;
-        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
-        initializeTitle();
+        upgradeName();
     }
 
     @Override

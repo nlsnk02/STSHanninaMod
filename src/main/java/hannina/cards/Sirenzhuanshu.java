@@ -31,9 +31,6 @@ public class Sirenzhuanshu extends AbstractHanninaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            this.isInnate = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
         }
     }
 

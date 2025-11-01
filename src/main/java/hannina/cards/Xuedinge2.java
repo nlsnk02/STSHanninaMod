@@ -1,29 +1,26 @@
 package hannina.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import hannina.actions.SelectFromRewardAction;
 import hannina.actions.XuedingeAction;
 import hannina.fantasyCard.AbstractHanninaCard;
-import hannina.utils.UnionManager;
-
-import java.util.ArrayList;
 
 public class Xuedinge2 extends AbstractHanninaCard {
     public static final String[] actionTEXT;
 
     public Xuedinge2() {
-        super(Xuedinge2.class.getSimpleName(), 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(Xuedinge2.class.getSimpleName(), 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.baseBlock = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new XuedingeAction(this.magicNumber));
     }
 
@@ -32,6 +29,7 @@ public class Xuedinge2 extends AbstractHanninaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeBlock(2);
         }
     }
 

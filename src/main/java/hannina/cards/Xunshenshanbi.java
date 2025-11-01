@@ -26,11 +26,11 @@ public class Xunshenshanbi extends AbstractHanninaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1)));
 
         AbstractCard card = new Maodepingwenluodi();
-        if(this.upgraded){
+        if (this.upgraded) {
             card.upgrade();
         }
 
@@ -42,13 +42,6 @@ public class Xunshenshanbi extends AbstractHanninaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-
-            AbstractCard card = new Maodepingwenluodi();
-            card.upgrade();
-            this.cardsToPreview = card;
-
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 

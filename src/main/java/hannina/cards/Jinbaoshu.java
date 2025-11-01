@@ -42,7 +42,7 @@ public class Jinbaoshu extends AbstractHanninaCard {
             initializeDescription();
         }
 
-        this.baseDamage = amount = AbstractDungeon.player.gold * this.magicNumber * (upgraded ? 5 : 2) / 100;
+        this.baseDamage = amount = AbstractDungeon.player.gold * this.magicNumber * (upgraded ? 4 : 2) / 100;
 
         super.applyPowers();
     }

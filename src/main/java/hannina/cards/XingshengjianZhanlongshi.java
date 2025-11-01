@@ -14,17 +14,14 @@ import java.util.ArrayList;
 public class XingshengjianZhanlongshi extends AbstractHanninaCard {
     public XingshengjianZhanlongshi() {
         super(XingshengjianZhanlongshi.class.getSimpleName(), 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
-        this.damage = this.baseDamage = 14;
+        this.damage = this.baseDamage = 20;
         this.isInnate = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int tmp = 1;
-        if (m.type == AbstractMonster.EnemyType.BOSS || m.type == AbstractMonster.EnemyType.ELITE) tmp += 1;
-
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage * tmp, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         stanceChoices.add(new FusionColorCard(this));
@@ -33,23 +30,10 @@ public class XingshengjianZhanlongshi extends AbstractHanninaCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return true;
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = this.name + "+" + this.timesUpgraded;
-        this.initializeTitle();
-    }
-
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(5);
         }
     }
 

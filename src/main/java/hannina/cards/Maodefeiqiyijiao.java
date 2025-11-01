@@ -14,7 +14,7 @@ import hannina.powers.MaodefeiqiyijiaoPower;
 public class Maodefeiqiyijiao extends AbstractHanninaCard {
     public Maodefeiqiyijiao() {
         super(Maodefeiqiyijiao.class.getSimpleName(), 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new Maodepingwenluodi();
     }
 

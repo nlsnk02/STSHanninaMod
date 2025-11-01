@@ -59,8 +59,7 @@
   "hannina:Xunshenshanbi": {
     "NAME": "迅身闪避",
     "TAG" : 2,
-    "DESCRIPTION": "抽 !M! 张牌，本回合获得 !M! 点 敏捷 。 NL 将一张 *猫落地~ 加入手牌。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，本回合获得 !M! 点 敏捷 。 NL 将一张 *猫落地~ +加入手牌。"
+    "DESCRIPTION": "抽 !M! 张牌，本回合获得1点 敏捷 。 NL 将一张 *猫落地~ 加入手牌。"
   },
   "hannina:Daoyingsansejin": {
     "NAME": "倒映三色堇",
@@ -91,13 +90,13 @@
   "hannina:Daoyingziluolan": {
     "NAME": "倒映紫罗兰",
     "TAG" : 2,
-    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 选择:进入 愤怒 或 平静 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 进入观者猫 hannina:形态 。 NL 选择:进入 愤怒 或 平静 。"
+    "DESCRIPTION": "进入观者猫 hannina:形态 。 NL 进入 平静 。 NL 抽到这张牌时，进入 愤怒 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 进入观者猫 hannina:形态 。 NL 进入 平静 。 NL 抽到这张牌时，进入 愤怒 。"
   },
   "hannina:Budingxingxiji": {
     "NAME": "不定形袭击",
     "TAG" : 1,
-    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 增加1张 *猫冲击！ 到你的手牌。 NL 处于任意 hannina:职业形态 :伤害+ !M! 。",
+    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 增加1张 *猫冲击！ 到你的手牌。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Yehuashenti": {
@@ -114,7 +113,7 @@
   "hannina:Zhenjianduijue2": {
     "NAME": "真剑对决",
     "TAG": 2,
-    "DESCRIPTION": "造成本回合打出的技能牌数量× !D! 的伤害。 NL 处于战士猫 hannina:形态 : 获得本回合打出的攻击牌等量的 活力 。",
+    "DESCRIPTION": "造成本回合打出的技能牌数量 !D! 倍的伤害。 NL 处于战士猫 hannina:形态 : 获得本回合打出的攻击牌等量的 活力 。",
     "UPGRADE_DESCRIPTION": "wwwwww",
     "EXTENDED_DESCRIPTION": [
       " NL （%s张，%s张）"
@@ -123,8 +122,8 @@
   "hannina:Zhuazhunile": {
     "NAME": "抓住你了！",
     "TAG": 1,
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去1点 力量 。 NL 下回合增加1张 *猫落地~ 到你的手牌。 NL 处于猎人猫 hannina:形态 :该卡牌耗能-1。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去1点 力量 。 NL 下回合增加1张 *猫落地~+ 到你的手牌。 NL 处于猎人猫 hannina:形态 :该卡牌耗能-1。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~ 到你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~+ 到你的手牌。"
   },
   "hannina:Jihanchaodao": {
     "NAME": "极寒超导",
@@ -164,7 +163,7 @@
   "hannina:Xuedinge2": {
     "NAME": "薜定谔的猫",
     "TAG": 2,
-    "DESCRIPTION": "打出抽牌堆顶部的1张牌，如果他是 hannina:复合 牌则改为随机打出其 hannina:复合 的 !M! 张卡牌。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 打出抽牌堆顶部的1张牌，如果他是 hannina:复合 牌则改为随机打出其 hannina:复合 的 !M! 张卡牌。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:MMRuizhan": {
@@ -180,7 +179,7 @@
   "hannina:Touqianwenlu": {
     "NAME": "投钱问路",
     "TAG" : 1,
-    "DESCRIPTION": "失去1金币。 NL 预见 !M! ，每丢弃一张获得 !B! 点 格挡 。 NL 处于观者猫 hannina:形态 :获得 !D! 点 真言 。",
+    "DESCRIPTION": "失去3金币。 NL 预见 !M! ，每丢弃一张获得 !B! 点 格挡 。 NL 处于观者猫 hannina:形态 :获得 !D! 点 真言 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Huijinrutu": {
@@ -234,10 +233,9 @@
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:YZYHSXTBJHLM": {
-    "NAME": "  一直用红色形态不就好了吗？",
+    "NAME": "一直用红色形态不就好了吗？",
     "TAG": 2,
-    "DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机红色牌中选择一张加入手牌并使其费用在本回合减少1； NL 该卡牌 hannina:复合 的红色牌费用-1。",
-    "UPGRADE_DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 处于战士猫  hannina:形态 时：从3张随机 升级 红色牌中选择一张加入手牌并使其费用在本回合减少1； NL 该卡牌 hannina:复合 的红色牌费用-1。"
+    "DESCRIPTION": "hannina:复合 。 NL 进入任意 hannina:职业形态 。 NL 进入战士猫  hannina:形态 时：该卡牌 hannina:复合 的红色牌费用在本场战斗-1。"
   },
   "hannina:Maodefeiqiyijiao": {
     "NAME": "猫的飞起一脚",
@@ -265,7 +263,7 @@
   "hannina:Zuiainile": {
     "NAME": "最爱你了",
     "TAG" : 2,
-    "DESCRIPTION": "你拥有的数值最低的 *猫猫打击 与 *猫猫防御 各 !M! 张在本局游戏中数值增加1。",
+    "DESCRIPTION": "你卡组中的 *猫猫打击 与 *猫猫防御 在本场战斗中的数值增加 !M! 。 NL 可被多次 升级 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Maozhangrenshi": {
@@ -313,7 +311,7 @@
     "NAME": "金爆术",
     "TAG": 1,
     "DESCRIPTION": "失去 !M! ％ *金币 ，造成失去 *金币 数2倍的伤害。",
-    "UPGRADE_DESCRIPTION": "失去 !M! ％ *金币 ，造成失去 *金币 数5倍的伤害。",
+    "UPGRADE_DESCRIPTION": "失去 !M! ％ *金币 ，造成失去 *金币 数4倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       "(!D! 点)"
     ]
@@ -343,7 +341,7 @@
   "hannina:Jushouzailing": {
     "NAME": "巨兽再临·狰",
     "TAG": 2,
-    "DESCRIPTION": "hannina:复合 。 NL 对所有敌人造成 !D! 点伤害。 NL 打出此牌中的所有 hannina:复合 牌。 NL 仅会 hannina:复合 稀有牌。 NL 消耗 。",
+    "DESCRIPTION": "hannina:复合 。 NL 对所有敌人造成 NL !D! 点伤害。 NL 打出此牌中的所有 hannina:复合 牌。 NL 仅会 hannina:复合 稀有牌。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:Jiaorongsansejin": {
@@ -361,14 +359,14 @@
   "hannina:XCDZhanlongshi": {
     "NAME": "衔蝉刀·斩龙式",
     "TAG": 2,
-    "DESCRIPTION": "斩杀 时:它在本局游戏中的伤害永久性增加 !M! 。造成 !D! 点伤害。 NL 能被多次升级。 NL 移除该卡牌时若该卡牌伤害不低于14，则将1张 *心生剑·斩龙式 加入牌组。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时:它在本局游戏中的伤害永久性增加 !M! 。 NL 移除该卡牌时若该卡牌伤害不低于14，则将1张 *心生剑·斩龙式 加入牌组。",
     "UPGRADE_DESCRIPTION": "wwwwww"
   },
   "hannina:XingshengjianZhanlongshi": {
     "NAME": "心生剑·斩龙式",
     "TAG": 2,
-    "DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 可被多次 升级 。 NL 本卡牌对首领与精英敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 本卡牌对首领与精英敌人造成的伤害x2。 NL 可选择:融合为 *尖塔之兽 并 消耗 。"
+    "DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 可选择:融合为 *尖塔之兽 并 消耗 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 造成 !D! 点伤害。 NL 可选择:融合为 *尖塔之兽 并 消耗 。"
   },
   "hannina:FusionColorCard": {
     "NAME": "尖塔之兽",
@@ -409,13 +407,13 @@
   },
   "hannina:Jinziyinhang": {
     "NAME": "金子银行",
-    "DESCRIPTION": "格挡 不再在你的回合开始时消失。 NL 失去 !M! ％金币，获得消耗金币数的 格挡 。 NL 本场战斗你在战斗中获得的金币翻倍。",
-    "UPGRADE_DESCRIPTION": "格挡 不再在你的回合开始时消失。 NL 失去 !M! ％金币，获得消耗金币数+ !B! 的 格挡 。 NL 本场战斗你在战斗中获得的金币翻倍。"
+    "DESCRIPTION": "失去 !M! ％金币，获得 *壁垒 和消耗金币数的 格挡 。 NL 本场战斗你在战斗中获得的金币翻倍。",
+    "UPGRADE_DESCRIPTION": "失去 !M! ％金币，获得 *壁垒 和消耗金币数+ !B! 的 格挡 。 NL 本场战斗你在战斗中获得的金币翻倍。"
   },
   "hannina:Sirenzhuanshu": {
     "NAME": "私人专属",
     "DESCRIPTION": "获得 !M! 层 *金属化 。 NL 每回合开始时获得一层 *金属化 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 获得 !M! 层 *金属化 。 NL 每回合开始时获得一层 *金属化 。"
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 *金属化 。 NL 每回合开始时获得一层 *金属化 。"
   },
   "hannina:Baisenianye": {
     "NAME": "白色粘液",

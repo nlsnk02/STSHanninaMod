@@ -3,17 +3,12 @@ package hannina.cards;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import hannina.actions.ChangeCharColorAction;
 import hannina.actions.ChooseColor2EnterAction;
-import hannina.actions.SelectFromRewardAction;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
 import hannina.modcore.Enums;
@@ -24,6 +19,7 @@ import java.util.ArrayList;
 
 public class YZYHSXTBJHLM extends AbstractHanninaCard {
     public static final String[] actionTEXT;
+
     static {
         UIStrings actionUiStrings = CardCrawlGame.languagePack.getUIString("hannina:YZYHSXTBJHLM");
         actionTEXT = actionUiStrings.TEXT;
@@ -59,24 +55,7 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
-                        if(ModHelper.getPlayerColor() == CardColor.RED) {
-                            ArrayList<AbstractCard> cards = new ArrayList<>();
-                            while (cards.size() < YZYHSXTBJHLM.this.magicNumber) {
-                                AbstractCard card = UnionManager.getRamdomCard(c -> c.color == CardColor.RED);
-                                card.modifyCostForCombat(-1);
-                                if (cards.stream().noneMatch(c -> card.cardID.equals(c.cardID))) {
-                                    cards.add(card);
-                                }
-                            }
-
-                            if(upgraded) cards.forEach(AbstractCard::upgrade);
-
-                            addToTop(new SelectFromRewardAction(cards,
-                                    c -> c.ifPresent(abstractCard -> {
-                                        abstractCard.setCostForTurn(abstractCard.costForTurn - 1);
-                                        addToTop(new MakeTempCardInHandAction(abstractCard));
-                                    }),
-                                    actionTEXT[0], true, AbstractGameAction.ActionType.DRAW));
+                        if (ModHelper.getPlayerColor() == CardColor.RED) {
                             ArrayList<AbstractCardModifier> list = CardModifierManager.getModifiers(YZYHSXTBJHLM.this, "ReunionModifier");
                             if (list.size() > 0) {
                                 ReunionModifier mod = (ReunionModifier) list.get(0);
@@ -99,8 +78,6 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 

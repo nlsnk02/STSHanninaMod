@@ -16,8 +16,7 @@ import hannina.utils.ModHelper;
 public class Budingxingxiji extends AbstractHanninaCard {
     public Budingxingxiji() {
         super(Budingxingxiji.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.damage = this.baseDamage = 3;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.damage = this.baseDamage = 4;
         this.cardsToPreview = new Maodechongfengjinji();
     }
 
@@ -33,33 +32,10 @@ public class Budingxingxiji extends AbstractHanninaCard {
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        this.glowColor = ModHelper.getPlayerColor() != Enums.HanninaColor ?
-                AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
-    }
-
-    @Override
-    public void applyPowers() {
-        if (ModHelper.getPlayerColor() != Enums.HanninaColor) this.baseDamage += this.baseMagicNumber;
-        super.applyPowers();
-        if (ModHelper.getPlayerColor() != Enums.HanninaColor) this.baseDamage -= this.baseMagicNumber;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        if (ModHelper.getPlayerColor() != Enums.HanninaColor) this.baseDamage += this.baseMagicNumber;
-        super.calculateCardDamage(mo);
-        if (ModHelper.getPlayerColor() != Enums.HanninaColor) this.baseDamage -= this.baseMagicNumber;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(1);
-            upgradeMagicNumber(1);
         }
     }
 

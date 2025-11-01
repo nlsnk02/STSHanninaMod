@@ -20,7 +20,7 @@ public class Touqianwenlu extends AbstractHanninaCard {
     public Touqianwenlu() {
         super(Touqianwenlu.class.getSimpleName(), 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.damage = this.baseDamage = 2;
-        this.block = this.baseBlock = 1;
+        this.block = this.baseBlock = 2;
         this.magicNumber = this.baseMagicNumber = 5;
     }
 
@@ -40,7 +40,7 @@ public class Touqianwenlu extends AbstractHanninaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseGoldAction(1));
+        addToBot(new LoseGoldAction(3));
 
         addToBot(new MyScryAction(this.magicNumber, (l1, l2) -> {
             if (!l2.isEmpty()) {

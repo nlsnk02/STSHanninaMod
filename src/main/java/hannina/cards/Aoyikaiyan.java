@@ -15,7 +15,7 @@ public class Aoyikaiyan extends AbstractHanninaCard {
     public Aoyikaiyan() {
         super(Aoyikaiyan.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.baseDamage = 2;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.isMultiDamage = true;
     }
 
