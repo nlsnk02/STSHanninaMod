@@ -16,7 +16,7 @@ public class Zhuazhunile extends AbstractHanninaCard {
     public Zhuazhunile() {
         super(Zhuazhunile.class.getSimpleName(), 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 7;
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.cardsToPreview = new Maodepingwenluodi();
     }
 

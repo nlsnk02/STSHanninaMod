@@ -122,8 +122,8 @@
   "hannina:Zhuazhunile": {
     "NAME": "抓住你了！",
     "TAG": 1,
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~ 到你的手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。 NL 下回合增加一张 *猫落地~+ 到你的手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 下回合增加一张 *猫落地~ 到你的手牌。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 下回合增加一张 *猫落地~+ 到你的手牌。 NL 处于猎人猫 hannina:形态 :使敌人失去 !M! 点 力量 一回合。"
   },
   "hannina:Jihanchaodao": {
     "NAME": "极寒超导",

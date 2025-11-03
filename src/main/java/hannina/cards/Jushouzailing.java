@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import hannina.actions.PlayACardAction;
 import hannina.fantasyCard.AbstractHanninaCard;
 import hannina.misc.ReunionModifier;
@@ -47,6 +48,7 @@ public class Jushouzailing extends AbstractHanninaCard {
         if (list.size() > 0) {
             ReunionModifier mod = (ReunionModifier) list.get(0);
             for (AbstractCard card : mod.union) {
+                card.energyOnUse = EnergyPanel.totalCount;
                 addToBot(new PlayACardAction(card, null, null, true));
             }
         }
