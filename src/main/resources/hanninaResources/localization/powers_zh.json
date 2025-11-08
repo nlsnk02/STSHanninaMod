@@ -40,9 +40,8 @@
   "hannina:QianmiaowanhaPower": {
     "NAME": "千猫万哈",
     "DESCRIPTIONS": [
-      "再打出 #b",
-      " 张牌后，抽 #b",
-      " 张牌，随机进入任意 #y职业形态 。"
+      "每次打出非本角色的牌时，随机进入一种本回合没有进入过的 #y形态 并获得 #b",
+      " [E] 。"
     ]
   },
   "hannina:ZhuchengjinshenPower": {
