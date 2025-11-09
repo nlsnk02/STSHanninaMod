@@ -132,7 +132,13 @@ public class UnionManager {
                 CardModifierManager.addModifier(rtCard, mod);
 
                 group.group = group.group.stream().map(gc -> {
-                    if (gc == c) return rtCard;
+                    if (gc == c) {
+                        //特判腐化
+                        if (AbstractDungeon.player.hasPower("Corruption") && rtCard.type == AbstractCard.CardType.SKILL)
+                            rtCard.setCostForTurn(-9);
+
+                        return rtCard;
+                    }
                     return gc;
                 }).collect(Collectors.toCollection(ArrayList::new));
             }
