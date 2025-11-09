@@ -30,6 +30,7 @@ public class UnionPower extends AbstractPower {
     // 能力的描述
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final int AMOUNT = 2;
+    private int multiplier = 1;
 
 
     private TextureAtlas.AtlasRegion region128R = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ModHelper.makeRelicAd("UnionPowerR", true)), 0, 0, 84, 84);
@@ -85,8 +86,6 @@ public class UnionPower extends AbstractPower {
 //    }
 
     public void leaveColor(AbstractCard.CardColor color) {
-        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ? null : AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-        int multiplier = lastCard != null && AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(c -> c.cardID.equals(Jiaorongsansejin.class.getSimpleName())) ? (lastCard.upgraded ? 4 : 3) : 1;
         if (color == AbstractCard.CardColor.RED || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
             addToBot(new ReducePowerAction(this.owner, this.owner,
                     StrengthPower.POWER_ID, AMOUNT * multiplier));
@@ -103,8 +102,8 @@ public class UnionPower extends AbstractPower {
 
     public void enterColor(AbstractCard.CardColor color) {
         this.color = color;
-        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ? null : AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-        int multiplier = lastCard != null && AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(c -> c.cardID.equals(Jiaorongsansejin.class.getSimpleName())) ? (lastCard.upgraded ? 4 : 3) : 1;
+        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(c -> c.cardID.equals("hannina:" + Jiaorongsansejin.class.getSimpleName())).findFirst().orElse(null);
+        multiplier = lastCard != null ? (lastCard.upgraded ? 4 : 3) : 1;
         if (color == AbstractCard.CardColor.RED || owner.hasPower(MaodearxingtaiPower2.POWER_ID)) {
             addToBot(new ApplyPowerAction(this.owner, this.owner,
                     new StrengthPower(this.owner, AMOUNT * multiplier)));

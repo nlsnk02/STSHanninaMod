@@ -17,11 +17,9 @@ import java.util.ArrayList;
 public class Jiaorongsansejin extends AbstractHanninaCard {
     public Jiaorongsansejin() {
         super(Jiaorongsansejin.class.getSimpleName(), 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
         this.tags.add(Enums.ChangeColorCard);
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,14 +28,15 @@ public class Jiaorongsansejin extends AbstractHanninaCard {
         stanceChoices.add(new GreenColorCard());
         stanceChoices.add(new BlueColorCard());
         addToBot(new ChooseOneAction(stanceChoices));
-        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p, 4)));
+        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 

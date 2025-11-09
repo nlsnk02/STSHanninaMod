@@ -69,8 +69,7 @@
   "hannina:AntiUnionPower": {
     "NAME": "无法改变形态",
     "DESCRIPTIONS": [
-      "在 #b",
-      " 回合内，你不能改变你的 #y形态 。"
+      "在本回合，你不能改变你的 #y形态 。"
     ]
   },
   "hannina:MMRuizhanPower": {
