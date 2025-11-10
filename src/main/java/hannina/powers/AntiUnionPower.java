@@ -1,7 +1,7 @@
 package hannina.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -19,12 +19,12 @@ public class AntiUnionPower extends AbstractPower {
     private static final String PATH48 = ModHelper.makeRelicAd(AntiUnionPower.class.getSimpleName(), false);
 
     //效果特判在change color action里
-    public AntiUnionPower(AbstractCreature owner, int amount) {
+    public AntiUnionPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.type = PowerType.DEBUFF;
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
 //        this.loadRegion("tools");
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PATH128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(PATH48), 0, 0, 32, 32);
@@ -33,10 +33,10 @@ public class AntiUnionPower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
-        addToBot(new ReducePowerAction(owner, owner, this, 1));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0];
     }
 }

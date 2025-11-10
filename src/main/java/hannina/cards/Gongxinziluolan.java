@@ -27,7 +27,7 @@ public class Gongxinziluolan extends AbstractHanninaCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ChangeCharColorAction(CardColor.PURPLE));
         addToBot(new ApplyPowerAction(p, p, new MantraPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new AntiUnionPower(p)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
