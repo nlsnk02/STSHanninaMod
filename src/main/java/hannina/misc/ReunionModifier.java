@@ -24,6 +24,8 @@ import java.util.stream.Collectors;
 实现了复合牌的美术效果，包括四张牌的预览以及使用滚轮且牌
 
 除此之外重写了modifier的应用，复制，保存读取功能来确保它能工作
+
+注意，一组复合的牌只有当前能打出的牌具有这个modifer，其他会自动清除（否则会无限递归卡死）
  */
 public class ReunionModifier extends AbstractCardModifier implements
         UnionMechanicsPatch.CardModPreRenderPatch.PreCardRenderModifier {
