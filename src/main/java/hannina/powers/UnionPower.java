@@ -88,16 +88,16 @@ public class UnionPower extends AbstractPower {
         AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() ? null : AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
         int multiplier = lastCard != null && AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().anyMatch(c -> c.cardID.equals(Jiaorongsansejin.class.getSimpleName())) ? (lastCard.upgraded ? 4 : 3) : 1;
         if (color == AbstractCard.CardColor.RED || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
-                    StrengthPower.POWER_ID, AMOUNT * multiplier));
+            addToBot(new ApplyPowerAction(this.owner, this.owner,
+                    new StrengthPower(this.owner, -AMOUNT * multiplier)));
         }
         if (color == AbstractCard.CardColor.GREEN || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
-                    DexterityPower.POWER_ID, AMOUNT * multiplier));
+            addToBot(new ApplyPowerAction(this.owner, this.owner,
+                    new DexterityPower(this.owner, -AMOUNT * multiplier)));
         }
         if (color == AbstractCard.CardColor.BLUE || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
-                    FocusPower.POWER_ID, multiplier));
+            addToBot(new ApplyPowerAction(this.owner, this.owner,
+                    new FocusPower(this.owner, -multiplier)));
         }
     }
 

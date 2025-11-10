@@ -51,12 +51,12 @@ public class YZYHSXTBJHLM extends AbstractHanninaCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
+                ArrayList<AbstractCardModifier> list = CardModifierManager.getModifiers(YZYHSXTBJHLM.this, "ReunionModifier");
                 addToBot(new ChooseColor2EnterAction());
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
                         if (ModHelper.getPlayerColor() == CardColor.RED) {
-                            ArrayList<AbstractCardModifier> list = CardModifierManager.getModifiers(YZYHSXTBJHLM.this, "ReunionModifier");
                             if (list.size() > 0) {
                                 ReunionModifier mod = (ReunionModifier) list.get(0);
                                 for (AbstractCard card : mod.union) {
