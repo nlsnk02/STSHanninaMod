@@ -48,23 +48,23 @@ public class ChangeCharColorAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(AbstractDungeon.player.hasPower(AntiUnionPower.POWER_ID)){
+        if (AbstractDungeon.player.hasPower(AntiUnionPower.POWER_ID) && color != Enums.HanninaColor) {
             AbstractDungeon.player.getPower(AntiUnionPower.POWER_ID).flash();
             this.isDone = true;
             return;
         }
 
-        if(AbstractDungeon.player.hasPower(FusionPower.POWER_ID) && color != Enums.HanninaColor){
+        if (AbstractDungeon.player.hasPower(FusionPower.POWER_ID) && color != Enums.HanninaColor) {
             AbstractDungeon.player.getPower(FusionPower.POWER_ID).flash();
             this.isDone = true;
             return;
         }
 
         //更改buff
-        if(color == Enums.HanninaColor){
+        if (color == Enums.HanninaColor) {
             addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     UnionPower.POWER_ID));
-        }else {
+        } else {
             if (AbstractDungeon.player.hasPower(UnionPower.POWER_ID)) {
                 UnionPower p = (UnionPower) AbstractDungeon.player.getPower(UnionPower.POWER_ID);
 
@@ -81,13 +81,13 @@ public class ChangeCharColorAction extends AbstractGameAction {
         ChangeCharColorAction.cardColorsEnteredThisTurn.add(color);
 
         AbstractDungeon.player.powers.forEach(p -> {
-            if(p instanceof OnChangeColorSubscriber) {
+            if (p instanceof OnChangeColorSubscriber) {
                 ((OnChangeColorSubscriber) p).onChangeColor(this.color);
             }
         });
 
         AbstractDungeon.player.relics.forEach(r -> {
-            if(r instanceof OnChangeColorSubscriber) {
+            if (r instanceof OnChangeColorSubscriber) {
                 ((OnChangeColorSubscriber) r).onChangeColor(this.color);
             }
         });

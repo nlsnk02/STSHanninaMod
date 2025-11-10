@@ -2,6 +2,7 @@ package hannina.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -32,8 +33,10 @@ public class AntiUnionPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfRound() {
-        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer == (owner instanceof AbstractPlayer)) {
+            addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+        }
     }
 
     public void updateDescription() {

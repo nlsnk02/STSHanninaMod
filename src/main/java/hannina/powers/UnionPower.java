@@ -87,15 +87,15 @@ public class UnionPower extends AbstractPower {
 
     public void leaveColor(AbstractCard.CardColor color) {
         if (color == AbstractCard.CardColor.RED || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
+            addToTop(new ReducePowerAction(this.owner, this.owner,
                     StrengthPower.POWER_ID, AMOUNT * multiplier));
         }
         if (color == AbstractCard.CardColor.GREEN || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
+            addToTop(new ReducePowerAction(this.owner, this.owner,
                     DexterityPower.POWER_ID, AMOUNT * multiplier));
         }
         if (color == AbstractCard.CardColor.BLUE || (owner.hasPower(MaodearxingtaiPower2.POWER_ID) && enhancedByForm)) {
-            addToBot(new ReducePowerAction(this.owner, this.owner,
+            addToTop(new ReducePowerAction(this.owner, this.owner,
                     FocusPower.POWER_ID, multiplier));
         }
     }
@@ -135,7 +135,7 @@ public class UnionPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer && !AbstractDungeon.player.hasPower(XingtaibianhuaPower.POWER_ID)) {
-            addToBot(new ChangeCharColorAction(Enums.HanninaColor));
+            addToTop(new ChangeCharColorAction(Enums.HanninaColor));
         }
     }
 
