@@ -74,7 +74,7 @@ public class Zuiainile extends AbstractHanninaCard {
     public void upgradeName() {
         ++this.timesUpgraded;
         this.upgraded = true;
-        this.name = this.name + "+" + this.timesUpgraded;
+        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
         this.initializeTitle();
     }
 
