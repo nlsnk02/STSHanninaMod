@@ -58,7 +58,7 @@ public class QianmiaowanhaPower extends TwoAmountPower {
             if(!ChangeCharColorAction.cardColorsEnteredThisTurn.contains(AbstractCard.CardColor.PURPLE)){
                 cardColors.add(AbstractCard.CardColor.PURPLE);
             }
-            if(cardColors.size() > 0) {
+            if(cardColors.size() > 0 && !AbstractDungeon.player.hasPower(FusionPower.POWER_ID)) {
                 addToBot(new GainEnergyAction(this.amount));
                 int n = AbstractDungeon.cardRandomRng.random(cardColors.size()-1);
                 addToBot(new ChangeCharColorAction(cardColors.get(n)));
