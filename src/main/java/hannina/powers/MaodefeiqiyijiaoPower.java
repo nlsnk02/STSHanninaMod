@@ -59,7 +59,7 @@ public class MaodefeiqiyijiaoPower extends TwoAmountPower implements OnChangeCol
     @Override
     public void onChangeColor(AbstractCard.CardColor color) {
         if (color == AbstractCard.CardColor.GREEN && this.amount >= 1) {
-            addToBot(new DrawCardAction(3));
+            addToBot(new DrawCardAction(2));
             amount -= 1;
             updateDescription();
         }

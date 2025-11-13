@@ -34,7 +34,7 @@
     "NAME": "猫的飞起一脚",
     "DESCRIPTIONS": [
       "每回合前 #b",
-      " 次进入 #y猎人猫形态 时抽 #b3 张牌。"
+      " 次进入 #y猎人猫形态 时抽 #b2 张牌。"
     ]
   },
   "hannina:QianmiaowanhaPower": {
