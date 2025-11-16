@@ -240,8 +240,8 @@
   "hannina:Maodefeiqiyijiao": {
     "NAME": "猫的飞起一脚",
     "TAG": 1,
-    "DESCRIPTION": "每回合首次进入猎人猫 hannina:形态 时抽 !M! 张牌。 NL 将1张 *猫落地 加入手牌。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合首次进入猎人猫 hannina:形态 时抽 !M! 张牌。 NL 将1张 *猫落地 +加入手牌。"
+    "DESCRIPTION": "每回合首次进入猎人猫 hannina:形态 时抽2张牌。 NL 将1张 *猫落地 加入手牌。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合首次进入猎人猫 hannina:形态 时抽2张牌。 NL 将1张 *猫落地 +加入手牌。"
   },
   "hannina:Wanqiushijiandao": {
     "NAME": "玩球时间到！",
