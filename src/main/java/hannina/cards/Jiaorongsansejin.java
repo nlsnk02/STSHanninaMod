@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class Jiaorongsansejin extends AbstractHanninaCard {
     public Jiaorongsansejin() {
         super(Jiaorongsansejin.class.getSimpleName(), 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        this.exhaust = true;
         this.tags.add(Enums.ChangeColorCard);
     }
 
