@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import hannina.cards.HanninaDefence;
+import hannina.cards.HanninaStrike;
 import hannina.cards.MMRuizhan;
 import hannina.relics.Gangqi;
 import hannina.relics.Miaodan;
@@ -63,12 +65,14 @@ public class FlyingCat extends AbstractImageEvent {
                         for (int i=0;i<j;i++){
                             AbstractDungeon.player.masterDeck.removeTopCard();
                         }
-                        for (int i=0;i<5;i++){
+                        for (int i=0;i<4;i++){
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new MMRuizhan(), (float)Settings.WIDTH / 2.0F - 350.0F * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
-                        } for (int i=0;i<3;i++){
+                        } for (int i=0;i<4;i++){
                            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Pride(), (float)Settings.WIDTH / 2.0F - 350.0F * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
-
                         }
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new HanninaStrike(), (float)Settings.WIDTH / 2.0F - 350.0F * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new HanninaDefence(), (float)Settings.WIDTH / 2.0F - 350.0F * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
+
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)Settings.WIDTH * 0.28F, (float)Settings.HEIGHT / 2.0F, new Miaodan());
                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)Settings.WIDTH * 0.28F, (float)Settings.HEIGHT / 2.0F, new Gangqi());
 
