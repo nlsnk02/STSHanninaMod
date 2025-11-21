@@ -91,12 +91,23 @@ public class ChangePlayerModel {
 //                    Invoker.setField(AbstractDungeon.overlayMenu.energyPanel, "gainEnergyImg", ImageMaster.PURPLE_ORB_FLASH_VFX);
                     break;
                 case "Hannina":
-                    Field atlas = AbstractCreature.class.getDeclaredField("atlas");
-                    atlas.setAccessible(true);
-                    atlas.set(AbstractDungeon.player, null);
+                    //TODO 目前只实装了sfw皮肤，后面需要判断当前使用的哪个皮肤
+                    loadAnimationMethod = AbstractCreature.class.getDeclaredMethod(
+                            "loadAnimation",
+                            String.class,
+                            String.class,
+                            float.class);
+                    loadAnimationMethod.setAccessible(true);
+                    loadAnimationMethod.invoke(
+                            AbstractDungeon.player,
+                            ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/Hannina_Kimono_null.atlas"),
+                            ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/hannina_kimono_null37.json"),
+                            2.0F
+                    );
+                    AbstractDungeon.player.state.setAnimation(0, "Idle", true);
                     break;
             }
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | NoSuchFieldException e) {
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }

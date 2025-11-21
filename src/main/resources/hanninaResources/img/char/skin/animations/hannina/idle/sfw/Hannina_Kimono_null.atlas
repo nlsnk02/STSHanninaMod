@@ -1,0 +1,132 @@
+
+Hannina_Kimono_null.png
+size: 512,894
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+Cat
+  rotate: false
+  xy: 2, 2
+  size: 125, 111
+  orig: 125, 111
+  offset: 0, 0
+  index: -1
+Chain
+  rotate: false
+  xy: 320, 46
+  size: 25, 67
+  orig: 25, 67
+  offset: 0, 0
+  index: -1
+Chain_Back
+  rotate: false
+  xy: 472, 93
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+Cross1
+  rotate: false
+  xy: 224, 41
+  size: 59, 72
+  orig: 59, 72
+  offset: 0, 0
+  index: -1
+Cross F1
+  rotate: false
+  xy: 224, 41
+  size: 59, 72
+  orig: 59, 72
+  offset: 0, 0
+  index: -1
+Cross2
+  rotate: false
+  xy: 182, 21
+  size: 40, 92
+  orig: 40, 92
+  offset: 0, 0
+  index: -1
+Cross F2
+  rotate: false
+  xy: 182, 21
+  size: 40, 92
+  orig: 40, 92
+  offset: 0, 0
+  index: -1
+Cross3
+  rotate: false
+  xy: 285, 44
+  size: 33, 69
+  orig: 33, 69
+  offset: 0, 0
+  index: -1
+Cross F3
+  rotate: false
+  xy: 285, 44
+  size: 33, 69
+  orig: 33, 69
+  offset: 0, 0
+  index: -1
+Cross4
+  rotate: false
+  xy: 347, 52
+  size: 51, 61
+  orig: 51, 61
+  offset: 0, 0
+  index: -1
+Cross F4
+  rotate: false
+  xy: 347, 52
+  size: 51, 61
+  orig: 51, 61
+  offset: 0, 0
+  index: -1
+Ear_L
+  rotate: false
+  xy: 400, 76
+  size: 32, 37
+  orig: 32, 37
+  offset: 0, 0
+  index: -1
+Ear_R
+  rotate: false
+  xy: 434, 78
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+Eye_L
+  rotate: false
+  xy: 400, 57
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+Eye_R
+  rotate: false
+  xy: 490, 95
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+Player
+  rotate: false
+  xy: 2, 115
+  size: 488, 777
+  orig: 488, 777
+  offset: 0, 0
+  index: -1
+Tag
+  rotate: false
+  xy: 129, 20
+  size: 51, 93
+  orig: 51, 93
+  offset: 0, 0
+  index: -1
+Tag_Back
+  rotate: false
+  xy: 490, 75
+  size: 13, 18
+  orig: 13, 18
+  offset: 0, 0
+  index: -1
