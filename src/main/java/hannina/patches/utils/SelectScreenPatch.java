@@ -36,6 +36,8 @@ public class SelectScreenPatch {
         public static void Prefix(CharacterSelectScreen _inst) {
             if (SelectScreenPatch.isHanninaSelected())
                 SkinSelectScreen.Inst.update();
+			else
+				_inst.confirmButton.isDisabled = false;
         }
     }
 }

@@ -419,5 +419,39 @@
     "NAME": "白色粘液",
     "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Zhuangdan": {
+    "NAME": "装弹",
+    "DESCRIPTION": "将弃牌堆中的随机 !M! 张 *攻击牌 加入手中。"
+  },
+  "hannina:Gangqi": {
+    "NAME": "刚气",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 随机 消耗 !M! 张抽牌堆和手牌中的 诅咒 或 状态牌 。"
+  },
+  "hannina:Tuijinzhan": {
+    "NAME": "推进斩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 随机 消耗 1张抽牌堆中费用最低的牌，并将1张 *猫猫锐斩 加入手中。 NL 虚无 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 随机 消耗 1张抽牌堆中费用最低的牌，并将1张 *猫猫锐斩+ 加入手中。 NL 虚无 。"
+  },
+  "hannina:Kuaidaoluanma": {
+    "NAME": "快刀乱麻",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 随机打出抽牌堆中 !M! 张耗能最低的牌。"
+  },
+  "hannina:Wujingyichuan": {
+    "NAME": "无境一穿",
+    "DESCRIPTION": "预见 并丢弃本卡牌时，对所有敌人造成 !D! 点伤害，并退出当前 姿态 。"
+  },
+  "hannina:Quanzhuangfensui": {
+    "NAME": "全装粉碎",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 激发 所有充能球。 NL 每 激发 一个，造成的伤害+ !M! ，并 生成 一个随机充能球。"
+  },
+  "hannina:Huiyaoqiangya": {
+    "NAME": "辉耀强压",
+    "DESCRIPTION": "依次抽取并 消耗 所有未被 消耗 的 诅咒 或 状态牌 。 NL 每 消耗 一张，获得 !M! 点 力量 ， !B! 点 格挡 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "依次抽取并 消耗 所有未被 消耗 的 诅咒 或 状态牌 。 NL 每 消耗 一张，获得 !M! 点 力量 ， !B! 点 格挡 。"
+  },
+  "hannina:Biduancanxiang": {
+    "NAME": "彼端残像",
+    "DESCRIPTION": "这张牌的耗能无法改变。 NL 这张牌进入弃牌堆时，将这张牌从弃牌堆放入你的手牌，并获得 !B! 点 格挡 。"
   }
 }

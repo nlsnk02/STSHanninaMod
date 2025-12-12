@@ -21,24 +21,34 @@ public class ConfigHelper {
     public static String skinId = "";
     public static boolean nsfw = false;
     public static boolean activeTutorials = true;
+	
+	public static boolean hasDefeatedTheHeart = false;
+	public static boolean hasDefeatedTheHeartSFW2 = false;
+	public static String checkedLatestVersion = "";
 
     public static void tryCreateConfig() {
+		Properties defaults = new Properties();
+		defaults.setProperty("skinId", "");
+		defaults.setProperty("nsfw", "false");
+		defaults.setProperty("activeTutorials", "true");
+		defaults.setProperty("hasDefeatedTheHeart", "false");
+		defaults.setProperty("hasDefeatedTheHeartSFW2", "false");
+		defaults.setProperty("checkedLatestVersion", "");
+		
         try {
-            config = new SpireConfig("hannina", "hanninaConfig");
+            config = new SpireConfig("hannina", "hanninaConfig", defaults);
         } catch (IOException e) {
             ModHelper.logger.warn("+++++++++++++++++++++" + e + "++++++++++++++++++++++");
             config = null;
         }
 
         if (config != null) {
-            if (config.has("skinId")) {
-                skinId = config.getString("skinId");
-            } else skinId = "";
-
-            nsfw = config.has("nsfw") && config.getBool("nsfw");
-
-            activeTutorials = (config.has("activeTutorials") && config.getBool("activeTutorials")) ||
-                    !config.has("activeTutorials");
+			skinId = config.getString("skinId");
+			nsfw = config.getBool("nsfw");
+			activeTutorials = config.getBool("activeTutorials");
+			hasDefeatedTheHeart = config.getBool("hasDefeatedTheHeart");
+			hasDefeatedTheHeartSFW2 = config.getBool("hasDefeatedTheHeartSFW2");
+			checkedLatestVersion = config.getString("checkedLatestVersion");
         }
     }
 
@@ -49,6 +59,27 @@ public class ConfigHelper {
             ModHelper.logger.warn(e);
         }
     }
+	
+	public static void saveHasDefeatedTheHeart(boolean defeated) {
+		if (config == null) return;
+		hasDefeatedTheHeart = defeated;
+		config.setBool("hasDefeatedTheHeart", hasDefeatedTheHeart);
+		trySaveConfig(config);
+	}
+	
+	public static void saveHasDefeatedTheHeartSFW2(boolean defeated) {
+		if (config == null) return;
+		hasDefeatedTheHeartSFW2 = defeated;
+		config.setBool("hasDefeatedTheHeartSFW2", hasDefeatedTheHeartSFW2);
+		trySaveConfig(config);
+	}
+	
+	public static void saveCheckedLatestVersion(String version) {
+		if (config == null) return;
+		checkedLatestVersion = version;
+		config.setString("checkedLatestVersion", checkedLatestVersion);
+		trySaveConfig(config);
+	}
 
     public static void saveId(String id) {
         if (config == null) return;

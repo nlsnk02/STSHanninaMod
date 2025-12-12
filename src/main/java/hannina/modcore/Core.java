@@ -39,10 +39,13 @@ import hannina.potions.Jinbi;
 import hannina.potions.Maozhua;
 import hannina.relics.*;
 import hannina.utils.*;
+import jdk.internal.org.jline.reader.History;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Objects;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 import static hannina.modcore.Enums.HanninaColor;
@@ -110,13 +113,37 @@ public class Core implements
     @Override
     public void receiveEditCards() {
         logger.info("================加入卡牌=============");
-        (new AutoAdd("hannina"))
-                .packageFilter("hannina.cards")
-                .any(AbstractCard.class, (info, c) -> {
-                    BaseMod.addCard(c);
-                    UnlockTracker.unlockCard(c.cardID);
-                });
-      BaseMod.addCard(new Chaojuehajimi());
+		
+		// For testing purpose
+//		ConfigHelper.saveHasDefeatedTheHeart(false);
+//		ConfigHelper.saveHasDefeatedTheHeartSFW2(false);
+		
+        new AutoAdd("hannina")
+				.packageFilter("hannina.cards")
+				.any(AbstractCard.class, (info, c) -> {
+					if (!ConfigHelper.hasDefeatedTheHeart &&
+							Arrays.stream(UnlockHelper.unlockBundle1)
+									.anyMatch(id -> id.equals(c.cardID))) {
+						c.setLocked();
+						UnlockTracker.unlockPref.putInteger(c.cardID, 0);
+						UnlockTracker.seenPref.putInteger(c.cardID, 0);
+					}
+					else if (!ConfigHelper.hasDefeatedTheHeartSFW2 &&
+							Arrays.stream(UnlockHelper.unlockBundle2)
+									.anyMatch(id -> id.equals(c.cardID))) {
+						c.setLocked();
+						UnlockTracker.unlockPref.putInteger(c.cardID, 0);
+						UnlockTracker.seenPref.putInteger(c.cardID, 0);
+					}
+					
+//					if (c.isLocked)
+//						logger.info("Card {} is locked.", c.cardID);
+					
+					BaseMod.addCard(c);
+				});
+		
+		BaseMod.addCard(new Chaojuehajimi());
+		
         logger.info("================加入卡牌=============");
     }
 
@@ -166,6 +193,12 @@ public class Core implements
 
         logger.info("===============加载事件与其他东西===============");
 
+		String version = "25.12.8";
+		if (!Objects.equals(ConfigHelper.checkedLatestVersion, version)) {
+			logger.info("Checking history for version {}", version);
+			HistoryHelper.runCheck();
+			ConfigHelper.saveCheckedLatestVersion(version);
+		}
     }
 
     @Override

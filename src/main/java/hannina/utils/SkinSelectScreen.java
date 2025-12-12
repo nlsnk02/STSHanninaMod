@@ -17,6 +17,7 @@ import hannina.modcore.Enums;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public class SkinSelectScreen {
     public static final float SKIN_SELECT_POSITION_X = Settings.WIDTH * 1.15F - 600.0F * Settings.scale;
@@ -29,8 +30,10 @@ public class SkinSelectScreen {
     public Hitbox rightHb;
 
     public String curName = "";
+	public boolean curUnlocked = false;
 
     public String nextName = "";
+	public boolean nextUnlocked = false;
 
     public int index;
 
@@ -45,7 +48,7 @@ public class SkinSelectScreen {
     public SkinSelectScreen() {
         this.index = 0;
 
-        //读取本地化内容
+        // 读取本地化内容
         if(ConfigHelper.skinId != null) {
             for (Skin skin : skins) {
                 if (Objects.equals(skin.id, ConfigHelper.skinId)) {
@@ -67,7 +70,9 @@ public class SkinSelectScreen {
         ConfigHelper.saveId(ConfigHelper.skinId);
 
         this.curName = skin.name;
+		this.curUnlocked = skin.unlockCondition.get();
         this.nextName = skins.get(nextIndex()).name;
+		this.nextUnlocked = skins.get(nextIndex()).unlockCondition.get();
 
         HanninaImageMaster.refreshSkin();
         if (AbstractDungeon.player instanceof Hannina) {
@@ -89,6 +94,8 @@ public class SkinSelectScreen {
         this.leftHb.move(centerX - 200.0F * Settings.scale, centerY);
         this.rightHb.move(centerX + 200.0F * Settings.scale, centerY);
         updateInput();
+		
+		CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.isDisabled = !this.curUnlocked;
     }
 
     private void updateInput() {
@@ -124,8 +131,41 @@ public class SkinSelectScreen {
         Color color = Settings.GOLD_COLOR.cpy();
         color.a /= 2.0F;
         float dist = 100.0F * Settings.scale;
-        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, this.curName, centerX, centerY, Settings.GOLD_COLOR);
-        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, this.nextName, centerX + dist * 1.5F, centerY - dist, color);
+		
+        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, this.curName,
+				centerX, centerY, Settings.GOLD_COLOR, 1.1F);
+		if (!this.curUnlocked) {
+//			float width = FontHelper.getSmartWidth(FontHelper.cardTitleFont,
+//					uiStrings.EXTRA_TEXT[0] + uiStrings.EXTRA_TEXT[this.index + 1],
+//					9999.0F, 0.0F, 0.9F);
+			
+			sb.setColor(Color.WHITE);
+			sb.draw(ImageMaster.COLOR_TAB_LOCK,
+					centerX - 20.0F,
+					centerY + 40.0F * Settings.scale - 20.0F,
+					20.0F, 20.0F, 40.0F, 40.0F,
+					Settings.scale, Settings.scale,
+					0.0F, 0, 0, 40, 40,
+					false, false);
+			
+			FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont,
+					uiStrings.EXTRA_TEXT[0] + uiStrings.EXTRA_TEXT[this.index + 1],
+					centerX , centerY + 80.0F * Settings.scale, Color.WHITE, 0.9F);
+		}
+		
+        FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, this.nextName,
+				centerX + dist * 1.5F, centerY - dist, color);
+		if (!this.nextUnlocked) {
+			sb.setColor(Color.WHITE.cpy().mul(1.0F, 1.0F, 1.0F, 0.5F));
+			sb.draw(ImageMaster.COLOR_TAB_LOCK,
+					centerX + dist * 1.5F - 20.0F,
+					centerY - dist + 40.0F * Settings.scale - 20.0F,
+					20.0F, 20.0F, 40.0F, 40.0F,
+					Settings.scale, Settings.scale,
+					0.0F, 0, 0, 40, 40,
+					false, false);
+		}
+		
         if (this.leftHb.hovered) {
             sb.setColor(Color.LIGHT_GRAY);
         } else {
@@ -169,7 +209,7 @@ public class SkinSelectScreen {
                 false, false);
     }
 
-    public static void init(){
+    public static void init() {
         String currentGroup = null;
         int skinIndex = 0;
 
@@ -185,20 +225,21 @@ public class SkinSelectScreen {
                     break;
                 default:
                     if (currentGroup != null && i + 1 < uiStrings.TEXT.length) {
-
-                        if(currentGroup.equals("NSFW SKIN") && !ConfigHelper.nsfw){
+                        if(currentGroup.equals("NSFW SKIN") && !ConfigHelper.nsfw)
                             break;
-                        }
 
-                        String name = item;
                         String id = uiStrings.TEXT[i + 1];
 
-
-                        skins.add(new Skin(skinIndex, name, id));
+						Skin skin = new Skin(skinIndex, item, id);
+						if (id.equals("SFW-3"))
+							skin.unlockCondition = () -> ConfigHelper.hasDefeatedTheHeart;
+						
+						skins.add(skin);
 
                         i++; // 跳过ID
                         skinIndex++;
                     }
+					
                     break;
             }
         }
@@ -206,7 +247,7 @@ public class SkinSelectScreen {
         Inst = new SkinSelectScreen();
     }
 
-    public static void printSkinNameAndId(){
+    public static void printSkinNameAndId() {
         for(Skin skin : skins){
             ModHelper.logger.info("skin name = {}, id = {}, index = {}", skin.name, skin.id, skin.index);
         }
@@ -217,6 +258,8 @@ public class SkinSelectScreen {
 
         public String name;
         public String id;
+		
+		public Supplier<Boolean> unlockCondition = () -> true;
 
         public Skin(int index, String name, String id) {
             this.index = index;

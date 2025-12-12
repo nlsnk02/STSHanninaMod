@@ -149,8 +149,7 @@ public class Hannina extends CustomPlayer {
                 false // 别动
         );
     }
-
-
+	
     @Override
     public String getTitle(PlayerClass playerClass) {
         return characterStrings.NAMES[0];
