@@ -24,17 +24,28 @@ public class GoldManager {
     }
 
     public static void updateGold() {
-        if (ModHelper.isInCombat() && monitorEnabled) {
-            if (AbstractDungeon.player.gold != gold) {
-                if (AbstractDungeon.player.gold > gold) {
-                    if (gold != -1000) {
+        boolean isInCombat = ModHelper.isInCombat() && monitorEnabled;
+
+        if (AbstractDungeon.player.gold != gold) {
+            if (AbstractDungeon.player.gold > gold) {
+                if (gold != -1000) {
+                    if(isInCombat) {
                         AbstractDungeon.player.powers.stream()
                                 .filter(p -> p instanceof OnGainGoldSubscriber)
                                 .forEach(p -> ((OnGainGoldSubscriber) p).onGainGold());
                         goldGainInCombat += AbstractDungeon.player.gold - gold;
                     }
-                } else {
-                    goldLoseLastTime = gold - AbstractDungeon.player.gold;
+                }
+            } else {
+                goldLoseLastTime = gold - AbstractDungeon.player.gold;
+
+                AbstractDungeon.player.potions.stream()
+                        .filter(p -> p instanceof OnLoseGoldSubscriber)
+                        .forEach(p -> {
+                            ((OnLoseGoldSubscriber) p).onLoseGold(goldLoseLastTime);
+                        });
+
+                if(isInCombat) {
                     goldLoseInCombat += goldLoseLastTime;
 
                     Stream.of(AbstractDungeon.player.hand.group,
@@ -55,16 +66,10 @@ public class GoldManager {
                             .forEach(r -> {
                                 ((OnLoseGoldSubscriber) r).onLoseGold(goldLoseLastTime);
                             });
-
-                    AbstractDungeon.player.potions.stream()
-                            .filter(p -> p instanceof OnLoseGoldSubscriber)
-                            .forEach(p -> {
-                                ((OnLoseGoldSubscriber) p).onLoseGold(goldLoseLastTime);
-                            });
-
                 }
             }
-            gold = AbstractDungeon.player.gold;
         }
+        gold = AbstractDungeon.player.gold;
+
     }
 }

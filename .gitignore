@@ -37,3 +37,4 @@ build/
 *.psd
 *.xlsx
 *.docx!/.idea/
+!/pom.xml
