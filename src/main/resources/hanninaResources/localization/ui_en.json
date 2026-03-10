@@ -1,0 +1,52 @@
+{
+  "hannina:Xuedinge": {
+    "TEXT": [
+      "Master, quickly choose one to shuffle into the draw pile meow ovo"
+    ]
+  },
+  "hannina:YZYHSXTBJHLM": {
+    "TEXT": [
+      "Master, choose one from here to add to your hand +v+"
+    ]
+  },
+  "hannina:ChangeCharColorAction": {
+    "TEXT": [
+      "I can't do it meow >A<"
+    ]
+  },
+  "hannina:SkinSelect": {
+    "注释": [
+      "Except for [Select Skin], [SFW SKIN], and [NSFW SKIN], they are grouped in pairs. The first is the skin name, the second is the skin id (which is the name of the skin folder).",
+      "The ones below [SFW SKIN] are SFW skins, the ones below [NSFW SKIN] are NSFW skins.",
+      "NSFW skins need to have the option turned on in the settings to unlock (requires restart)."
+    ],
+    "TEXT": [
+      "Select Skin",
+      "SFW SKIN",
+      "Normal Cat",
+      "SFW",
+      "Sky Hannina - Winged Cat - Thunder",
+      "SFW-2",
+      "ZEXAL - Nine-Tailed Cat God's Gun",
+      "SFW-3",
+      "NSFW SKIN",
+      "Lewd Cat",
+      "NSFW",
+      "Gushing over Magical Cats",
+      "NSFW-2",
+      "Before I met you...",
+      "NSFW-3"
+    ],
+    "EXTRA_TEXT": [
+      "Unlock Condition:",
+      "",
+      "",
+      "Defeat the Corrupt Heart"
+    ]
+  },
+  "hannina:GameOverScreen": {
+    "TEXT": [
+      "New Content Unlocked!"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "NAMES": [
+      "composite"
+    ],
+    "DESCRIPTION": "When this card appears, it randomly selects and records 1 #rRed , 1 #bBlue , 1 #gGreen , and 1 #pPurple card on itself. NL When a #yComposite card is Upgraded, the recorded cards are also Upgraded."
+  },
+  {
+    "NAMES": [
+      "class form", "form"
+    ],
+    "DESCRIPTION": "Grants different effects while in different #yForms , and #yComposite cards will also change to the corresponding #yForm . Automatically exits at the end of the turn."
+  }
+]

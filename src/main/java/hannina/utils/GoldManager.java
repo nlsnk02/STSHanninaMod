@@ -24,6 +24,9 @@ public class GoldManager {
     }
 
     public static void updateGold() {
+        if (AbstractDungeon.player == null)
+            return;
+
         boolean isInCombat = ModHelper.isInCombat() && monitorEnabled;
 
         if (AbstractDungeon.player.gold != gold) {

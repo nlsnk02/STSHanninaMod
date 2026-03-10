@@ -1,0 +1,2 @@
+Hannina_fusion需要在NSFW、SFW、NSFW-2、SFW-2重复使用；Hannina_NSFW_die需要在NSFW、NSFW-2、NSFW-3重复使用；Hannina_SFW_die
+需要在SFW、SFW-3重复使用。

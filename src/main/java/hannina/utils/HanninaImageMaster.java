@@ -8,10 +8,12 @@ import java.util.HashMap;
 public class HanninaImageMaster {
     public static Texture charIdle;
     public static Texture badge;
+    public static Texture lockedPic;
 
     static {
-        charIdle = new Texture(ModHelper.getImgPath("char/null.png"));
+        charIdle = new Texture(ModHelper.getImgPath("char/Hannina_null/Hannina_null.png"));
         badge = new Texture(ModHelper.getImgPath("UI/badge.png"));
+        lockedPic = new Texture(ModHelper.getImgPath("cards/locked_skill.png"));
     }
 
     private static HashMap<String, Texture> skinTexture = new HashMap<>();

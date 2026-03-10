@@ -1,0 +1,265 @@
+
+Hannina_NSFW-3.png
+size: 1351,1036
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+Ahoge_1
+  rotate: false
+  xy: 201, 2
+  size: 39, 17
+  orig: 39, 17
+  offset: 0, 0
+  index: -1
+Ahoge_2
+  rotate: false
+  xy: 1075, 42
+  size: 53, 18
+  orig: 53, 18
+  offset: 0, 0
+  index: -1
+Ahoge_3
+  rotate: false
+  xy: 201, 21
+  size: 67, 18
+  orig: 67, 18
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 1055, 311
+  size: 92, 159
+  orig: 92, 159
+  offset: 0, 0
+  index: -1
+Cape
+  rotate: false
+  xy: 889, 728
+  size: 308, 306
+  orig: 308, 306
+  offset: 0, 0
+  index: -1
+Clothes
+  rotate: false
+  xy: 201, 141
+  size: 302, 171
+  orig: 302, 171
+  offset: 0, 0
+  index: -1
+Ear_L
+  rotate: false
+  xy: 889, 682
+  size: 56, 44
+  orig: 56, 44
+  offset: 0, 0
+  index: -1
+Ear_L Blue
+  rotate: false
+  xy: 947, 682
+  size: 56, 44
+  orig: 56, 44
+  offset: 0, 0
+  index: -1
+Ear_R
+  rotate: false
+  xy: 1235, 497
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+Ear_R Blue
+  rotate: false
+  xy: 1216, 68
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 590, 9
+  size: 72, 101
+  orig: 72, 101
+  offset: 0, 0
+  index: -1
+Fusion_R
+  rotate: false
+  xy: 1212, 226
+  size: 93, 66
+  orig: 93, 66
+  offset: 0, 0
+  index: -1
+Hair_Back
+  rotate: false
+  xy: 201, 41
+  size: 111, 98
+  orig: 111, 98
+  offset: 0, 0
+  index: -1
+L-Hair
+  rotate: false
+  xy: 1216, 118
+  size: 50, 106
+  orig: 50, 106
+  offset: 0, 0
+  index: -1
+L1-Hair
+  rotate: false
+  xy: 416, 31
+  size: 76, 108
+  orig: 76, 108
+  offset: 0, 0
+  index: -1
+L_blood
+  rotate: false
+  xy: 678, 30
+  size: 159, 282
+  orig: 159, 282
+  offset: 0, 0
+  index: -1
+M-Hair
+  rotate: false
+  xy: 1268, 143
+  size: 41, 81
+  orig: 41, 81
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 1005, 690
+  size: 35, 36
+  orig: 35, 36
+  offset: 0, 0
+  index: -1
+R-Hair
+  rotate: false
+  xy: 1253, 29
+  size: 23, 87
+  orig: 23, 87
+  offset: 0, 0
+  index: -1
+R1-Hair
+  rotate: false
+  xy: 1146, 183
+  size: 64, 126
+  orig: 64, 126
+  offset: 0, 0
+  index: -1
+R2-Hair
+  rotate: false
+  xy: 1146, 58
+  size: 68, 123
+  orig: 68, 123
+  offset: 0, 0
+  index: -1
+R_blood
+  rotate: false
+  xy: 2, 7
+  size: 197, 305
+  orig: 197, 305
+  offset: 0, 0
+  index: -1
+blue_L
+  rotate: false
+  xy: 1285, 494
+  size: 64, 231
+  orig: 64, 231
+  offset: 0, 0
+  index: -1
+blue_L1
+  rotate: false
+  xy: 1149, 321
+  size: 84, 224
+  orig: 84, 224
+  offset: 0, 0
+  index: -1
+blue_R
+  rotate: false
+  xy: 1075, 62
+  size: 69, 247
+  orig: 69, 247
+  offset: 0, 0
+  index: -1
+blue_R1
+  rotate: false
+  xy: 1055, 472
+  size: 79, 254
+  orig: 79, 254
+  offset: 0, 0
+  index: -1
+blue_blood_L
+  rotate: false
+  xy: 505, 112
+  size: 171, 200
+  orig: 171, 200
+  offset: 0, 0
+  index: -1
+blue_blood_R
+  rotate: false
+  xy: 1136, 547
+  size: 147, 178
+  orig: 147, 178
+  offset: 0, 0
+  index: -1
+green_L
+  rotate: false
+  xy: 839, 32
+  size: 119, 276
+  orig: 119, 276
+  offset: 0, 0
+  index: -1
+green_R
+  rotate: false
+  xy: 960, 24
+  size: 113, 284
+  orig: 113, 284
+  offset: 0, 0
+  index: -1
+purple_Back
+  rotate: false
+  xy: 1235, 294
+  size: 99, 198
+  orig: 99, 198
+  offset: 0, 0
+  index: -1
+purple_L
+  rotate: false
+  xy: 494, 34
+  size: 94, 76
+  orig: 94, 76
+  offset: 0, 0
+  index: -1
+purple_R
+  rotate: false
+  xy: 314, 59
+  size: 100, 80
+  orig: 100, 80
+  offset: 0, 0
+  index: -1
+red
+  rotate: false
+  xy: 2, 314
+  size: 874, 351
+  orig: 874, 351
+  offset: 0, 0
+  index: -1
+red_blood_L
+  rotate: false
+  xy: 878, 310
+  size: 175, 355
+  orig: 175, 355
+  offset: 0, 0
+  index: -1
+red_blood_R
+  rotate: false
+  xy: 1199, 727
+  size: 141, 307
+  orig: 141, 307
+  offset: 0, 0
+  index: -1
+red_fusion
+  rotate: false
+  xy: 2, 667
+  size: 885, 367
+  orig: 885, 367
+  offset: 0, 0
+  index: -1

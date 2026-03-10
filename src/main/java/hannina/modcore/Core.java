@@ -142,7 +142,7 @@ public class Core implements
 					BaseMod.addCard(c);
 				});
 		
-		BaseMod.addCard(new Chaojuehajimi());
+//		BaseMod.addCard(new Chaojuehajimi());
 		
         logger.info("================加入卡牌=============");
     }
@@ -152,7 +152,7 @@ public class Core implements
     public void receiveEditKeywords() {
         logger.info("===============加载关键字===============");
         Gson gson = new Gson();
-        String lang = "zh";
+        String lang = "en";
         if (language == Settings.GameLanguage.ZHS) {
             lang = "zh";
         }
@@ -224,9 +224,9 @@ public class Core implements
         logger.info("===============加载文字信息===============");
 
         String lang;
-        if (language == Settings.GameLanguage.ZHS || language == Settings.GameLanguage.ZHT) {
+        if (language == Settings.GameLanguage.ZHS) {
             lang = "zh";
-        } else lang = "zh";
+        } else lang = "en";
 
         //keywords在receiveEditKeywords里单独判断
         card = "hanninaResources/localization/cards_" + lang + ".json";

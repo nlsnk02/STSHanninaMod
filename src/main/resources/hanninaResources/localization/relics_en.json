@@ -1,0 +1,72 @@
+{
+  "hannina:Maozhibaozang": {
+    "NAME": "Cat's Treasure",
+    "FLAVOR": "The cat's treasure has always been by her side.",
+    "DESCRIPTIONS": [
+      "Card reward options increased by 1. NL At the end of combat, gain #b9 #yGold ."
+    ]
+  },
+  "hannina:Xiantuanniudanji": {
+    "NAME": "Yarn Gacha Machine",
+    "FLAVOR": "So special it only dispenses yarn balls.",
+    "DESCRIPTIONS": [
+      "Every #b2 turns, lose #b3 #yGold and gain [E] ."
+    ]
+  },
+  "hannina:PToy": {
+    "NAME": "P Doll",
+    "FLAVOR": "Rarely used because she hugs the real person to sleep at night.",
+    "DESCRIPTIONS": [
+      "Whenever you lose #yGold in combat, gain #b1 #yGold and #b3 #yVigor ."
+    ]
+  },
+  "hannina:Chuchanling": {
+    "NAME": "Livestock Spirit",
+    "FLAVOR": "That's exactly why she got this figure.",
+    "DESCRIPTIONS": [
+      "Upon pickup, remove 1 Strike from your deck and gain #b4 Max HP."
+    ]
+  },
+  "hannina:Gangqi": {
+    "NAME": "Aura of Steel: Heart",
+    "FLAVOR": "Ha!",
+    "DESCRIPTIONS": [
+      "When #yVigor is consumed, gain Block equal to the amount of #yVigor consumed / 2. NL When you Exhaust Curse and Status cards, gain 1 #yPlated #yArmor ."
+    ]
+  },
+  "hannina:Miaodan": {
+    "NAME": "Tiger Meow Bomb",
+    "FLAVOR": "Sparkling gold!",
+    "DESCRIPTIONS": [
+      "For the first 4 turns of each combat, gain 5 #yVigor and add 1 Pride into your hand each turn. When Super Kitty Scratch is added to your hand, gain 10 #yVigor ."
+    ]
+  },
+  "hannina:Qinmihezhao": {
+    "NAME": "Intimate Photo",
+    "FLAVOR": "Taken 50 years ago, when the cat was only 50 years old.",
+    "DESCRIPTIONS": [
+      "The first time you enter any #yForm each turn, gain [E] ."
+    ]
+  },
+  "hannina:Jibeilongdehuiyi": {
+    "NAME": "Memory of the Spined Dragon",
+    "FLAVOR": "Sweet memories of the first time we met.",
+    "DESCRIPTIONS": [
+      "When entering Ironclad Cat #yForm , gain 1 #yStrength this turn. NL When entering Silent Cat #yForm , gain 1 #yDexterity this turn. NL When entering Defect Cat #yForm , gain 1 #yFocus this turn."
+    ]
+  },
+  "hannina:Jibeilongdehuiyi2": {
+    "NAME": "Memory of the Spined Dragon",
+    "FLAVOR": "Sweet memories of the first time we met.",
+    "DESCRIPTIONS": [
+      "When entering any #yForm , gain #b1 #yStrength , #b1 #yDexterity , and #b1 #yFocus this turn."
+    ]
+  },
+  "hannina:Maozhizhencang": {
+    "NAME": "Cat's Collection",
+    "FLAVOR": "The cat's collection has always been behind her.",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b400 #yGold . NL At the end of combat, gain #b15 Gold. NL Card reward options increased by 1."
+    ]
+  }
+}

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import hannina.misc.ReunionModifier;
 import hannina.modcore.Enums;
 import hannina.utils.ConfigHelper;
+import hannina.utils.HanninaImageMaster;
 import hannina.utils.ModHelper;
 
 import java.util.ArrayList;
@@ -42,6 +43,9 @@ public abstract class AbstractHanninaCard extends CustomCard {
         super("hannina:" + NAME, getCardStrings(NAME).NAME, getPicPath(NAME, TYPE),
                 COST, getCardStrings(NAME).DESCRIPTION, TYPE, color, RARITY, TARGET);
         cardStrings = getCardStrings(NAME);
+        if(this.portraitImg == null){
+            this.portraitImg = HanninaImageMaster.lockedPic;
+        }
     }
 
     /*

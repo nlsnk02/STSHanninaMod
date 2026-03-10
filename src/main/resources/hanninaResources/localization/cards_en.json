@@ -1,0 +1,457 @@
+{
+  "hannina:TestCard": {
+    "NAME": "Test",
+    "DESCRIPTION": "TestTestTestTestTestTestTestTest",
+    "UPGRADE_DESCRIPTION": "wwwwww",
+    "EXTENDED_DESCRIPTION": [
+      "wwwwww"
+    ]
+  },
+  "hannina:HanninaStrike": {
+    "NAME": "Cat Strike",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:HanninaDefence": {
+    "NAME": "Cat Defend",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Maodepingwenluodi": {
+    "NAME": "Cat Landing~",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Enter a random hannina:Form. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Retain . hannina:composite . NL Enter a random hannina:Form. NL Exhaust ."
+  },
+  "hannina:Maodechongfengjinji": {
+    "NAME": "Cat Dash!",
+    "TAG": 2,
+    "DESCRIPTION": "Exhaust 1 card. NL Draw 1 card. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Retain . NL Exhaust 1 card. NL Draw 1 card. NL Exhaust ."
+  },
+  "hannina:Xingtaibianhua": {
+    "NAME": "FormChange",
+    "TAG": 2,
+    "DESCRIPTION": "Enter a random hannina:Form. NL At the end of this turn, do not exit hannina:Form.",
+    "UPGRADE_DESCRIPTION": "Retain . NL Enter a random hannina:Form. NL At the end of this turn, do not exit hannina:Form."
+  },
+  "hannina:Sisezhuayin": {
+    "NAME": "Four-Color Pawprint",
+    "DESCRIPTION": "hannina:composite . NL Deal !D! damage !M! times. NL Gain !B! Block !M! times. NL Can only hannina:composite Starter cards.",
+    "UPGRADE_DESCRIPTION": "hannina:composite . Retain . NL Deal !D! damage !M! times. NL Gain !B! Block !M! times. NL Can only hannina:composite Starter cards."
+  },
+  "hannina:MZLFushu": {
+    "NAME": "Cat Power: Hidden Mouse",
+    "DESCRIPTION": "hannina:composite . NL Deal !D! damage. NL Can only hannina:composite Common 1-cost Attack cards.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:MZJTaohu": {
+    "NAME": "Cat Skill: Naughty Tiger",
+    "DESCRIPTION": "hannina:composite . NL Gain !B! Block . NL Can only hannina:composite Common 1-cost Skill cards.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Gongshenxuli": {
+    "NAME": "Arching Charge",
+    "TAG": 1,
+    "DESCRIPTION": "Draw !M! cards. Gain !B! Strength this turn.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Xunshenshanbi": {
+    "NAME": "Swift Dodge",
+    "TAG": 2,
+    "DESCRIPTION": "Draw !M! cards. Gain 1 Dexterity this turn. NL Add 1 *Cat *Landing~ into your hand."
+  },
+  "hannina:Daoyingsansejin": {
+    "NAME": "Reflected Pansy",
+    "TAG": 1,
+    "DESCRIPTION": "Retain . NL When drawn, draw 1 card. NL Choose: Enter Ironclad Cat hannina:Form, Silent Cat hannina:Form, or Defect Cat hannina:Form.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:RedColorCard": {
+    "NAME": "Ironclad Cat Form",
+    "DESCRIPTION": "Enter Ironclad Cat Form. NL *Composite cards become the corresponding red cards recorded within them.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:GreenColorCard": {
+    "NAME": "Silent Cat Form",
+    "DESCRIPTION": "Enter Silent Cat Form. NL *Composite cards become the corresponding green cards recorded within them.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:BlueColorCard": {
+    "NAME": "Defect Cat Form",
+    "DESCRIPTION": "Enter Defect Cat Form. NL *Composite cards become the corresponding blue cards recorded within them.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:PurpleColorCard": {
+    "NAME": "Watcher Cat Form",
+    "DESCRIPTION": "Enter Watcher Cat Form. NL *Composite cards become the corresponding purple cards recorded within them.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Daoyingziluolan": {
+    "NAME": "Reflected Violet",
+    "TAG": 2,
+    "DESCRIPTION": "Enter Watcher Cat hannina:Form. NL Enter Calm . NL When drawn, enter Wrath .",
+    "UPGRADE_DESCRIPTION": "Retain . NL Enter Watcher Cat hannina:Form. NL Enter Calm . NL When drawn, enter Wrath ."
+  },
+  "hannina:Budingxingxiji": {
+    "NAME": "Amorphous Strike",
+    "TAG": 1,
+    "DESCRIPTION": "Deal !D! damage 2 times. NL Add 1 *Cat *Dash! into your hand.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Yehuashenti": {
+    "NAME": "Liquefied Body",
+    "DESCRIPTION": "Gain !B! Block 2 times. NL If not in any hannina:Form: +1 time.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Zhenjianduijue": {
+    "NAME": "Real Sword Duel",
+    "TAG": 2,
+    "DESCRIPTION": "If an enemy's intent is Attack, deal !D! damage and gain !B! Block . NL In Ironclad Cat hannina:Form: Gain !M! Plated Armor .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Zhenjianduijue2": {
+    "NAME": "Real Sword Duel",
+    "TAG": 2,
+    "DESCRIPTION": "Deal damage equal to !D! times the number of Skills played this turn. NL In Ironclad Cat hannina:Form: Gain Vigor equal to the number of Attacks played this turn.",
+    "UPGRADE_DESCRIPTION": "wwwwww",
+    "EXTENDED_DESCRIPTION": [
+      " NL (%s cards, %s cards)"
+    ]
+  },
+  "hannina:Zhuazhunile": {
+    "NAME": "Gotcha!",
+    "TAG": 1,
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 *Cat *Landing~ into your hand. NL In Silent Cat hannina:Form: The enemy loses !M! Strength for 1 turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 *Cat *Landing~+ into your hand. NL In Silent Cat hannina:Form: The enemy loses !M! Strength for 1 turn."
+  },
+  "hannina:Jihanchaodao": {
+    "NAME": "Cryo-Superconduct",
+    "DESCRIPTION": "Channel 1 Lightning and 1 Frost . NL Exhaust . NL In Defect Cat hannina:Form: Place a copy of this card into your discard pile.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Fengqiyunyong": {
+    "NAME": "Gathering Storm",
+    "TAG": 2,
+    "DESCRIPTION": "Retain . NL Deal !D! damage. NL In Watcher Cat hannina:Form: Enter Wrath . NL Otherwise, enter Calm .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Lachangshenti": {
+    "NAME": "Elongated Body",
+    "TAG": 2,
+    "DESCRIPTION": "Gain !B! Block . NL At the end of this turn, do not exit the current hannina:Form.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Lachangshenti2": {
+    "NAME": "Elongated Body",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Gain [E] . NL Enter a random hannina:Form.",
+    "UPGRADE_DESCRIPTION": "hannina:composite . NL Gain [E] [E] . NL Enter a random hannina:Form."
+  },
+  "hannina:MZHLingzhixing": {
+    "NAME": "Cat Fusion: FormZero",
+    "TAG": 2,
+    "DESCRIPTION": "Add 2 random Common cards to your hand; they cost 0 this turn. NL Only adds cards of the corresponding hannina:Form. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Xuedinge": {
+    "NAME": "Schrödinger's Cat",
+    "TAG": 2,
+    "DESCRIPTION": "Choose 1 of !M! random cards and shuffle it into your draw pile.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Xuedinge2": {
+    "NAME": "Schrödinger's Cat",
+    "TAG": 2,
+    "DESCRIPTION": "Gain !B! Block . NL Play the top card of your draw pile. If it is a hannina:composite card, randomly play !M! of its hannina:composite cards instead.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:MMRuizhan": {
+    "NAME": "Cat Sharp Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Put all *Cat *Sharp *Slashes from your draw pile into your hand. NL Next turn, gain !M! Vigor .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Chaojuehajimi": {
+    "NAME": "Super Kitty Scratch",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies 5 times. NL This card receives !M! times the benefit from Vigor. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Touqianwenlu": {
+    "NAME": "Toss a Coin",
+    "TAG": 1,
+    "DESCRIPTION": "Scry !M! . For each card discarded, gain !B! Block and lose 1 Gold. NL In Watcher Cat hannina:Form: Gain !D! Mantra .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Huijinrutu": {
+    "NAME": "Spend Like Dirt",
+    "DESCRIPTION": "Lose !M! Gold. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Jinshajianyu": {
+    "NAME": "Gold Sand Sword Rain",
+    "DESCRIPTION": "Costs 1 less Energy for each time you lost Gold this combat. NL Deal !D! damage 3 times.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Linghuaqian": {
+    "NAME": "Pocket Money",
+    "DESCRIPTION": "Exhaust up to 3 cards in your hand. For each card Exhausted , gain !M! Gold and draw 1 card. NL Exhaust . Ethereal .",
+    "UPGRADE_DESCRIPTION": "Exhaust up to 3 cards in your hand. For each card Exhausted , gain !M! Gold and draw 1 card. NL Exhaust ."
+  },
+  "hannina:Doumaobang": {
+    "NAME": "Cat Teaser",
+    "TAG": 1,
+    "DESCRIPTION": "At the start of your turn, randomly add 1 *Cat *Landing~ or 1 *Cat *Dash! into your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, randomly add 1 *Cat *Landing~+ or 1 *Cat *Dash!+ into your hand."
+  },
+  "hannina:MZLLieguang": {
+    "NAME": "Cat Power: Rending Light",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Deal !D! damage. NL For each card played this combat that is not your character's color: Damage + !M! . NL Can only hannina:composite Uncommon 1-cost Attack cards.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:MZJZhuying": {
+    "NAME": "Cat Skill: Chasing Shadows",
+    "TAG": 1,
+    "DESCRIPTION": "hannina:composite . NL Apply !M! Weak . NL Randomly play 1 of this card's hannina:composite cards. NL Can only hannina:composite Uncommon 1-cost Skill cards.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Shanyaoxianshi": {
+    "NAME": "Mountain Demon: Huan",
+    "TAG": 1,
+    "DESCRIPTION": "hannina:composite . NL Deal !D! damage . NL Exhaust all *Status and *Curse cards in your hand. NL Can only hannina:composite Attack cards that cost 2 or more.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Shenlingpingyi": {
+    "NAME": "Divine Possession: Bastet",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Gain !B! Block . NL Retain your hand this turn. NL Can only hannina:composite Skill cards that cost 2 or more.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Ezhaofushen": {
+    "NAME": "Omen Possession: Liangqu",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies, and apply !M! Weak and !M! Vulnerable . NL Add 1 *Pride to your hand.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:YZYHSXTBJHLM": {
+    "NAME": "Why Not Just Use Red Form?",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Enter a random hannina:Form. NL When entering Ironclad Cat hannina:Form: The cost of the red cards hannina:composite by this card is reduced by 1 for this combat."
+  },
+  "hannina:Maodefeiqiyijiao": {
+    "NAME": "Cat's Flying Kick",
+    "TAG": 1,
+    "DESCRIPTION": "The first time you enter Silent Cat hannina:Formeach turn, draw 2 cards. NL Add 1 *Cat *Landing into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate . NL The first time you enter Silent Cat hannina:Formeach turn, draw 2 cards. NL Add 1 *Cat *Landing+ into your hand."
+  },
+  "hannina:Wanqiushijiandao": {
+    "NAME": "Time to Play with Orbs!",
+    "TAG": 2,
+    "DESCRIPTION": "Channel 1 random Orb and trigger its passive ability !M! times. NL In Defect Cat hannina:Form: Trigger its passive ability 1 additional time.",
+    "UPGRADE_DESCRIPTION": "Channel 1 random Orb and gain 1 Orb slot, then trigger its passive ability !M! times. NL In Defect Cat hannina:Form: Trigger its passive ability 1 additional time."
+  },
+  "hannina:Aoyikaiyan": {
+    "NAME": "Secret Art: Open Eyes",
+    "TAG": 2,
+    "DESCRIPTION": "Scry !M! . NL For each card discarded, deal !D! damage to ALL enemies. NL In Watcher Cat hannina:Form: For each card discarded, gain 1 Mantra .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Yishenyigui": {
+    "NAME": "Paranoia",
+    "DESCRIPTION": "Deal !D! damage. NL Add !M! *Cat *Dash! into your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add !M! *Cat *Dash!+ into your hand."
+  },
+  "hannina:Zuiainile": {
+    "NAME": "Love You the Most",
+    "TAG": 2,
+    "DESCRIPTION": "The stats of *Cat *Strike and *Cat *Defend in your deck increase by !M! for this combat. NL Can be Upgraded multiple times.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Maozhangrenshi": {
+    "NAME": "Cat's Bravado",
+    "DESCRIPTION": "Heal !M! *HP . NL Gain !B! Block . NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Qianmiaowanha": {
+    "NAME": "Thousands of Meows",
+    "TAG": 2,
+    "DESCRIPTION": "Whenever you play a card of a *color *other *than *your *character's this turn, enter a random hannina:Formyou haven't entered this turn and gain [E] .",
+    "UPGRADE_DESCRIPTION": "Retain . NL Whenever you play a card of a *color *other *than *your *character's this turn, enter a random hannina:Formyou haven't entered this turn and gain [E] ."
+  },
+  "hannina:Yeshifudejuehuo": {
+    "NAME": "Master Ye's Specialty",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL When drawn, gain [E] . NL *Please *do *not *play *this *card . NL Can only hannina:composite Power cards.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Maishenhuanzhai": {
+    "NAME": "Sell Body to Pay Debt",
+    "TAG": 2,
+    "DESCRIPTION": "Add 2 *White *Slimes into your draw pile, gain !M! Gold. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Add 2 *White *Slimes+ into your draw pile, gain !M! Gold. NL Exhaust ."
+  },
+  "hannina:Zhuchengjinshen": {
+    "NAME": "Cast Solid Gold",
+    "TAG": 1,
+    "DESCRIPTION": "Whenever you gain or lose *Gold this combat, gain !M! Block .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Dengjiajiaohuan": {
+    "NAME": "Equivalent Exchange",
+    "TAG": 2,
+    "DESCRIPTION": "Exhaust 1 card in your hand. Gain !M! *Gold and Block based on the exhausted card's rarity.",
+    "UPGRADE_DESCRIPTION": "wwwwww",
+    "EXTENDED_DESCRIPTION": [
+      "Equivalent Exchange",
+      "Status/Curse/Starter: #y4 , NL Common/Uncommon: #y8 , NL Rare: #y12",
+      "Status/Curse/Starter: #y6 , NL Common/Uncommon: #y10 , NL Rare: #y14",
+      "Exhaust to gain Gold"
+    ]
+  },
+  "hannina:Jinbaoshu": {
+    "NAME": "Gold Explosion",
+    "TAG": 1,
+    "DESCRIPTION": "Lose !M! % of your *Gold , deal damage equal to 2 times the *Gold lost.",
+    "UPGRADE_DESCRIPTION": "Lose !M! % of your *Gold , deal damage equal to 4 times the *Gold lost.",
+    "EXTENDED_DESCRIPTION": [
+      "(!D! damage)"
+    ]
+  },
+  "hannina:Maodearxingtai(old)": {
+    "NAME": "Cat-dear Form",
+    "TAG": 2,
+    "DESCRIPTION": "The first card you play each turn is placed at the bottom of your draw pile. Before being played, it costs 0. (Only for cards that would go to the discard pile)",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Maodearxingtai": {
+    "NAME": "Cat-dear Form",
+    "TAG": 2,
+    "DESCRIPTION": "When you enter a hannina:Form, gain the hannina:Formbuffs of all hannina:Forms simultaneously. NL The first time you enter any hannina:Formeach turn, play the powerful card of the corresponding hannina:Form.",
+    "UPGRADE_DESCRIPTION": "Retain . NL When you enter a hannina:Form, gain the hannina:Formbuffs of all hannina:Forms simultaneously. NL The first time you enter any hannina:Formeach turn, play the powerful card of the corresponding hannina:Form."
+  },
+  "hannina:Kongbuzhiliyuan": {
+    "NAME": "Terrifying Upright Ape",
+    "DESCRIPTION": "Apply 1 Vulnerable , 1 Weak , !M! Poison , !M! Mark , and !M! Lock-On to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Kongbuzhiliyuan2": {
+    "NAME": "Terrifying Upright Ape",
+    "DESCRIPTION": "Add X random hannina:composite cards to your hand. Those hannina:composite cards and the cards hannina:composite within them cost 0 and gain Exhaust . NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Add X random Upgraded hannina:composite cards to your hand. Those hannina:composite cards and the cards hannina:composite within them cost 0 and gain Exhaust . NL Exhaust ."
+  },
+  "hannina:Jushouzailing": {
+    "NAME": "Beast Returns: Zheng",
+    "TAG": 2,
+    "DESCRIPTION": "hannina:composite . NL Deal !D! damage to ALL enemies. NL Play all hannina:composite cards within this card. NL Can only hannina:composite Rare cards. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Jiaorongsansejin": {
+    "NAME": "Blended Pansy",
+    "TAG": 2,
+    "DESCRIPTION": "Choose: Enter Ironclad Cat hannina:Form, Silent Cat hannina:Form, or Defect Cat hannina:Form. NL The hannina:Formbuffs gained this turn are tripled. NL You cannot change your hannina:Formagain this turn.",
+    "UPGRADE_DESCRIPTION": "Choose: Enter Ironclad Cat hannina:Form, Silent Cat hannina:Form, or Defect Cat hannina:Form. NL The hannina:Formbuffs gained this turn are quadrupled. NL You cannot change your hannina:Formagain this turn."
+  },
+  "hannina:Gongxinziluolan": {
+    "NAME": "Concentric Violet",
+    "TAG": 2,
+    "DESCRIPTION": "Enter Watcher Cat hannina:Form. NL Gain !M! Mantra . NL If you enter Divinity , add 1 *Brilliance into your hand and Exhaust . NL You cannot change your hannina:Formagain this turn.",
+    "UPGRADE_DESCRIPTION": "Enter Watcher Cat hannina:Form. NL Gain !M! Mantra . NL If you enter Divinity , add 1 *Brilliance+ into your hand and Exhaust . NL You cannot change your hannina:Formagain this turn."
+  },
+  "hannina:XCDZhanlongshi": {
+    "NAME": "Xianchan Blade: Dragon Slaying Stance",
+    "TAG": 2,
+    "DESCRIPTION": "Deal !D! damage. NL Fatal : Permanently increase this card's damage by !M! this run. NL When this card is removed, if its damage is 14 or more, add 1 *Heartborn *Sword: *Dragon *Slaying *Stance to your deck.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:XingshengjianZhanlongshi": {
+    "NAME": "Heartborn Sword: Dragon Slaying Stance",
+    "TAG": 2,
+    "DESCRIPTION": "Innate . NL Deal !D! damage. NL Choose: Fuse into *Beast *of *the *Spire and Exhaust .",
+    "UPGRADE_DESCRIPTION": "Innate . NL Deal !D! damage. NL Choose: Fuse into *Beast *of *the *Spire and Exhaust ."
+  },
+  "hannina:FusionColorCard": {
+    "NAME": "Beast of the Spire",
+    "DESCRIPTION": "Enter Beast of the Spire hannina:Form. NL Gain 1 *Artifact and 1 *Buffer . NL Restore your hannina:composite cards. NL Cannot enter other hannina:Forms this turn. When playing a hannina:composite card, choose and play 1 of its hannina:composite d cards. When playing a card that enters a hannina:Form, gain [E] .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:NullColorCard": {
+    "NAME": "Cancel",
+    "DESCRIPTION": "Do not enter Beast of the Spire hannina:Form.",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:XCDDangmoshi": {
+    "NAME": "Xianchan Blade: Demon Sweeping Stance",
+    "TAG": 4,
+    "DESCRIPTION": "Deal !D! damage 3 times. NL Fatal : This card costs 1 less and returns to your hand. NL When played at least !M! times in a single combat, gain [E] [E] and choose: Fuse into *Beast *of *the *Spire and Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Jingzhuangjianmie": {
+    "NAME": "Deluxe Annihilation",
+    "TAG": 2,
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL For each enemy killed this turn, gain !M! *Gold .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Jingzhuangjianmie2": {
+    "NAME": "Xianchan Blade: Spirit Extinguishing Stance",
+    "TAG": 2,
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Gain Gold equal to the damage dealt. NL If the total Gold gained and lost this combat reaches 100, fuse into *Beast *of *the *Spire . Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Lost !M! )"
+    ]
+  },
+  "hannina:Xianzaishuicaishizhuren": {
+    "NAME": "Who is the Master Now?",
+    "TAG": 2,
+    "DESCRIPTION": "Lose !M! *Gold . NL Gain 1 *Potion , [E] , draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Returns to your hand after being played. NL Lose !M! *Gold . NL Gain 1 *Potion , [E] , draw 1 card."
+  },
+  "hannina:Jinziyinhang": {
+    "NAME": "Gold Bank",
+    "DESCRIPTION": "Lose !M! % of your Gold, gain *Barricade and Block equal to the Gold lost. NL Gold gained in combat is doubled for this combat.",
+    "UPGRADE_DESCRIPTION": "Lose !M! % of your Gold, gain *Barricade and Block equal to the Gold lost + !B! . NL Gold gained in combat is doubled for this combat."
+  },
+  "hannina:Sirenzhuanshu": {
+    "NAME": "Private Exclusive",
+    "DESCRIPTION": "Gain !M! *Metallicize . NL At the start of your turn, gain 1 *Metallicize .",
+    "UPGRADE_DESCRIPTION": "Gain !M! *Metallicize . NL At the start of your turn, gain 1 *Metallicize ."
+  },
+  "hannina:Baisenianye": {
+    "NAME": "White Slime",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "wwwwww"
+  },
+  "hannina:Zhuangdan": {
+    "NAME": "Reload",
+    "DESCRIPTION": "Add !M! random *Attacks from your discard pile into your hand."
+  },
+  "hannina:Gangqi": {
+    "NAME": "Aura of Steel",
+    "DESCRIPTION": "Gain !B! Block . NL Randomly Exhaust !M! Curses or Status cards from your draw pile and hand."
+  },
+  "hannina:Tuijinzhan": {
+    "NAME": "Thrust Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Randomly Exhaust 1 card with the lowest cost from your draw pile, and add 1 *Cat *Sharp *Slash into your hand. NL Ethereal .",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Randomly Exhaust 1 card with the lowest cost from your draw pile, and add 1 *Cat *Sharp *Slash+ into your hand. NL Ethereal ."
+  },
+  "hannina:Kuaidaoluanma": {
+    "NAME": "Gordian Knot",
+    "DESCRIPTION": "Deal !D! damage. NL Randomly play !M! cards with the lowest cost from your draw pile."
+  },
+  "hannina:Wujingyichuan": {
+    "NAME": "Limitless Pierce",
+    "DESCRIPTION": "When Scryed and discarded, deal !D! damage to ALL enemies and exit your current Stance ."
+  },
+  "hannina:Quanzhuangfensui": {
+    "NAME": "Full Armor Smash",
+    "DESCRIPTION": "Deal !D! damage. NL Evoke all Orbs. NL For each Orb Evoked , damage increases by !M! , and Channel 1 random Orb."
+  },
+  "hannina:Huiyaoqiangya": {
+    "NAME": "Radiant Suppression",
+    "DESCRIPTION": "Draw and Exhaust all unexhausted Curses and Status cards in order. NL For each card Exhausted , gain !M! Strength and !B! Block . NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Draw and Exhaust all unexhausted Curses and Status cards in order. NL For each card Exhausted , gain !M! Strength and !B! Block ."
+  },
+  "hannina:Biduancanxiang": {
+    "NAME": "Afterimage of the Beyond",
+    "DESCRIPTION": "The cost of this card cannot be changed. NL When this card enters the discard pile, return it from the discard pile to your hand, and gain !B! Block ."
+  }
+}

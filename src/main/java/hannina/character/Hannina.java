@@ -6,10 +6,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.IronWave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,11 +21,13 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.BloodVial;
 import com.megacrit.cardcrawl.relics.TinyChest;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import hannina.cards.HanninaStrike;
+import hannina.character.skin.*;
 import hannina.fantasyCard.Chaojuehajimi;
 import hannina.misc.SaveData;
 import hannina.modcore.Enums;
@@ -31,7 +35,10 @@ import hannina.powers.FusionPower;
 import hannina.powers.UnionPower;
 import hannina.utils.*;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 import static hannina.fantasyCard.Chaojuehajimi.startGIF;
 
@@ -61,7 +68,6 @@ public class Hannina extends CustomPlayer {
 
     private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
 
-
     private static final int STARTING_HP = 84;
     private static final int MAX_HP = 84;
     private static final int STARTING_GOLD = 99;
@@ -70,6 +76,20 @@ public class Hannina extends CustomPlayer {
     private static final int ASCENSION_MAX_HP_LOSS = 8;
 
     public static final Color My_COLOR = CardHelper.getColor(0, 0, 191);
+
+    private AbstractCard.CardColor unionColorLastFrame = null;
+    private boolean fusionLastFrame = false;
+    public static ArrayList<AbstractSkin> skins = new ArrayList<>();
+    public AbstractSkin currentSkin=null;
+    static {
+        skins.add(new SFW_1_Skin());
+        skins.add(new SFW_2_Skin());
+        skins.add(new SFW_3_Skin());
+
+        skins.add(new NSFW_1_Skin());
+        skins.add(new NSFW_2_Skin());
+        skins.add(new NSFW_3_Skin());
+    }
 
     public Hannina(String name) {
 
@@ -84,14 +104,22 @@ public class Hannina extends CustomPlayer {
 
         if (SkinSelectScreen.Inst != null)
             refreshSkin();
+        //读取皮肤
+        for (AbstractSkin s : skins) {
+            if (s.id.equals(ConfigHelper.skinId)){
+                currentSkin = s;
+                break;
+            }
+        }
+        if (currentSkin==null){
+            currentSkin=new SFW_1_Skin();
+        }
+        currentSkin.init(this);
+        currentSkin.reset(this);
+    }
 
-        //TODO 目前只实装了sfw皮肤，后面需要判断当前使用的哪个皮肤
-        this.loadAnimation(
-                ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/Hannina_Kimono_null.atlas"),
-                ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/hannina_kimono_null37.json"),
-                2.0F
-        );
-        this.state.setAnimation(0, "Idle", true);
+    public void loadAnimation(String atlas, String skeleton,float scale){
+        super.loadAnimation(atlas, skeleton, 2.67F/scale);
     }
 
     public void refreshSkin() {
@@ -149,7 +177,7 @@ public class Hannina extends CustomPlayer {
                 false // 别动
         );
     }
-	
+
     @Override
     public String getTitle(PlayerClass playerClass) {
         return characterStrings.NAMES[0];
@@ -238,96 +266,59 @@ public class Hannina extends CustomPlayer {
         return panels;
     }
 
-    private AbstractCard.CardColor unionColorLastFrame = null;
-
     @Override
     public void update() {
-        if (!this.isDead) {
+        if (!this.isDead && Objects.equals(SaveData.saveData.skin, "Hannina")) {
+
             if (this.hasPower(FusionPower.POWER_ID)) {
-                if (this.atlas != null) {
-                    this.atlas.dispose();
-                }
-                this.atlas = null;
-                this.img = HanninaImageMaster.getSkinImg("fusion");
-                unionColorLastFrame = null;
-            } else if (this.hasPower(UnionPower.POWER_ID)) {
-                UnionPower power = (UnionPower) this.getPower(UnionPower.POWER_ID);
-                //TODO
-                if (unionColorLastFrame != power.color) {
-                    if (power.color == AbstractCard.CardColor.RED) {
-                        if (this.atlas != null) {
-                            this.atlas.dispose();
-                        }
-                        this.atlas = null;
-                        this.img = HanninaImageMaster.getSkinImg("red");
+                if (!fusionLastFrame) {
+                    if (currentSkin!=null){
+                        currentSkin.enterFusion(this);
                     }
-                    if (power.color == AbstractCard.CardColor.GREEN) {
-                        if (this.atlas != null) {
-                            this.atlas.dispose();
-                        }
-                        this.atlas = null;
-                        this.img = HanninaImageMaster.getSkinImg("green");
-                    }
-                    if (power.color == AbstractCard.CardColor.BLUE) {
-                        if (this.atlas != null) {
-                            this.atlas.dispose();
-                        }
-                        this.atlas = null;
-                        this.img = HanninaImageMaster.getSkinImg("blue");
-                    }
-                    if (power.color == AbstractCard.CardColor.PURPLE) {
-                        if (this.atlas != null) {
-                            this.atlas.dispose();
-                        }
-                        String sfwPath = "sfw";
-                        if (ConfigHelper.skinId.contains("NSFW") && ConfigHelper.nsfw) {
-                            sfwPath = "nsfw";
-                        }
-                        this.loadAnimation(
-                                ModHelper.getImgPath(String.format("char/skin/animations/purple/idle/%s/Hannina_Kimono.atlas", sfwPath)),
-                                ModHelper.getImgPath(String.format("char/skin/animations/purple/idle/%s/hannina_kimono37.json", sfwPath)),
-                                2.0F
-                        );
-                        this.state.setAnimation(0, "Idle_" + sfwPath, true);
-                    }
-                    unionColorLastFrame = power.color;
                 }
-                if (startGIF > 0) {
-                    this.img = HanninaImageMaster.getSkinImg(startGIF + "z");
+
+                this.fusionLastFrame = true;
+                this.unionColorLastFrame = AbstractCard.CardColor.COLORLESS;
+            }
+            else {
+                this.fusionLastFrame = false;
+                AbstractPower unionPower = this.getPower(UnionPower.POWER_ID);
+
+                if (unionPower!=null) {
+                    UnionPower power = (UnionPower) unionPower;
+                    if (this.unionColorLastFrame !=power.color){
+                        this.unionColorLastFrame = power.color;
+                        if (currentSkin!=null){
+                            currentSkin.switchForm(this,unionColorLastFrame);
+                        }
+                    }
+                    if (startGIF > 0) {
+                        this.img = HanninaImageMaster.getSkinImg(startGIF + "z");
+                    }
+                } else { // null
+                    if (unionColorLastFrame!=null){
+                        unionColorLastFrame = null;
+                        if (currentSkin!=null){
+                            currentSkin.switchForm(this,null);
+                        }
+                    }
                 }
-            } else {
-                //TODO 目前只实装了sfw皮肤，后面需要判断当前使用的哪个皮肤
-                if (this.atlas != null) {
-                    this.atlas.dispose();
-                }
-                this.loadAnimation(
-                        ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/Hannina_Kimono_null.atlas"),
-                        ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/hannina_kimono_null37.json"),
-                        2.0F
-                );
-                this.state.setAnimation(0, "Idle", true);
-                unionColorLastFrame = null;
             }
         }
-        ReflectionHacks.setPrivate(this, AbstractPlayer.class, "renderCorpse", false);
+//        ReflectionHacks.setPrivate(this, AbstractPlayer.class, "renderCorpse", false);
         super.update();
     }
 
     @Override
     public void playDeathAnimation() {
+        if (currentSkin!=null){
+            currentSkin.dead(this);
+        }
+    }
+    public void disposeModel(){
         if (this.atlas != null) {
             this.atlas.dispose();
         }
-        String sfwPath = "sfw";
-        if (ConfigHelper.skinId.contains("NSFW") && ConfigHelper.nsfw) {
-            sfwPath = "nsfw";
-        }
-        this.loadAnimation(
-                ModHelper.getImgPath(String.format("char/skin/animations/hannina/defeated/%s/Hannina_reverse_upright_straddle.atlas", sfwPath)),
-                ModHelper.getImgPath(String.format("char/skin/animations/hannina/defeated/%s/hannina_reverse_upright_straddle37.json", sfwPath)),
-                2.0F
-        );
-        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override

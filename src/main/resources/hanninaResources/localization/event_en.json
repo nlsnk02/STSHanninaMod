@@ -1,0 +1,52 @@
+{
+	"MetAlbaz": {
+		"NAME": "Branded Opening",
+		"DESCRIPTIONS": [
+			"You find a lookout point in the Spire. A white dragon surrounded by #yGolden #yFlames flies across the horizon. NL The golden flames cover the watchtower, and rumbling thunder erupts from afar, as if heaven and earth are shaking. NL However, you feel a reassuring power from the flames around it. NL You take a brief #grest bathed in the golden flames, and you feel a vague #rurge to play cards. NL (Act 4 difficulty, please choose carefully whether to challenge it.)",
+			"The dragon flaps its massive wings, drawing gorgeous arcs high in the sky. NL Intense light flashes from its scales, and eventually, it transforms into a young boy, landing leisurely on the watchtower.",
+			"You rest for a moment in the golden flames, then quietly part ways with this unexpected guest."
+		],
+		"OPTIONS": [
+			"[Issue Invitation] #rAttempt #rto #rfight #rthe #rdragon. ",
+			"[Rest Awhile] #gHeal #gto #gMax #gHP. ",
+			"[Duel]",
+			"[Leave]"
+		]
+	},
+	"ComicHail": {
+		"NAME": "Comic Store",
+		"DESCRIPTIONS": [
+  			"You push through tough thorns and find a building standing next to a cold stone wall. Through the bright glass doors, under snow-white lights, bookshelves and a counter are neatly arranged. The display window next to it holds many dolls and posters. A red-haired boy stands at the entrance, seemingly muttering something to himself.",
+  			"You walk into the store, greeted by bookshelves filled with many comics, alongside a few claw machines and gacha machines. It really is a comic bookstore. There aren't many customers. Seeing you enter, the red-haired boy follows you inside, gives a simple 'welcome', and continues muttering: \"#yI'm #ystill #ymissing #ythose #yfew #ykey #ycards, #ywhere #ycan #yI #yfind #ythem...\"",
+  			"How could there be such a place in the corruption-spreading Spire? You leave cautiously.",
+  			"This completely different form of expression compared to the boring magic books in La Maison feels novel to you. You casually flip through the comics here and continue exploring upwards.",
+  			"#g(Obtained '#yGacha'!)",
+  			"The young owner grabs your hand in pleasant surprise: \"#yAre #yyou #yreally #ywilling #yto #yhelp #yme? #yIf #yyou #ycan #yfind #ythe #ycards #yI #ywant, #ypick #yanything #yyou #ylike #yfrom #ythis #ystore!\" Feeling a bit awkward, you nod and quickly leave the bookstore. \"#yWe'll #ykeep #yin #ytouch #ythrough #ythis #yrelic!\" the boss shouts from behind."
+  		],
+  		"OPTIONS": [
+  			"[Enter the Store]",
+			"#gSpend #y30 #gGold #gto #genter.",
+			"[Locked]",
+			"Requires 30 Gold.",
+			"[Looks Suspicious] Leave",
+			"[Read Comics] #gChoose #gany #g\"Sky #gStriker #gBook\" #gcard #gto #gadd #gto #gyour #gdeck.",
+			"[Play Gacha Machine] #gReceive #ga #gcard #greward.",
+			"[Help the Boss] #gObtain #ga #gRelic.",
+			"[Leave]",
+			"Do you want to learn some moves from the comics?",
+			"What came out of the gacha machine?"
+		]
+	},"FlyingCat": {
+		"NAME": "Winged Cat",
+		"DESCRIPTIONS": [
+  		"Passing through a strange rift, you arrive on a bridge you have never seen before. A headless corpse lies across the bridge, along with a half-lit cigar... and a super cool coat and bullets!\nHannina looks at you with stars in her eyes, asking for your opinion.",
+		"The cat is very happy and eager to try it out. You head back the way you came to the main path.",
+		"For various possible reasons, you refuse. To comfort her fake crying, you give her quite a bit of white gold to satisfy her, after which you head back the way you came to the main path."],
+  		"OPTIONS": [
+  			"Help her make a matching coat and cigar, and pick up the bullets. (Replace your starting deck and obtain two special Relics)",
+			"Refuse. (Gain 50 Gold)",
+			"Proceed"
+		]
+	}
+  		
+}

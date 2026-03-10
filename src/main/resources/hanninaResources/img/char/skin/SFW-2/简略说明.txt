@@ -1,0 +1,1 @@
+Hannina_SFW-2_null要被重复用于null、red、green、blue、purple；Hannina_SFW-2_die动画不循环使用。

@@ -32,7 +32,7 @@ public class Xianzaishuicaishizhuren extends AbstractHanninaCard {
 
         addToBot(new GainEnergyAction(1));
         addToBot(new DrawCardAction(1));
-        addToBot(new HealAction(p, p, 10));
+//        addToBot(new HealAction(p, p, 10));
     }
 
     @Override

@@ -120,7 +120,7 @@ public class ModHelper {
     }
 
     //融合
-    public static void fusion(){
+    public static void fusion() {
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 AntiUnionPower.POWER_ID));
 

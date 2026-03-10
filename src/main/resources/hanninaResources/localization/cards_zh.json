@@ -402,8 +402,8 @@
   "hannina:Xianzaishuicaishizhuren": {
     "NAME": "现在谁才是主人？",
     "TAG": 2,
-    "DESCRIPTION": "失去 !M! *金币 。 NL 获得1瓶 *药水 ， [E] ，抽1张牌，回复10点 *生命 。",
-    "UPGRADE_DESCRIPTION": "打出后回到手牌。 NL 失去 !M! *金币 。 NL 获得1瓶 *药水 ， [E] ，抽1张牌，回复10点 *生命 。"
+    "DESCRIPTION": "失去 !M! *金币 。 NL 获得1瓶 *药水 ， [E] ，抽1张牌。",
+    "UPGRADE_DESCRIPTION": "打出后回到手牌。 NL 失去 !M! *金币 。 NL 获得1瓶 *药水 ， [E] ，抽1张牌。"
   },
   "hannina:Jinziyinhang": {
     "NAME": "金子银行",

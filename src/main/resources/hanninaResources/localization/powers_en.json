@@ -1,0 +1,114 @@
+{
+  "hannina:UnionPower": {
+    "NAME": "Form",
+    "DESCRIPTIONS": [
+      "When in Ironclad Cat Form, gain #b2 #yStrength . NL #yComposite cards become the corresponding #rRed cards recorded within them.",
+      "When in Silent Cat Form, gain #b2 #yDexterity . NL #yComposite cards become the corresponding #gGreen cards recorded within them.",
+      "When in Defect Cat Form, Channel 1 #yLightning and gain #b1 #yFocus . NL #yComposite cards become the corresponding #bBlue cards recorded within them.",
+      "When in Watcher Cat Form, #yScry #b2 . NL #yComposite cards become the corresponding #pPurple cards recorded within them.",
+      " NL Automatically exits at the end of the turn."
+    ]
+  },
+  "hannina:XingtaibianhuaPower": {
+    "NAME": "Form Change",
+    "DESCRIPTIONS": [
+      "For #b",
+      " turns, do not exit the current #yForm at the end of the turn."
+    ]
+  },
+  "hannina:DoumaobangPower": {
+    "NAME": "Cat Teaser",
+    "DESCRIPTIONS": [
+      "At the start of your turn, randomly add #b",
+      " #yCat #yLanding~ or #yCat #yDash! into your hand."
+    ]
+  },
+  "hannina:DoumaobangUPGPower": {
+    "NAME": "Cat Teaser+",
+    "DESCRIPTIONS": [
+      "At the start of your turn, randomly add #b",
+      " #yCat #yLanding~ or #yCat #yDash!+ into your hand."
+    ]
+  },
+  "hannina:MaodefeiqiyijiaoPower": {
+    "NAME": "Cat's Flying Kick",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " times you enter #ySilent #yCat #yForm each turn, draw #b2 cards."
+    ]
+  },
+  "hannina:QianmiaowanhaPower": {
+    "NAME": "Thousands of Meows",
+    "DESCRIPTIONS": [
+      "Whenever you play a card of a color other than your character's, enter a random #yForm you haven't entered this turn and gain #b",
+      " [E] ."
+    ]
+  },
+  "hannina:ZhuchengjinshenPower": {
+    "NAME": "Cast Solid Gold",
+    "DESCRIPTIONS": [
+      "Whenever you gain or lose Gold this combat, gain #b",
+      " #yBlock ."
+    ]
+  },
+  "hannina:MaodearxingtaiPower": {
+    "NAME": "Cat-dear Form",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " cards played each turn are placed at the bottom of the draw pile, and cost 0 until played again."
+    ]
+  },
+  "hannina:MaodearxingtaiPower2": {
+    "NAME": "Cat-dear Form",
+    "DESCRIPTIONS": [
+      "When you enter a #yClass #yForm , gain the #yForm buffs of all #yForms simultaneously. NL The first #b",
+      " times you switch #yForms each turn, play the powerful card of the corresponding #yForm ."
+    ]
+  },
+  "hannina:AntiUnionPower": {
+    "NAME": "无法改变形态",
+    "DESCRIPTIONS": [
+      "在本回合，你不能改变你的 #y形态 。"
+    ]
+  },
+  "hannina:MMRuizhanPower": {
+    "NAME": "下回合获得活力",
+    "DESCRIPTIONS": [
+      "下回合开始时，获得 #b",
+      " 点 #r活力 。"
+    ]
+  },
+  "hannina:JinziyinhangPower": {
+    "NAME": "金子银行",
+    "DESCRIPTIONS": [
+      "战斗内，你获得的金币增加 #b",
+      " 倍。"
+    ]
+  },
+  "hannina:SirenzhuanshuPower": {
+    "NAME": "私人专属",
+    "DESCRIPTIONS": [
+      "回合开始时，获得 #b",
+      " 层 #y金属化 。"
+    ]
+  },
+  "hannina:ZhuazhunilePower": {
+    "NAME": "抓住你了",
+    "DESCRIPTIONS": [
+      "下回合开始时，在手牌加入 #b",
+      " 张 #y猫落地~ 。"
+    ]
+  },
+  "hannina:AiqingPower": {
+    "NAME": "坚不可摧",
+    "DESCRIPTIONS": [
+      "本回合最多只能受到 #b1 点伤害。"
+    ]
+  },
+  "hannina:FusionPower": {
+    "NAME": "尖塔之兽",
+    "DESCRIPTIONS": [
+      "本回合无法进入其他 #y形态 。打出 #y复合 卡牌时选择并打出1张其 #y复合 的卡牌。打出进入职业形态的卡牌时获得 [E] 。"
+    ]
+  }
+}

@@ -91,20 +91,44 @@ public class ChangePlayerModel {
 //                    Invoker.setField(AbstractDungeon.overlayMenu.energyPanel, "gainEnergyImg", ImageMaster.PURPLE_ORB_FLASH_VFX);
                     break;
                 case "Hannina":
-                    //TODO 目前只实装了sfw皮肤，后面需要判断当前使用的哪个皮肤
-                    loadAnimationMethod = AbstractCreature.class.getDeclaredMethod(
-                            "loadAnimation",
-                            String.class,
-                            String.class,
-                            float.class);
-                    loadAnimationMethod.setAccessible(true);
-                    loadAnimationMethod.invoke(
-                            AbstractDungeon.player,
-                            ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/Hannina_Kimono_null.atlas"),
-                            ModHelper.getImgPath("char/skin/animations/hannina/idle/sfw/hannina_kimono_null37.json"),
-                            2.0F
-                    );
-                    AbstractDungeon.player.state.setAnimation(0, "Idle", true);
+//                    loadAnimationMethod = AbstractCreature.class.getDeclaredMethod(
+//                            "loadAnimation",
+//                            String.class,
+//                            String.class,
+//                            float.class);
+//                    loadAnimationMethod.setAccessible(true);
+//
+//                    if (ConfigHelper.skinId.equals("SFW") ||
+//                            ConfigHelper.skinId.equals("NSFW") ||
+//                            ConfigHelper.skinId.equals("NSFW-2") ||
+//                            ConfigHelper.skinId.isEmpty()) {
+//                        loadAnimationMethod.invoke(
+//                                AbstractDungeon.player,
+//                                ModHelper.getImgPath("char/Hannina_null/Hannina_null.atlas"),
+//                                ModHelper.getImgPath("char/Hannina_null/hannina_null37.json"),
+//                                2.0F
+//                        );
+//                        AbstractDungeon.player.state.setAnimation(0, "Idle", true);
+//                    }
+//                    else if (ConfigHelper.skinId.equals("SFW-2")) {
+//                        loadAnimationMethod.invoke(
+//                                AbstractDungeon.player,
+//                                ModHelper.getImgPath("char/skin/SFW-2/Hannina_SFW-2_null/Hannina_SFW-2_null.atlas"),
+//                                ModHelper.getImgPath("char/skin/SFW-2/Hannina_SFW-2_null/hannina_sfw-2_null37.json"),
+//                                2.0F
+//                        );
+//                        AbstractDungeon.player.state.setAnimation(0, "Idle", true);
+//                    }
+//                    else { // SFW-3 / NSFW-3
+//                        loadAnimationMethod.invoke(
+//                                AbstractDungeon.player,
+//                                ModHelper.getImgPath(String.format("char/skin/%1$s/Hannina_%1$s/Hannina_%1$s.atlas", ConfigHelper.skinId)),
+//                                ModHelper.getImgPath(String.format("char/skin/%1$s/Hannina_%1$s/hannina_%2$s37.json", ConfigHelper.skinId, ConfigHelper.skinId.toLowerCase())),
+//                                2.0F
+//                        );
+//                        AbstractDungeon.player.state.setAnimation(0, "Idle_null", true);
+//                    }
+
                     break;
             }
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {

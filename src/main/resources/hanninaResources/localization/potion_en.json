@@ -1,0 +1,25 @@
+{
+  "hannina:Maozhua":{
+    "NAME": "Cat Paw Potion",
+    "DESCRIPTIONS": [
+      "Enter any 1 #yClass #yForm ."
+    ],
+    "FLAVOR": ""
+  },
+  "hannina:Jinbi":{
+    "NAME": "Gold Potion",
+    "DESCRIPTIONS": [
+      "Gain #b30 % of the total Gold lost since carrying this potion.",
+      "( #b",
+      " Gold)"
+    ],
+    "FLAVOR": ""
+  },
+  "hannina:Aiqing":{
+    "NAME": "Love Potion",
+    "DESCRIPTIONS": [
+      "Until the start of your next turn, gain 1 #yInvincible ."
+    ],
+    "FLAVOR": ""
+  }
+}
